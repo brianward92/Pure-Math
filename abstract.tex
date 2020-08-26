@@ -368,4 +368,31 @@ Each subset of case (a) is formed by taking a union between $\{y\}$ and any subs
 
 \noindent (*) For an alternative proof consider directly counting the subsets. For each element in $S$ it is either in the subset or not. Thus, each subset is equivalent to a list of flags 0/1 for whether or not to include the element. E.g. $(0,1,1)$ for a 3 element set indicates to omit the first element and keep the other two. Each element can be $0$ or $1$ so there are two choice for $n$ elements, therefore there are $\underbrace{2\cdot2\cdot2\ldots2}_{n\text{ times}}=2^n$ possible subsets. 
 
+
+
+\subsection{Q18}
+
+For $k=1$ we check if $f_{5\cdot1}=f_5$ is divisible by $5$. Indeed $f_5=5$ is divisible by $5$ as $5=5\cdot1$. Now assume that $f_{5n}$ is divisible by $5$. Then, 
+\begin{align*}
+	f_{5(n+1)} = f_{5n+5} = f_{5n+4} + f_{5n+3} = \left(f_{5n+3} + f_{5n+2}\right) + f_{5n+3} = 2 f_{5n+3} + f_{5n+2} & = 2(f_{5n+2} + f_{5n+1}) + f_{5n+2}\\
+	& = 3f_{5n+2} + 2f_{5n+1}\\
+	& = 3(f_{5n+1} + f_{5n}) + 2f_{5n+1}\\
+	& = 5f_{5n+1} + 3f_{5n}.\\
+\end{align*}
+Thus, $f_{5(n+1)}=5f_{5n+1} + 3f_{5n}$. By the induction hypothesis we know that $5$ divides $f_{5n}$ so there is an integer $k$ such that $f_{5n} = 5k$. Thus, $f_{5(n+1)}=5f_{5n+1} + 3f_{5n}=5f_{5n+1} + 3\cdot5k=5\left(f_{5n+1}+3k\right):=5k^\prime$, where $k^\prime$ is an integer. We conclude that $5$ divides $f_{5(n+1)}$, which is exactly the statement for $n+1$. 
+
+
+
+\subsection{Q19}
+
+When $n=1$ the left hand side is $f_{1+1}^2-f_1f_{1+2}=f_2^2-f_1f_3=1^2-1\cdot2=1-2=-1$. The right hand side is $(-1)^1=-1$. Now assume $f_{n+1}^2-f_nf_{n+2}=(-1)^n$. Then,
+\begin{align*}
+	f_{n+2}^2-f_{n+1}f_{n+3} = f_{n+2}^2-f_{n+1}(f_{n+2} + f_{n+1}) = f_{n+2}^2-f_{n+1}f_{n+2} - f_{n+1}^2  & = (f_{n+2}-f_{n+1})f_{n+2} - f_{n+1}^2\\
+	& = ((f_{n+1} + f_n)-f_{n+1})f_{n+2} - f_{n+1}^2\\
+	& = f_nf_{n+2} - f_{n+1}^2\\
+	& = -(f_{n+1}^2 - f_nf_{n+2})\\
+	& = -(-1)^n = (-1)^{n+1},
+\end{align*}
+where the second to last equality follows from the induction hypothesis. That demonstrates $f_{n+2}^2-f_{n+1}f_{n+3} = (-1)^{n+1}$, which is exactly the statement for $n+1$.
+
 \end{document}

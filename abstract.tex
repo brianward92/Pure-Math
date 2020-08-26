@@ -1,0 +1,188 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[margin = 0.5in]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{url}
+\usepackage[font=small]{caption}
+\usepackage{setspace}
+\usepackage{subfigure}
+\setcounter{MaxMatrixCols}{10}
+\newtheorem{theorem}{Theorem}
+\newtheorem{algorithm}{Algorithm} %[theorem]
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+%\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{axiom}[theorem]{Axiom}
+%\newtheorem{case}[theorem]{Case}
+%\newtheorem{claim}[theorem]{Claim}
+%\newtheorem{conclusion}[theorem]{Conclusion}
+%\newtheorem{condition}[theorem]{Condition}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%\newtheorem{criterion}[theorem]{Criterion}
+%\newtheorem{assumption}[theorem]{Assumption}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{problem}[theorem]{Problem}
+%\newtheorem{solution}[theorem]{Solution}
+%\newtheorem{summary}[theorem]{Summary}
+	
+\def\N{{\mathbb N}}        % positive integers
+\def\Q{{\mathbb Q}}        % rationals
+\def\Z{{\mathbb Z}}        % integers
+\def\R{{\mathbb R}}        % reals
+\def\Rn{{\R^{n}}}          % product of n copies of reals
+\def\P{{\mathbb P}}        % probability
+\def\E{{\mathbb E}}        % expectation
+\def\EQ{{\mathbb E}^{\mathbb Q}}        % expectation
+\def\1{{\mathbf 1}}        % indicator
+\def\F{{\mathcal F}}        % potential measure
+\def\G{{\mathcal G}}        % potential measure
+\def\ess{\text{ess}}
+\def\var{{\mathop{\mathbf Var}}}    %variance
+\def\L{{\mathcal L} \,}
+\def\Lhat{{\tilde{\mathcal L} \,}}
+\def\setZ{{\mathcal Z}}
+\def\setA{{\mathcal A}}
+\def\setT{{\mathcal T}}
+\def\D{{\mathcal D}}
+\def\C{{\mathcal C}}
+\def\setE{{\mathcal E}}
+\def\Vest{{\mathcal V}}
+\def\Cvest{{C}}
+\def\Cunvest{{\tilde{C}}}
+
+\def\I{{\mathbf I}}
+\def\thetahat{{\hat{\theta}}}
+\def\taub{{\hat{\tau}}}
+\def\xhat{{\hat{x}}}
+\def\xbar{{\bar{x}}}
+\def\yhat{{\hat{y}}}
+\def\x{{\textcolor[rgb]{0.00,0.00,0.00}{\hat{x}}}}
+\def\y{{\textcolor[rgb]{0.00,0.00,0.00}{\hat{y}}}}
+\def\v{{\hat{v}}}
+\def\Xhat{{\hat{X}}}
+\def\G{{\tilde{G}}}
+\def\H{{\tilde{H}}}
+\def\Yhat{{\hat{Y}}}
+\def\Vhat{{\hat{V}}}
+\def\Mhat{{\hat{M}}}
+
+%\addtolength{\hoffset}{-1.8cm} \addtolength{\voffset}{-2cm}
+%\addtolength{\textheight}{4cm} \addtolength{\textwidth}{3.6cm}
+
+\newcommand{\ward}[1]{\textcolor{red}{#1}}
+
+\numberwithin{theorem}{section}
+\numberwithin{equation}{section}
+\numberwithin{remark}{section}
+\numberwithin{definition}{section}
+\numberwithin{theorem}{section}
+\numberwithin{lemma}{section}
+\numberwithin{example}{section}
+
+\begin{document}
+\title{Solutions Guide to Abstract Algebra}
+\author{Brian Ward\thanks{Email: {bmw2150@columbia.edu}. Corresponding author. }} 
+\maketitle
+\abstract{Solutions to the textbook ``Abstract Algebra: A First Course", Second Edition by Dan Saracino.}
+
+\tableofcontents
+
+%\setcounter{section}{-1}
+
+\section{Sets and Induction}
+
+
+
+\subsection{Q1}
+With $S = \{2,5,\sqrt{2},25,\pi,5/2\}$ and $T=\{4,25,\sqrt{2},6,3/2\}$, we have 
+\begin{align*}
+	S\cap T = \{\sqrt{2},25\},
+\end{align*}
+and 
+\begin{align*}
+	S\cup T = \{2,5,\sqrt{2},25,\pi,5/2,4,6,3/2\}.
+\end{align*}
+
+
+
+\subsection{Q2}
+For the first equation, the left hand side is
+\begin{align*}
+	\mathbb{Z} \cap \left(S\cup T \right) = \{2,5,25,4,6\}.
+\end{align*}
+As for the right hand side, we have $\mathbb{Z}\cap S = \{2,5,25\}$. and $\mathbb{Z}\cap T = \{4,25,6\}$. Thus, 
+\begin{align*}
+	\left(\mathbb{Z}\cap S\right)\cup\left(\mathbb{Z}\cap T\right) = \{2,5,25\} \cup \{4,25,6\} = \{2,5,25,4,6\}.
+\end{align*}
+For the second equation, the left hand side is
+\begin{align*}
+	\mathbb{Z} \cup \left(S\cap T \right) = \mathbb{Z} \cup \{\sqrt{2},25\} = \{\sqrt{2},\ldots,-3,-2,-1,0,1,2,3,\ldots\}.
+\end{align*}
+As for the right hand side we have 
+\begin{align*}
+	\mathbb{Z} \cup S = \mathbb{Z} \cup  \{2,5,\sqrt{2},25,\pi,5/2\} = \{\sqrt{2},\pi,5/2,\ldots,-3,-2,-1,0,1,2,3,\ldots\},
+\end{align*}
+and
+\begin{align*}
+	\mathbb{Z} \cup T = \mathbb{Z} \cup \{4,25,\sqrt{2},6,3/2\} = \{\sqrt{2},3/2,\ldots,-3,-2,-1,0,1,2,3,\ldots\}.
+\end{align*}
+Thus,
+\begin{align*}
+	\left(\mathbb{Z}\cup S\right)\cap\left(\mathbb{Z}\cup T\right) = \{\sqrt{2},\ldots,-3,-2,-1,0,1,2,3,\ldots\}.
+\end{align*}
+
+
+
+\subsection{Q3}
+For the first equation, we prove (i) $S\cap\left(S\cup T\right)\subseteq S$ and (ii) $S\subseteq S\cap\left(S\cup T\right)$. 
+\begin{itemize}
+	\item[(i)]{Suppose $x\in S\cap\left(S\cup T\right)$. Because an element is in an intersection whenever it is in both sets of the intersection, we have $x\in S$ and $x\in S\cup T$. Of course, the first suffices for $S\cap\left(S\cup T\right)\subseteq S$.}
+	\item[(ii)]{Suppose $x\in S$. Then $x\in S \cup T$ as well because an element is in a union if it is in at least one of the two sets in that union. Since $x\in S$ and $x\in S \cup T$, we have $x\in S\cap\left(S\cup T\right)$ so $S\subseteq S\cap\left(S\cup T\right)$.}
+\end{itemize}
+For the second equation, we prove (iii) $S\cup\left(S\cap T\right)\subseteq S$ and (iv) $S\subseteq S\cup\left(S\cap T\right)$. 
+\begin{itemize}
+	\item[(iii)]{Suppose $x\in S\cup\left(S\cap T\right)$. Then, either (a) $x\in S$ or (b) $x\notin S$. In case (a), we clearly have $S\cup\left(S\cap T\right)\subseteq S$. In case (b), we must have $x\in S\cap T$ (if $x\not \in S\cap T$, then $x$ is in neither $S$ nor $S\cap T$, therefore not in $S\cup\left(S\cap T\right)$, which contradicts our assumption $x\in S\cup\left(S\cap T\right)$.) This implies case (b) is not possible. $x\in S\cap T$ implies $x\in S$ and $x\in T$, contradicting that $x\notin S$. Since cases (a) and (b) are mutually exclusive and exhaustive we have shown $S\cup\left(S\cap T\right)\subseteq S$.}
+	\item[(iv)]{Suppose $x\in S$. Then $x\in S\cup\left(S\cap T\right)$ as well because an element is in a union if it is in at least one of the two sets in that union. Thus, we have $S\subseteq S\cup\left(S\cap T\right)$.}
+\end{itemize}
+
+
+
+\subsection{Q4}
+\noindent ($\implies$) 
+
+Suppose that $S \cup T = T$. We must show $S \subseteq T$. Suppose $x\in S$. Then we have $x \in S \cup T$. As $S \cup T = T$, this implies $x\in T$. Thus, $S \cup T = T \implies S \subseteq T$.
+
+\noindent ($\impliedby$)
+
+Suppose that $S \subseteq T$. We must show that $S \cup T = T$. Thus, we show (i) $S \cup T \subseteq T$ and (ii) $T \subseteq S \cup T$.
+\begin{itemize}
+	\item[(i)]{Suppose $x\in S \cup T$. Then, either (a) $x\in S$ or (b) $x\notin S$. In case (a) because we assume $S \subseteq T$, we have $x \in T$. In case (b), we must have $x \in T$ because otherwise $x\notin S$ and $x\notin T$ so $x$ could not be in $S \cup T$. In both cases we have shown $x\in T$ so we have $S \cup T \subseteq T$.}
+	\item[(ii)]{Suppose $x \in T$. Then we know $x \in S \cup T$ (because it is in one of the sets in the union) so $T \subseteq S \cup T$.}
+\end{itemize}
+Together (i) and (ii) imply $S \cup T = T$ so $S \subseteq T \implies S \cup T = T$.
+
+
+
+\subsection{Q5}
+
+We show (i) $A \cap \left(B \cup C\right) \subseteq \left(A \cap B\right) \cup  \left(A \cap C\right)$ and (ii) $\left(A \cap B\right) \cup  \left(A \cap C\right) \subseteq A \cap \left(B \cup C\right)$.
+\begin{itemize}
+	\item[(i)]{Suppose $x\in A \cap \left(B \cup C\right)$. Then $x\in A$ and $x \in B \cup C$. Either (a) $x\in B$ or (b) $x\notin B$. In case (a) we have $x\in A$ and $x\in B$ so $x\in A \cap B$. In case (b) we must have $x\in C$ (similar to previous arguments) so $x\in A$ and $x \in C$ implying $x \in A \cap C$. In either case we have shown $x$ is in one of the sets of the union $\left(A \cap B\right) \cup  \left(A \cap C\right)$ so $A \cap \left(B \cup C\right) \subseteq \left(A \cap B\right) \cup  \left(A \cap C\right)$.}
+	\item[(ii)]{Suppose $x \in \left(A \cap B\right) \cup  \left(A \cap C\right)$. Either (a) $x \in A \cap B$ or (b) $x \notin A \cap B$. In case (a) we have $x\in A$ and $x\in B$. In case (b) we must have $x \in A \cap C$ (similar to previous arguments) so that $x\in A$ and $x\in C$. In either case $x\in A$ and $x$ is either in $B$ or $C$ so that $x\in B \cup C$. Together we have $x\in A \cap \left(B \cup C\right)$ so $\left(A \cap B\right) \cup  \left(A \cap C\right) \subseteq A \cap \left(B \cup C\right)$.}
+\end{itemize}
+
+\end{document}

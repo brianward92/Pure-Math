@@ -101,7 +101,7 @@
 
 \tableofcontents
 
-%\setcounter{section}{-1}
+\setcounter{section}{-1}
 
 \section{Sets and Induction}
 
@@ -155,7 +155,7 @@ For the first equation, we prove (i) $S\cap\left(S\cup T\right)\subseteq S$ and 
 \end{itemize}
 For the second equation, we prove (iii) $S\cup\left(S\cap T\right)\subseteq S$ and (iv) $S\subseteq S\cup\left(S\cap T\right)$. 
 \begin{itemize}
-	\item[(iii)]{Suppose $x\in S\cup\left(S\cap T\right)$. Then, either (a) $x\in S$ or (b) $x\notin S$. In case (a), we clearly have $S\cup\left(S\cap T\right)\subseteq S$. In case (b), we must have $x\in S\cap T$ (if $x\not \in S\cap T$, then $x$ is in neither $S$ nor $S\cap T$, therefore not in $S\cup\left(S\cap T\right)$, which contradicts our assumption $x\in S\cup\left(S\cap T\right)$.) This implies case (b) is not possible. $x\in S\cap T$ implies $x\in S$ and $x\in T$, contradicting that $x\notin S$. Since cases (a) and (b) are mutually exclusive and exhaustive we have shown $S\cup\left(S\cap T\right)\subseteq S$.}
+	\item[(iii)]{Suppose $x\in S\cup\left(S\cap T\right)$. Then either (a) $x\in S$ or (b) $x\notin S$. In case (a) we clearly have $S\cup\left(S\cap T\right)\subseteq S$. In case (b) we must have $x\in S\cap T$ (if $x\not \in S\cap T$, then $x$ is in neither $S$ nor $S\cap T$, therefore not in $S\cup\left(S\cap T\right)$, which contradicts our assumption $x\in S\cup\left(S\cap T\right)$.) This implies case (b) is not possible. $x\in S\cap T$ implies $x\in S$ and $x\in T$, contradicting that $x\notin S$. Since cases (a) and (b) are mutually exclusive and exhaustive we have shown $S\cup\left(S\cap T\right)\subseteq S$.}
 	\item[(iv)]{Suppose $x\in S$. Then $x\in S\cup\left(S\cap T\right)$ as well because an element is in a union if it is in at least one of the two sets in that union. Thus, we have $S\subseteq S\cup\left(S\cap T\right)$.}
 \end{itemize}
 
@@ -170,7 +170,7 @@ Suppose that $S \cup T = T$. We must show $S \subseteq T$. Suppose $x\in S$. The
 
 Suppose that $S \subseteq T$. We must show that $S \cup T = T$. Thus, we show (i) $S \cup T \subseteq T$ and (ii) $T \subseteq S \cup T$.
 \begin{itemize}
-	\item[(i)]{Suppose $x\in S \cup T$. Then, either (a) $x\in S$ or (b) $x\notin S$. In case (a) because we assume $S \subseteq T$, we have $x \in T$. In case (b), we must have $x \in T$ because otherwise $x\notin S$ and $x\notin T$ so $x$ could not be in $S \cup T$. In both cases we have shown $x\in T$ so we have $S \cup T \subseteq T$.}
+	\item[(i)]{Suppose $x\in S \cup T$. Then, either (a) $x\in S$ or (b) $x\notin S$. In case (a) because we assume $S \subseteq T$, we have $x \in T$. In case (b) we must have $x \in T$ because otherwise $x\notin S$ and $x\notin T$ so $x$ could not be in $S \cup T$. In both cases we have shown $x\in T$ so we have $S \cup T \subseteq T$.}
 	\item[(ii)]{Suppose $x \in T$. Then we know $x \in S \cup T$ (because it is in one of the sets in the union) so $T \subseteq S \cup T$.}
 \end{itemize}
 Together (i) and (ii) imply $S \cup T = T$ so $S \subseteq T \implies S \cup T = T$.
@@ -184,5 +184,97 @@ We show (i) $A \cap \left(B \cup C\right) \subseteq \left(A \cap B\right) \cup  
 	\item[(i)]{Suppose $x\in A \cap \left(B \cup C\right)$. Then $x\in A$ and $x \in B \cup C$. Either (a) $x\in B$ or (b) $x\notin B$. In case (a) we have $x\in A$ and $x\in B$ so $x\in A \cap B$. In case (b) we must have $x\in C$ (similar to previous arguments) so $x\in A$ and $x \in C$ implying $x \in A \cap C$. In either case we have shown $x$ is in one of the sets of the union $\left(A \cap B\right) \cup  \left(A \cap C\right)$ so $A \cap \left(B \cup C\right) \subseteq \left(A \cap B\right) \cup  \left(A \cap C\right)$.}
 	\item[(ii)]{Suppose $x \in \left(A \cap B\right) \cup  \left(A \cap C\right)$. Either (a) $x \in A \cap B$ or (b) $x \notin A \cap B$. In case (a) we have $x\in A$ and $x\in B$. In case (b) we must have $x \in A \cap C$ (similar to previous arguments) so that $x\in A$ and $x\in C$. In either case $x\in A$ and $x$ is either in $B$ or $C$ so that $x\in B \cup C$. Together we have $x\in A \cap \left(B \cup C\right)$ so $\left(A \cap B\right) \cup  \left(A \cap C\right) \subseteq A \cap \left(B \cup C\right)$.}
 \end{itemize}
+
+
+
+\subsection{Q6}
+
+We show (i) $A \cup \left(B \cap C\right) \subseteq \left(A \cup B\right) \cap  \left(A \cup C\right)$ and (ii) $\left(A \cup B\right) \cap  \left(A \cup C\right) \subseteq A \cup \left(B \cap C\right)$.
+\begin{itemize}
+	\item[(i)]{Suppose $x\in A \cup \left(B \cap C\right)$. Then either (a) $x\in A$ or (b) $x \notin A$. In case (a) $x\in A$ implies $x\in A \cup B$ and $x \in A \cup C$ so $\left(A \cup B\right) \cap  \left(A \cup C\right)$. In case (b) we must have $x\in B \cap C$ (similar to previous arguments) so $x\in B$ and $x\in C$. That implies $x \in A \cup B$ and $x \in A \cup C$, respectively. In either case, we have $x \in A \cup B$ and $x \in A \cup C$ so $x\in \left(A \cup B\right) \cap  \left(A \cup C\right)$. That means $A \cup \left(B \cap C\right) \subseteq \left(A \cup B\right) \cap  \left(A \cup C\right)$.}
+	\item[(ii)]{Suppose $x\in \left(A \cup B\right) \cap  \left(A \cup C\right)$. Then $x\in A \cup B$ and $x\in A \cup C$. Either (a) $x\in A$ or (b) $x\notin A$. In case (a) $x\in A$ implies $x\in A \cup \left(B \cap C\right)$. In case (b) we have $x\notin A$, but $x\in A \cup B$ and $x\in A \cup C$. The last two facts respectively imply $x\in B$ and $x\in C$ (otherwise $x$ could not be in those two unions) so $x\in B \cap C$ so that $x \in A \cup \left(B \cap C\right)$. Thus, $\left(A \cup B\right) \cap  \left(A \cup C\right) \subseteq A \cup \left(B \cap C\right)$.}
+\end{itemize}
+
+
+
+\subsection{Q7}
+
+The key problem in the proof is the requirement that the subsets overlap. In particular, the book's proof has horses labeled $h_1,h_2,\ldots,h_{m},h_{m+1}$ and considers two subsets of size $m$. Subset 1 is $\{h_1,h_2,\ldots,h_m\}$ and subset 2 is $\{h_2,\ldots,h_m,h_{m+1}\}$. The intersection of these two sets is $S:=\{h_2,\ldots,h_m\}$. We know from the fact that $S$ is in subset 1, that $S$ are all of the same color, say $C_1$. Moreover, this is the color of $h_1$. We also know from the fact that $S$ is in subset 2, that $S$ are all of the same color, say $C_2$. Moreover, this is the color of $h_{m+1}$. Of course, we have just concluded $S$ has color $C_1$ \emph{and} color $C_2$ so $C_1=C_2$. Finally, that indicates $h_1$'s color, $C_1$ must equal that of $h_{m+1}$'s color, $C_2$ and so all $m+1$ horses are the same color. 
+
+However, $S$ is empty when $m=1$ so this first inductive step cannot be carried forward. Intuitively, If I have a group of two horses and I know that all subsets of size less than two are groups of the same color, it does not imply both horses are the same color. For example, if I have one white horse and one black horse then the inductive hypothesis is satisfied by this collection of horses: any subset of size less than two (i.e. a subset of size one) is a group of horses of the same color (pick any individual horse, it is the same color as itself). However, it is obviously not true that the two horses are the same color in spite of the inductive hypothesis holding. 
+
+
+
+\subsection{Q8}
+
+When $n=1$, the left hand side is $1^3=1$. The right hand side is $\left(\frac{1(1+1)}{2}\right)^2=\left(\frac{1\cdot2}{2}\right)^2=1^2=1$. Now assume
+\begin{align*}
+	1^3 + 2^3 + \ldots + n^3 = \left(\frac{n(n+1)}{2}\right)^2,
+\end{align*}
+then by adding $(n+1)^3$ to both sides we obtain
+\begin{align*}
+	1^3 + 2^3 + \ldots + n^3 + (n+1)^3&= \left(\frac{n(n+1)}{2}\right)^2 + (n+1)^3.
+\end{align*}
+We can further simplify the right hand side as
+\begin{align*}
+	 \left(\frac{n(n+1)}{2}\right)^2 + (n+1)^3 = \left[\left(\frac{n}{2}\right)^2 + (n+1)\right](n+1)^2 & = \frac{1}{4}\left(n^2 + 4(n+1)\right)(n+1)^2 \\
+	 & = \frac{1}{4}\left(n^2 + 4n+4)\right)(n+1)^2 \\
+	 & = \frac{1}{4}(n+2)^2(n+1)^2\\
+	 & = \left(\frac{(n+1)(n+2)}{2}\right)^2,
+\end{align*}
+which is the right hand side for $n+1$, exactly as required.
+
+
+
+\subsection{Q9}
+
+When $n=1$ the left hand side is $1+(2\cdot1+1)=4$. The right hand side is $(1+1)^2=2^2=4$. Now assume
+\begin{align*}
+	1 + 3 + 5 + \ldots + (2n+1) = (n+1)^2,
+\end{align*}
+then adding $2(n+1)+1=2n+3$ to both sides we obtain 
+\begin{align*}
+	1 + 3 + 5 + \ldots + (2n+1) + 2n+3 = (n+1)^2 + 2n+3.
+\end{align*}
+We can further simplify the right hand side as 
+\begin{align*}
+	(n+1)^2 + 2n+3 = n^2 + 2n + 1 + 2n + 3 = n^2 + 4n + 4 = (n+2)^2, 
+\end{align*}
+which is the right hand side for $n+1$, exactly as required. 
+
+
+
+\subsection{Q10}
+
+When $n=1$ the left hand side is $2\cdot1=2$. The right hand side is $1\cdot(1+1)=1\cdot2=2$. Now assume
+\begin{align*}
+	2+4+6+\ldots+2n = n(n+1),
+\end{align*}
+then adding $2(n+1)=2n+2$ to both sides we obtain 
+\begin{align*}
+	2+4+6+\ldots+2n + 2n+2 = n(n+1) + 2n+2.
+\end{align*}
+We can further simplify the right hand side as 
+\begin{align*}
+	n(n+1) + 2n+2 = n^2 + n + 2n + 2 = n^2 + 3n + 2 = (n+1)(n+2),
+\end{align*}
+which is the right hand side for $n+1$, exactly as required. 
+
+\vspace{\baselineskip}
+
+\noindent(*) For an alternative proof, note that for $m=2n$, Equation [0.1] on page 5 of the textbook gives
+\begin{align*}
+	1 + 2 + \ldots + (2n-1) + 2n = \frac{2n(2n+1)}{2}=n(2n+1).
+\end{align*}
+Let $E:=2+4+6 + \ldots+2n$ and $O:=1 + 3 + 5 + \ldots + (2n+1)$. Then clearly $O-(2n+1)+E=1+2+\ldots+(2n-1)+2n=n(2n+1)$. In Problem 0.9 we proved $O=(n+1)^2$. Thus,
+\begin{align*}
+	O-(2n+1)+E=n(2n+1) &\implies (n+1)^2-(2n+1)+E=n(2n+1) \\
+	&\implies E=n(2n+1)+(2n+1)-(n+1)^2.
+\end{align*}
+We can further simplify the right hand side as
+\begin{align*}
+	n(2n+1)+(2n+1)-(n+1)^2=2n^2+n+2n+1-n^2-2n-1=n^2+n=n(n+1), 
+\end{align*}
+exactly as required. 
 
 \end{document}

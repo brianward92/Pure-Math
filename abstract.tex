@@ -289,12 +289,17 @@ Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le 
 
 \subsection{Q12}
 
+The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some $n\ge c$. Then $S:=\{n\ge c:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq c$ because we know $P(c)$ is true from assumption (i). Thus, $n_0 > c$ or $n_0\ge c+1$ and $n_1:=n_0-1\ge c$. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
+
+Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le n_1 = n_0 - 1 < n_0$ that $P(k)$ is true. Assumption (ii) implies $P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some positive $n$ cannot be correct and $P(n)$ is true for all positive $n$. 
 
 
 
 \subsection{Q13}
 
+The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some $n\ge c$. Then $S:=\{n\ge c:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq c$ because we know $P(c)$ is true from assumption (i). Thus, $n_0 > c$ or $n_0\ge c+1$ and $n_1:=n_0-1\ge c$. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
 
+Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le n_1 = n_0 - 1 < n_0$ that $P(k)$ is true. Assumption (ii) implies $P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some positive $n$ cannot be correct and $P(n)$ is true for all positive $n$. 
 
 
 \subsection{Q14}
@@ -394,5 +399,95 @@ When $n=1$ the left hand side is $f_{1+1}^2-f_1f_{1+2}=f_2^2-f_1f_3=1^2-1\cdot2=
 	& = -(-1)^n = (-1)^{n+1},
 \end{align*}
 where the second to last equality follows from the induction hypothesis. That demonstrates $f_{n+2}^2-f_{n+1}f_{n+3} = (-1)^{n+1}$, which is exactly the statement for $n+1$.
+
+
+
+\subsection{Q20}
+
+Because the Fibonacci Series relies on its prior two values to generate the current value, we need to use the second form of induction from Theorem [0.3]. However, the inductive step will not make sense for $m=2$ because we would be looking at $f_m = f_{m-1} + f_{m-2}$ and there is no $f_{m-2}=f_{2-2}=f_0$ (although traditionally $f_0=0$, it has not been defined in the textbook.) Therefore we simply prove the result for $n=1$ directly as a separate fact first. Then, we rely on the slightly modified version of Theorem [0.3] that we proved in Problem 0.13 to prove this result for all $n\ge2$.
+
+\vspace{\baselineskip}
+
+\noindent ($n=1$) When $n=1$ the left hand side is $f_1 = 1$. The right hand side is
+\begin{align*}
+	\frac{\alpha^1-\beta^1}{\sqrt{5}}=\frac{\frac{1+\sqrt{5}}{2}-\frac{1-\sqrt{5}}{2}}{\sqrt{5}}=\frac{\frac{1+\sqrt{5}-1+\sqrt{5}}{2}}{\sqrt{5}}=\frac{\frac{2\sqrt{5}}{2}}{\sqrt{5}}=\frac{\sqrt{5}}{\sqrt{5}}=1.
+\end{align*}
+
+\vspace{\baselineskip}
+
+\noindent ($n\ge2$) When $n=2$, the left hand side is $f_2 = 1$. The right hand side is 
+\begin{align*}
+	\frac{\alpha^2-\beta^2}{\sqrt{5}}=\frac{\left(\frac{1+\sqrt{5}}{2}\right)^2-\left(\frac{1-\sqrt{5}}{2}\right)^2}{\sqrt{5}}=\frac{\frac{\left(1+\sqrt{5}\right)^2}{4}-\frac{\left(1-\sqrt{5}\right)^2}{4}}{\sqrt{5}}&=\frac{\frac{1+2\sqrt{5}+5}{4}-\frac{1-2\sqrt{5}+5}{4}}{\sqrt{5}}\\
+	&=\frac{\frac{1+2\sqrt{5}+5-1+2\sqrt{5}-5}{4}}{\sqrt{5}}\\
+	&=\frac{\frac{4\sqrt{5}}{4}}{\sqrt{5}}=\frac{\sqrt{5}}{\sqrt{5}}=1.
+\end{align*}
+Now assume for all $2\le k<m$ that $f_k = \frac{\alpha^k-\beta^k}{\sqrt{5}}.$ Then, 
+\begin{align*}
+	f_m = f_{m-1} + f_{m-2} = \frac{\alpha^{m-1}-\beta^{m-1}}{\sqrt{5}} +  \frac{\alpha^{m-2}-\beta^{m-2}}{\sqrt{5}} & = \frac{\alpha^{m-1}-\beta^{m-1}+\alpha^{m-2}-\beta^{m-2}}{\sqrt{5}} \\
+	& = \frac{\alpha^{m-2}(\alpha+1)-\beta^{m-2}(\beta+1)}{\sqrt{5}}.
+\end{align*}
+Next, observe that $\alpha+1=\frac{1+\sqrt{5}}{2}+1=\frac{3+\sqrt{5}}{2}$. Moreover,
+\begin{align*}
+	\alpha^2=\left(\frac{1+\sqrt{5}}{2}\right)^2=\frac{\left(1+\sqrt{5}\right)^2}{4}=\frac{1+2\sqrt{5}+5}{4}=\frac{6+2\sqrt{5}}{4}=\frac{3+\sqrt{5}}{2}=\alpha+1. 
+\end{align*}
+Similarly, $\beta+1=\frac{1-\sqrt{5}}{2}+1=\frac{3-\sqrt{5}}{2}$ and 
+\begin{align*}
+	\beta^2=\left(\frac{1-\sqrt{5}}{2}\right)^2=\frac{\left(1-\sqrt{5}\right)^2}{4}=\frac{1-2\sqrt{5}+5}{4}=\frac{6-2\sqrt{5}}{4}=\frac{3-\sqrt{5}}{2}=\beta+1. 
+\end{align*}
+Continuing the above equalities we have
+\begin{align*}
+	f_m  = \frac{\alpha^{m-2}(\alpha+1)-\beta^{m-2}(\beta+1)}{\sqrt{5}} = \frac{\alpha^{m-2}\alpha^2-\beta^{m-2}\beta^2}{\sqrt{5}} = \frac{\alpha^{m}-\beta^{m}}{\sqrt{5}},
+\end{align*}
+which is exactly the statement for $m$. 
+
+\vspace{\baselineskip}
+
+\noindent (*) There is one final technicality worth noting. With $c=2$, assumption (ii) of the variant of Theorem [0.3] from Problem 0.13 says \emph{``for every $m>2$, if $P(k)$ is true for all $k$ such that $2\le k < m$ then $P(m)$ is true."} In truth, we have verified this assumption only for $m>3$ because then $m-2>1$ or $m-2\ge 2$. That is required for us to be able to use the Fibonacci Series definition which recurses twice backwards in the series ($f_m = f_{m-1} + f_{m-2}$) and still have two indices $\ge 2$ for which we know the result to be true.
+
+The problem I am getting at is that when $m=3$ the set of $k$ such that $2\le k < m$ is simply $\{2\}$ and not $\{1,2\}$ but calculating $f_3$ relies on $f_2$ and $f_1$. However, we can treat the statement here for $n=1$ as a separate fact that is just \emph{always} true regardless of any induction. In this case, then for $m=3$ it is sufficient to assume $P(2)$ \emph{only} to get $P(3)$ to be true inductively as we can call on this separate fact (i.e. $P(1)$) as needed to complete our proof. 
+
+
+
+\subsection{Q21}
+
+When $n=1$ the left hand side is $F_0F_1\ldots F_{n-1}=F_0=2^{2^0}+1=2^1+1=2+1=3$. The right hand side is $F_1 - 2 = 2^{2^{1}}+1-2=2^2-1=4-1=3$. Now assume $F_0F_1\ldots F_{n-1}=F_n-2$, then mulitplying both sides by $F_n$ we have $F_0F_1\ldots F_{n-1}F_n=F_n^2-2F_n$. We can simplify the right hand side as 
+\begin{align*}
+	F_n^2-2F_n = \left(2^{2^n}+1\right)^2-2\left(2^{2^n}+1\right)=\left(2^{2^n}\right)^2+2\cdot 2^{2^n}+1-2\cdot 2^{2^n} - 2 = \left(2^{2^n}\right)^2-1 & = 2^{2^n}\cdot 2^{2^n}-1\\
+	& = 2^{2\cdot2^n}-1\\
+	& = 2^{2^{n+1}}+1-2\\
+	& = F_{n+1}-2\\
+\end{align*}
+which is the right hand side for $n+1$, exactly as required. 
+
+
+
+\subsection{Q22}
+
+
+
+\newpage
+
+\section{Binary Operations}
+
+\subsection{Q1}
+
+\subsection{Q2}
+
+\subsection{Q3}
+
+To ensure an operation is a binary operation we require (i) the operation can be computed for any element of $S\times S$ (i.e. any ordered pair of elements of $S$) and (ii) the operation returns an element of $S$. 
+
+\begin{itemize}
+	\item[(a)]{}
+	\item[(b)]{}
+	\item[(c)]{No, the operation cannot be computed for the ordered pair $(0,0)$.}
+	\item[(d)]{No, the operation cannot be computed for the ordered pair $(0,0)$.}
+	\item[(e)]{}
+	\item[(f)]{}
+	\item[(g)]{No, $1*-4=|-4|=4\notin$S.}
+	\item[(h)]{No, $3*3=3\cdot3=9\notin S$}
+	\item[(i)]{}
+	\item[(j)]{}
+\end{itemize}
 
 \end{document}

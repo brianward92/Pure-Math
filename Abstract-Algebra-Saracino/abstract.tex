@@ -281,7 +281,7 @@ exactly as required.
 
 \subsection{Q11}
 
-The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some positive $n$. Then $S:=\{n\in\Z_+:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq1$ because we know $P(1)$ is true from assumption (i). Thus, $n_0 > 1$ and $n_1:=n_0-1>0$ is a positive integer. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
+The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some positive $n$. Then $S:=\{n\in\Z_+:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq1$ because we know $P(1)$ is true from assumption (i). Thus, $n_0 > 1$ and $n_1:=n_0-1>0$ is a positive integer. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k\prime$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
 
 Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le n_1 = n_0 - 1 < n_0$ that $P(k)$ is true. Assumption (ii) implies $P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some positive $n$ cannot be correct and $P(n)$ is true for all positive $n$. 
 
@@ -289,18 +289,17 @@ Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le 
 
 \subsection{Q12}
 
-The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some $n\ge c$. Then $S:=\{n\ge c:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq c$ because we know $P(c)$ is true from assumption (i). Thus, $n_0 > c$ or $n_0\ge c+1$ and $n_1:=n_0-1\ge c$. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
+The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some $n\ge c$. Then $S:=\{n\ge c:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq c$ because we know $P(c)$ is true from assumption (i). Thus, $n_0 > c$ or $n_0\ge c+1$ and $n_1:=n_0-1\ge c$. We know that $P(n_1)$ is true because otherwise $n_1$ would be a member of $S$. However, $n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
 
-Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le n_1 = n_0 - 1 < n_0$ that $P(k)$ is true. Assumption (ii) implies $P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some positive $n$ cannot be correct and $P(n)$ is true for all positive $n$. 
+Now we may apply assumption (ii) for $m=n_1$ as we know $P(n_1)$ is true. Assumption (ii) implies $P(n_1+1)=P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some $n\ge c$ cannot be correct and $P(n)$ is true for all $n\ge c$. 
 
 
 
 \subsection{Q13}
 
-The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some $n\ge c$. Then $S:=\{n\ge c:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq c$ because we know $P(c)$ is true from assumption (i). Thus, $n_0 > c$ or $n_0\ge c+1$ and $n_1:=n_0-1\ge c$. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
+The proof is very similar to the proof of Theorem [0.2]. Suppose $P(n)$ is false for some $n\ge c$. Then $S:=\{n\ge c:P(n)\text{ is False.}\}$ is a non-empty subset of $\Z_+$. Therefore it has a smallest element, say $n_0$. Observe that $n_0\neq c$ because we know $P(c)$ is true from assumption (i). Thus, $n_0 > c$ or $n_0\ge c+1$ and $n_1:=n_0-1\ge c$. We know that $P(k)$ is true for all positive integers $k\le n_1$. If, on the other hand, $P(k)$ were false for some positive $k^\prime\le n_1$, then $k^\prime$ would be a member of $S$. However, $k^\prime\le n_1 = n_0 - 1 < n_0$ means $n_0$ is not the least member of $S$, which is a contradiction. 
 
-Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le n_1 = n_0 - 1 < n_0$ that $P(k)$ is true. Assumption (ii) implies $P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some positive $n$ cannot be correct and $P(n)$ is true for all positive $n$. 
-
+Now we may apply assumption (ii) for $m=n_0$ as we know for all positive $k \le n_1 = n_0 - 1 < n_0$ that $P(k)$ is true. Assumption (ii) implies $P(n_0)$ is true, which is a contradiction. Thus, the assumption that $P(n)$ is false for some $n\ge c$ cannot be correct and $P(n)$ is true for all $n\ge c$. 
 
 \subsection{Q14}
 

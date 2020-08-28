@@ -13,6 +13,8 @@
 \usepackage[font=small]{caption}
 \usepackage{setspace}
 \usepackage{subfigure}
+\usepackage[dvipsnames]{xcolor}
+
 \setcounter{MaxMatrixCols}{10}
 \newtheorem{theorem}{Theorem}
 \newtheorem{algorithm}{Algorithm} %[theorem]
@@ -470,7 +472,58 @@ which is the right hand side for $n+1$, exactly as required.
 
 \subsection{Q1}
 
+\begin{itemize}
+	\item[(a)]{With $S = \{2,5,\sqrt{2},25,\pi,5/2\}$ and $T=\{4,25,\sqrt{2},6,3/2\}$, we have
+		\begin{align*}
+			S-T = \{2,5,\pi,5/2\},
+		\end{align*}
+		and
+		\begin{align*}
+			T-S = \{4,6,3/2\},
+		\end{align*}
+		so that 
+		\begin{align*}
+			S\triangle T = \left(S - T\right) \cup \left(T - S\right) = \{2,5,\pi,5/2\} \cup \{4,6,3/2\} = \{2,5,\pi,5/2,4,6,3/2\}.
+		\end{align*}
+		As a check, recall from Problem 0.1 that $S\cap T = \{\sqrt{2},25\}$ and $S\cup T = \{2,5,\sqrt{2},25,\pi,5/2,4,6,3/2\}$. Thus, we can also obtain $S\triangle T$ via
+		\begin{align*}
+			S\triangle T = \left(S \cup T\right) - \left(S \cap T\right)= \{2,5,\sqrt{2},25,\pi,5/2,4,6,3/2\} - \{\sqrt{2},25\} = \{2,5,\pi,5/2,4,6,3/2\},
+		\end{align*}
+		which verifies our prior computation.}
+	\item[(b)]{With $S=\left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}\right\}$ and $T=\left\{\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\}$, we have
+		\begin{align*}
+			S-T & = \left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}\right\} - \left\{\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\} \\
+ 			& = \left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}\right\},
+ 		\end{align*}
+ 		and
+		\begin{align*}
+			T-S & = \left\{\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\} - \left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}\right\} \\
+			& = \left\{\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\},
+		\end{align*}
+		so that 
+		\begin{align*}
+			S\triangle T = \left(S - T\right) \cup \left(T - S\right) = \left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}\right\} \cup \left\{\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\} = \left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}, \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\}.
+		\end{align*}
+		In a similar way, one may also verify this with the formula $S\triangle T = \left(S\cup T\right) - \left(S\cap T\right)$. Of course, $S\cup T = \left\{\begin{pmatrix} 1 & 3 \\ 4 & 6 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 1 & \pi \end{pmatrix}, \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\right\}$ and $S\cap T = \left\{\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}, \begin{pmatrix} 5 & 8 \\ 0 & -1 \end{pmatrix}\right\}$. Then, $\left(S\cup T\right) - \left(S\cap T\right)$ is exactly as above. }
+\end{itemize}
+
+
+
 \subsection{Q2}
+
+In Figure \ref{fig:problem_1.2_0}, the blue $x$'s mark $\left(A\triangle B\right)\triangle C$. 
+
+To understand why, first consider $A\triangle B$. The purple $x$'s mark $A\triangle B$: those elements of exactly one of $A$ or $B$. The green $x$ is in $A\cap B$ so cannot be in $A\triangle B$. It is also not in $C$ either so cannot be in $\left(A\triangle B\right)\triangle C$ hence it is not colored blue. The sub-regions of $A\triangle B$ with purple $x$'s but without blue $x$'s overlap with $C$ so they cannot be in $\left(A\triangle B\right)\triangle C$ and hence are not colored blue either. The trickiest region is the very center, which \emph{is} in $\left(A\triangle B\right)\triangle C$. That is because it is in $A\cap B$ so is not in $A\triangle B$, but it \emph{is} in $C$ so is in exactly one of $A\triangle B$ or $C$ and hence in $\left(A\triangle B\right)\triangle C$. The remaining regions (the outermost regions with their red text letters) are all in exactly one of $A\triangle B$ or $C$. 
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=2in]{fig/problem_1.2.png}
+		\caption{Graphic for the solution to Problem 1.2.}
+		\label{fig:problem_1.2_0}
+	\end{center}
+\end{figure}
+
+
 
 \subsection{Q3}
 
@@ -488,5 +541,22 @@ To ensure an operation is a binary operation we require (i) the operation can be
 	\item[(i)]{}
 	\item[(j)]{}
 \end{itemize}
+
+\subsection{Q4}
+
+\subsection{Q5}
+
+\subsection{Q6}
+
+\subsection{Q7}
+
+We must show $A \triangle B = B \triangle A$. To that end, we show (i) $A \triangle B \subseteq B \triangle A$ and (ii) $B \triangle A \subseteq A \triangle B$.
+\begin{itemize}
+	\item[(i)]{Suppose $x\in A\triangle B$. Then either (a) $x\in A$, $x\notin B$ or (b) $x\notin A$, $x \in B$. In case (a) $x\in B \triangle A$}
+\end{itemize}
+
+\vspace{\baselineskip}
+
+\noindent (*) Note that throughout we are using the fact that $x\in C \triangle D$ if and only if either (a) $x\in C$, $x\notin D$ or (b) $x\notin C$ or $x\in D$. Put more simply $x\in C \triangle D$ if and only if $x$ is in exactly on of $C$ or $D$. The definition from the text of $C \triangle D$ is $(C-D)\cup(D-C)$. Suppose $x\in C \triangle D$. Then either (a) $x\in C-D$ or (b) $x\notin C-D$. In case (a), by definition of set difference $x\in C$ and $x\notin D$. In case (b), we must have $x\in D-C$ (similar to previous arguments). Thus, by definition of set difference, $x\in D$ and $x\notin D$. 
 
 \end{document}

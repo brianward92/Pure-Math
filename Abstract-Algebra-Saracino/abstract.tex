@@ -530,21 +530,50 @@ To understand why, first consider $A\triangle B$. The purple $x$'s mark $A\trian
 To ensure an operation is a binary operation we require (i) the operation can be computed for any element of $S\times S$ (i.e. any ordered pair of elements of $S$) and (ii) the operation returns an element of $S$. 
 
 \begin{itemize}
-	\item[(a)]{}
-	\item[(b)]{}
+	\item[(a)]{Yes, for any pair of integers $(a,b)$ one can compute $b^2$ and obtain an integer. Then we have $a$ and $b^2$ as two integers and the sum of two integers is also an integer.}
+	\item[(b)]{Yes, for any pair of integers $(a,b)$ one can compute $a^2$ and $b^3$ and obtain integers. Then we have $a^2$ and $b^3$ as two integers and the product of two integers is also an integer.}
 	\item[(c)]{No, the operation cannot be computed for the ordered pair $(0,0)$.}
 	\item[(d)]{No, the operation cannot be computed for the ordered pair $(0,0)$.}
-	\item[(e)]{}
-	\item[(f)]{}
+	\item[(e)]{Yes, for any pair of integers $(a,b)$ one can compute $-a\cdot b$ and obtain an integer. Then we have $a$, $b$, and $-a\cdot b$ as three integers and the sum of three integers is also an integer.)}
+	\item[(f)]{Yes, for any pair of real numbers $(a,b)$ one can simply return $b$ and this yields another real number.}
 	\item[(g)]{No, $1*-4=|-4|=4\notin$S.}
 	\item[(h)]{No, $3*3=3\cdot3=9\notin S$}
 	\item[(i)]{}
 	\item[(j)]{}
 \end{itemize}
 
+
+
 \subsection{Q4}
 
+Let $a*b:=a/b$ for any pair of $(a,b)\in\R^+\times\R^+$. Then, $*$ is not commutative. For example, $1*2=1/2=0.5\neq2=2/1=2*1$. It is also not associative. For example, 
+\begin{align*}
+	(3*1)*2=(3/1)*2=3*2=3/2=1.5,
+\end{align*}
+while
+\begin{align*}
+	3*(1*2)=3*(1/2)=3*(0.5)=3/0.5=6.
+\end{align*}
+
+
+
 \subsection{Q5}
+
+Recall that for any $A\subseteq X$ and $B\subseteq X$, the definition of $A\cap B$ is $\{x\in X: x\in A,\text{ and } x\in B\}$. Then, let $A * B:= A \cap B$. We will show $*$ is a binary operation on $S$ (the set of all subsets of $X$) that is both commutative and associative. 
+
+\vspace{\baselineskip}
+
+\noindent ($*$ is a binary operation on $S$) To show that $*$ is a binary operation we need to show (i) the operation can be computed for any element of $S\times S$ and (ii) the operation returns an element of $S$. The first property is clear from the definition: we simply need to return the set of elements that are in both $A$ and $B$ to compute $A * B$. For (ii), suppose $x\in A * B := A \cap B$. Then, $x\in A \subseteq X \implies x \in X$. This is sufficient to show that $A * B \subseteq X$. 
+
+\vspace{\baselineskip}
+
+\noindent ($*$ is commutative) We need to show for any $(A,B)\in S\times S$, that $A * B = B * A$ or $A \cap B = B \cap A$. This is almost trivial though. Suppose $x\in A \cap B$, then $x \in A$ and $x \in B$. Re-ordering, we have $x\in B$ and $x \in A$ so $x \in B \cap A$. Thus, $A \cap B \subseteq B \cap A$. For the reverse, suppose $x \in B \cap A$, then $x \in B$ and $x \in A$. Re-ordering, we have $x \in A$ and $x\in B$ so $x \in A \cap B$. Thus, $B \cap A \subseteq A \cap B$ as well and the proof is complete. 
+
+\vspace{\baselineskip}
+
+\noindent ($*$ is associative) We need to show for any $A, B, C \in S$ that $(A * B) * C = A * (B * C)$ or $(A \cap B) \cap C = A \cap (B \cap C)$. This is again almost trivial. Suppose $x \in (A \cap B) \cap C$, then $x \in A \cap B$ and $x \in C$. The former implies $x \in A$ and $x \in B$. Since $x \in B$ and $x \in C$, we know $x \in B \cap C$. Thus, since $x \in A$ and $x \in B \cap C$, we have $x \in A \cap (B \cap C)$. Thus, $(A \cap B) \cap C \subseteq A \cap (B \cap C)$. For the reverse, suppose $x \in A \cap (B \cap C)$, then $x \in A$ and $x \in B \cap C$. The latter implies $x \in B$ and $x \in C$. Since $x \in A$ and $x \in B$, we know $x \in A \cap B$. Thus since $x \in A \cap B$ and $x \in C$, we have $x \in (A \cap B) \cap C$. Thus, $A \cap (B \cap C) \subseteq (A \cap B) \cap C$ as well and the proof is complete. 
+
+
 
 \subsection{Q6}
 

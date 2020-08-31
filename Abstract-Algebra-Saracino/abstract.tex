@@ -579,18 +579,51 @@ Recall that for any $A\subseteq X$ and $B\subseteq X$, the definition of $A\cap 
 
 \subsection{Q7}
 
-We must show $A \triangle B = B \triangle A$. To that end, we show (i) $A \triangle B \subseteq B \triangle A$ and (ii) $B \triangle A \subseteq A \triangle B$.
+\begin{remark}
+	This exercise and the one following it concern the symmetric difference, $\triangle$. Throughout these two exercises we make use of the following. 
+	\begin{center}
+		For any sets, $C$ and $D$, $x\in C \triangle D$ if and only if either (a) $x\in C$, $x\notin D$ or (b) $x\notin C$, $x\in D$.
+	\end{center}
+	We start with the definition from the text ($C \triangle D = (C-D)\cup(D-C)$) and then prove the above equivalent definition. 
+	
+	\vspace{\baselineskip}
+	
+	\noindent ($\implies$) Suppose $x \in C \triangle D = (C-D)\cup(D-C)$. Then either (a) $x\in C-D$ or (b) $x\notin C-D$. In case (a), by definition of set difference $x\in C$ and $x\notin D$. In case (b), we must have $x\in D-C$ (similar to previous arguments). By definition of set difference, $x\in D$ and $x\notin C$. Thus, if $x\in C \triangle D$ then either (a) $x\in C$, $x\notin D$ or (b) $x\notin C$, $x\in D$.
+	
+	\vspace{\baselineskip}
+	
+	\noindent ($\impliedby$) Suppose either (a) $x\in C$, $x\notin D$ or (b) $x\notin C$, $x\in D$. In case (a), by definition of set difference, $x\in C - D$. It follows that $x \in (C - D) \cup (D - C)$ because $x$ is in at least one set of this union. In case (b), by definition of set difference, $x \in D - C$. It follows that $x \in (C - D) \cup (D - C)$ because $x$ is in at least one set of this union. Thus if either (a) $x\in C$, $x\notin D$ or (b) $x\notin C$, $x\in D$, then $x\in (C - D) \cup (D - C) = C \triangle D$. 
+	
+\end{remark} 
+
+Now to solve Problem 0.7. To show $\triangle$ is commutative, we must show $A \triangle B = B \triangle A$. To that end, we show (i) $A \triangle B \subseteq B \triangle A$ and (ii) $B \triangle A \subseteq A \triangle B$.
 \begin{itemize}
-	\item[(i)]{Suppose $x\in A\triangle B$. Then either (a) $x\in A$, $x\notin B$ or (b) $x\notin A$, $x \in B$. In case (a) $x\in B \triangle A$}
+	\item[(i)]{Suppose $x\in A\triangle B$. Then our fact tells us either (a) $x\in A$, $x\notin B$ or (b) $x\notin A$, $x \in B$. In case (a), the second condition of the above fact holds when we take $C = B$ and $D = A$. That is, $x \notin C = B$ and $x \in D = A$. Thus, the fact implies $x \in C \triangle  D = B \triangle A$. In case (b), the first condition of the above fact holds when we again take $C = B$ and $D = A$. That is, $x \in C = B$ and $x \notin D = A$. Thus, the fact implies $x \in C \triangle D = B \triangle A$. Thus, we have $A \triangle B \subseteq B \triangle A$.}
+	\item[(ii)]{Suppose $x\in B\triangle A$. Then our fact tells us either (a) $x\in B$, $x\notin A$ or (b) $x\notin B$, $x \in A$. In case (a), the second condition of the above fact holds when we take $C = A$ and $D = B$. That is, $x \notin C = A$ and $x \in D = B$. Thus, the fact implies $x \in C \triangle  D = A \triangle B$. In case (b), the first condition of the above fact holds when we again take $C = A$ and $D = B$. That is, $x \in C = A$ and $x \notin D = B$. Thus, the fact implies $x \in C \triangle D = A \triangle B$. Thus, we have $B \triangle A \subseteq A \triangle B$.}
 \end{itemize}
-
-\vspace{\baselineskip}
-
-\noindent (*) Note that throughout we are using the fact that $x\in C \triangle D$ if and only if either (a) $x\in C$, $x\notin D$ or (b) $x\notin C$ or $x\in D$. Put more simply $x\in C \triangle D$ if and only if $x$ is in exactly on of $C$ or $D$. The definition from the text of $C \triangle D$ is $(C-D)\cup(D-C)$. Suppose $x\in C \triangle D$. Then either (a) $x\in C-D$ or (b) $x\notin C-D$. In case (a), by definition of set difference $x\in C$ and $x\notin D$. In case (b), we must have $x\in D-C$ (similar to previous arguments). Thus, by definition of set difference, $x\in D$ and $x\notin D$. 
 
 \subsection{Q8}
 
+\begin{remark}
+	This exercise is made a lot easier by utilizing the following.
+	\begin{center}
+		For any sets, $C$ and $D$, $(C \triangle D)^c = (C \cap D) \cup (C \cup D)^c$.
+	\end{center}
+\end{remark}
+
+The proof started on page 13. The only thing remaining is the reverse inclusion $A \triangle (B \triangle C) \subseteq (A \triangle B) \triangle C$. If we prove this, it then follows that $A \triangle (B \triangle C) = (A \triangle B) \triangle C$. That is precisely what it means for $\triangle$ to be an associative operation.
+
+Suppose $x \in A \triangle (B \triangle C)$. Then either (a) $x\in A$, $x \notin B \triangle C$ or (b) $x\in A$, $x \notin B \triangle C$. In case (a), there are two 
+
+
+
 \subsection{Q9}
+
+For the operation to be commutative we need this table to be symmetric. That is sufficient because then we know the value in ``row $s_1$, column $s_2$" equals the value in ``row $s_2$, column $s_1$." However, the table is constructed such that the respective values are $s_1 * s_2$ and $s_2 * s_1$. Thus, a symmetric table implies $s_1*s_2=s_2*s_1$, which means $*$ is commutative. In this case, by inspection, the table is symmetric so it is indeed commutative. 
+
+However, it is not associative. For it to be associative we would need $(a*b)*b=a*(b*b)$. The left hand side is $(a*b)*b=c*b=d$. The right hand side is $a*(b*b)=a*a=a$. 
+
+
 
 \subsection{Q10}
 

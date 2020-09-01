@@ -629,8 +629,18 @@ However, it is not associative. For it to be associative we would need $(a*b)*b=
 
 A binary operation is simply a map from $S \times S$ back to $S$. For each pair $(a,b)\in S\times S$ we need to assign another value $c\in S$. There are $n^2$ such pairs $(a,b)$ and each of them can be assigned one of $n$ values. That means there are $n^{n^2}$ binary operations on a set of $n$ elements. 
 
+For the operation to be commutative, we require $a * b = b * a$. This is automatically satisfied when $a=b$, so we only need to worry about $a\neq b$. We know there are $n^2$ pairs $(a,b)\in S \times S$, $n$ of which have $a=b$. That leaves $n^2-n=n(n-1)$ pairs where $a\neq b$. When we count the number of commutative binary operations, we know that given the value of $a * b = c$ we ``force" the value of $b * a = c$. Thus, we only need to count the number of possible choices for half of the $n(n-1)$ pairs where $a\neq b$ as the other half are ``forced." There are $\frac{1}{2}n(n-1)$ such pairs and each one can get one of $n$ possible values so there are $n^{\frac{1}{2}n(n-1)}$ possibilities. We must multiply this by the number of possible assignments to the $n$ pairs of the form $(a,a)$. Because there are $n$ elements with $n$ possible values, this is $n^n$. The result is that there are
+\begin{align*}
+	n^{\frac{1}{2}n(n-1)}\cdot n^n = n^{\frac{1}{2}n^2 - \frac{1}{2}n + n} = n^{\frac{1}{2}n^2 + \frac{1}{2}n} = n^{\frac{1}{2}n(n+1)}
+\end{align*}
+commutative binary operations on a set of $n$ elements. 
+
 \vspace{\baselineskip}
 
-\noindent (*) For an alternative proof, consider Problem 1.9. 
+\noindent (*) For an alternative proof, consider the representation of a binary operation from Problem 1.9. In that problem, the binary operation is represented by an $n\times n$ table with the value in ``row $a$, column $b$" being the value assigned to $a * b$. The question is how many such tables are there? Since there are $n^2$ entries in the table, with $n$ possible values for each entry, the total number is $\underbrace{n\cdot n \ldots n}_{n^2\text{ times}}=n^{n^2}$.
+
+\vspace{\baselineskip}
+
+\noindent We can use this representation to count hte number of commutative binary operations as well. In this case we need only concern ourselves with assigning a value to the ``lower left half" or ``lower triangle" part of the table. Given an entry below the diagonal, we know the value of the corresponding entry in the ``upper right half" or "upper triangle" part of the table. Thus, we need to know how many ways to assign values to the diagonal plus the lower half. There are $n + \frac{1}{2}(n^2-n) = n + \frac{1}{2}n^2 - \frac{1}{2}n = \frac{1}{2}n^2+\frac{1}{2}n = \frac{1}{2}n(n+1)$ entries to be assigned, each of which can have one of $n$ values. The result is $n^{\frac{1}{2}n(n+1)}$ possible tables. 
 
 \end{document}

@@ -596,7 +596,7 @@ Recall that for any $A\subseteq X$ and $B\subseteq X$, the definition of $A\cap 
 	
 \end{remark} 
 
-Now to solve Problem 0.7. To show $\triangle$ is commutative, we must show $A \triangle B = B \triangle A$. To that end, we show (i) $A \triangle B \subseteq B \triangle A$ and (ii) $B \triangle A \subseteq A \triangle B$.
+Now to solve Problem 1.7. To show $\triangle$ is commutative, we must show $A \triangle B = B \triangle A$. To that end, we show (i) $A \triangle B \subseteq B \triangle A$ and (ii) $B \triangle A \subseteq A \triangle B$.
 \begin{itemize}
 	\item[(i)]{Suppose $x\in A\triangle B$. Then our fact tells us either (a) $x\in A$, $x\notin B$ or (b) $x\notin A$, $x \in B$. In case (a), the second condition of the above fact holds when we take $C = B$ and $D = A$. That is, $x \notin C = B$ and $x \in D = A$. Thus, the fact implies $x \in C \triangle  D = B \triangle A$. In case (b), the first condition of the above fact holds when we again take $C = B$ and $D = A$. That is, $x \in C = B$ and $x \notin D = A$. Thus, the fact implies $x \in C \triangle D = B \triangle A$. Thus, we have $A \triangle B \subseteq B \triangle A$.}
 	\item[(ii)]{Suppose $x\in B\triangle A$. Then our fact tells us either (a) $x\in B$, $x\notin A$ or (b) $x\notin B$, $x \in A$. In case (a), the second condition of the above fact holds when we take $C = A$ and $D = B$. That is, $x \notin C = A$ and $x \in D = B$. Thus, the fact implies $x \in C \triangle  D = A \triangle B$. In case (b), the first condition of the above fact holds when we again take $C = A$ and $D = B$. That is, $x \in C = A$ and $x \notin D = B$. Thus, the fact implies $x \in C \triangle D = A \triangle B$. Thus, we have $B \triangle A \subseteq A \triangle B$.}
@@ -626,5 +626,11 @@ However, it is not associative. For it to be associative we would need $(a*b)*b=
 
 
 \subsection{Q10}
+
+A binary operation is simply a map from $S \times S$ back to $S$. For each pair $(a,b)\in S\times S$ we need to assign another value $c\in S$. There are $n^2$ such pairs $(a,b)$ and each of them can be assigned one of $n$ values. That means there are $n^{n^2}$ binary operations on a set of $n$ elements. 
+
+\vspace{\baselineskip}
+
+\noindent (*) For an alternative proof, consider Problem 1.9. 
 
 \end{document}

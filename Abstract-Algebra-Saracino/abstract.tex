@@ -534,12 +534,12 @@ To ensure an operation is a binary operation we require (i) the operation can be
 	\item[(b)]{Yes, for any pair of integers $(a,b)$ one can compute $a^2$ and $b^3$ and obtain integers. Then we have $a^2$ and $b^3$ as two integers and the product of two integers is also an integer.}
 	\item[(c)]{No, the operation cannot be computed for the ordered pair $(0,0)$.}
 	\item[(d)]{No, the operation cannot be computed for the ordered pair $(0,0)$.}
-	\item[(e)]{Yes, for any pair of integers $(a,b)$ one can compute $-a\cdot b$ and obtain an integer. Then we have $a$, $b$, and $-a\cdot b$ as three integers and the sum of three integers is also an integer.)}
+	\item[(e)]{Yes, for any pair of integers $(a,b)$ one can compute $-a\cdot b$ and obtain an integer. Then we have $a$, $b$, and $-a\cdot b$ as three integers and the sum of three integers is also an integer.}
 	\item[(f)]{Yes, for any pair of real numbers $(a,b)$ one can simply return $b$ and this yields another real number.}
 	\item[(g)]{No, $1*-4=|-4|=4\notin$S.}
 	\item[(h)]{No, $3*3=3\cdot3=9\notin S$}
-	\item[(i)]{}
-	\item[(j)]{}
+	\item[(i)]{Yes, for any pair of $2\times2$ matrices of real numbers $(a,b)$ computing $a*b$ is tantamount to computing 4 sums of pairs of real numbers. Of course, the sum of real numbers yields another real number so $a*b$ is a $2\times2$ matrix of real numbers.}
+	\item[(j)]{Yes, certainly for any pair of subsets of $X$, $(A,B)$ we can compute $A\triangle B$ as the set of elements of $A$ or $B$, but not in both $A$ and $B$. However, we must check that $\left(A\triangle B\right)\triangle B$ is a subset of $X$. Let $x\in \left(A\triangle B\right)\triangle B$. Then (using the result proved in the remark in Problem 1.7) we know either (a) $x\in A\triangle B$, $x\notin B$ or (b) $x\notin A \triangle B$, $x\in B$. In case (a) we know that $x\in A \triangle B$ further expands to two subcases. Thus, we know either (a1) $x\in A$, $x\notin B$ or (a2) $x\notin A$, $x\in B$. Recall in case (a) that $x\notin B$ so only case (a1) is possible. However, because $x\in A\subseteq X$ we know $x\in X$ in case (a). In case (b) we know $x\in B \subseteq X$ so we know $x\in X$ in case (b). Thus, $\left(A\triangle B\right)\triangle B \subseteq X$.} 
 \end{itemize}
 
 

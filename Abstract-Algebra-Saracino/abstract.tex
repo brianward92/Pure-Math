@@ -103,6 +103,8 @@
 
 \tableofcontents
 
+\newpage
+
 \setcounter{section}{-1}
 
 \section{Sets and Induction}
@@ -577,6 +579,17 @@ Recall that for any $A\subseteq X$ and $B\subseteq X$, the definition of $A\cap 
 
 \subsection{Q6}
 
+
+
+\begin{itemize}
+	\item[(a)]{It is neither commutative nor associative. Let $a=1, b=2, c=3$ then $a*b=1*2=1+2^2=5\neq3=2+1^2=2*1=b*a$. Moreover, $(a*b)*c=(1*2)*3=(1+2^2)*3=5*3=5+3^2=14$, while $a*(b*c)=1*(2*3)=1*(2+3^2)=1*11=1+11^2=122$.}
+	\item[(b)]{It is neither commutative nor associative. Let $a=1, b=2, c=3$ then $a*b=1*2=1^2\cdot2^3=1\cdot8=8$, while $b*a=2*1=2^2\cdot1^3=4\cdot1=4$. Moreover, $(a*b)*c=(1*2)*3=(1^2\cdot2^3)*3=8*3=8^2\cdot3^3=64\cdot27=1728$, while $a*(b*c)=1*(2*3)=1*(2^2\cdot3^3)=1*108=1^2\cdot108^3=1259712$.}
+	\item[(e)]{It is both commutative and associative. Observe that $a*b=a+b-ab=b+a-ba=b*a$ so $*$ is commutative. Moreover, $(a*b)*c=(a+b-ab)*c=(a+b-ab)+c-(a+b-ab)c=a+b+c-ab-ac-bc+abc$ and $a*(b*c)=a*(b+c-bc)=a+(b+c-bc)-a(b+c-bc)=a+b+c-bc-ab-ac+abc$ so $*$ is associative.}
+	\item[(f)]{It is associative but not commutative. Let $a=1, b=2, c=3$ then $a*b=1*2=2\neq 1 = 2*1=b*a$. Observe that $(a*b)*c=b*c=c$ and $a*(b*c)=a*c=c$ so $*$ is associative.}
+	\item[(i)]{}
+	\item[(j)]{It is associative but not commutative. In Problem 1.8 we verify that $\triangle$ is an associative binary operation. That implies that $(A\triangle B)\triangle B=A\triangle (B \triangle B)$. However, $B \triangle B= \emptyset$ (f it were not empty then we would have an element that is both in $B$ and not in $B$). Thus, $A*B=A\triangle (B \triangle B)=A \triangle \emptyset = (A\cup \emptyset)-A\cap\emptyset=A-\emptyset=A$. With this simpler form, it is trivial to prove the result here (in fact, it follows from the same proof as in (e)).}
+\end{itemize}
+
 \subsection{Q7}
 
 \begin{remark}
@@ -642,5 +655,35 @@ commutative binary operations on a set of $n$ elements.
 \vspace{\baselineskip}
 
 \noindent We can use this representation to count the number of commutative binary operations as well. In this case we need only concern ourselves with assigning a value to the ``lower left half" or ``lower triangle" part of the table. Given an entry below the diagonal, we know the value of the corresponding entry in the ``upper right half" or "upper triangle" part of the table. Thus, we need to know how many ways to assign values to the diagonal plus the lower half. There are $n + \frac{1}{2}(n^2-n) = n + \frac{1}{2}n^2 - \frac{1}{2}n = \frac{1}{2}n^2+\frac{1}{2}n = \frac{1}{2}n(n+1)$ entries to be assigned, each of which can have one of $n$ values. The result is $n^{\frac{1}{2}n(n+1)}$ possible tables. 
+
+
+
+\newpage
+
+\section{Groups}
+
+\subsection{Q1}
+
+\subsection{Q2}
+
+\subsection{Q3}
+
+\subsection{Q4}
+
+\subsection{Q5}
+
+\subsection{Q6}
+
+\subsection{Q7}
+
+\subsection{Q10}
+
+\subsection{Q11}
+
+\subsection{Q12}
+
+\subsection{Q13}
+
+\subsection{Q14}
 
 \end{document}

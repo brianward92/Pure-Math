@@ -769,14 +769,28 @@ Not it is not a group. This operation is not associative because $b*(c*b)=b*b=a$
 
 \subsection{Q7}
 
-We already know that by writing down a table with elements from the original set, we have a binary operation. For an identity element to exist we need $x*e=e*x=x$ for all $x\in S$. Consider first $x*e=x$. 
+We already know that by writing down a table with elements from the original set, we have a binary operation.\footnote{The table represents the value of $a*b$ for each $(a,b)\in S \times S$, so it is computable. Moreover, as long as each entry in the table is a member of $S$, we know $*$ always returns a member of $S$.} Consider the table below. Frankly, it was chosen because it is ``nice" in that it is pretty simple and seems reasonable since both $a$ and $b$ can be returned. 
+
 \begin{align*}
-	\begin{tabular}{c|cc}
-		& a & b \\
-		\hline
-		a & a & b\\
-		b & b & a\\
-	\end{tabular}
+\begin{tabular}{c|cc}
+	& $a$ & $b$ \\
+	\hline
+	$a$ & $a$ & $b$\\
+	$b$ & $b$ & $a$\\
+\end{tabular}
+\end{align*}
+
+In any case, an identity must satisfy $a*e=e*a=a$ and $b*e=e*b=b$. Observe that $a*a=a$ so $e=a$ meets the condition that $a*e=e*a=a$ (they are both the same condition when $e=a$). Moreover, $b*a=a*b=b$ so $e=a$ meets the condition that $b*e=e*b=b$. Thus, $e$ serves as an identify. Furthermore, we see that $a$ is its own inverse since $a*a=a$. As for $b$ we need an $x$ such that $b*x=x*b=a$. We know $b*b=a$ from the table so $b$ is also its own inverse (again, the required conditions are the same when $x=b$). Finally for associativity, we need to check for all $x,y,z\in \{a,b\}$ that $(x*y)*z=x*(z*y)$. That is fairly manageable to check directly.
+
+\begin{align*}
+	(a*a)*a=a*(a*a) \iff a*a=a*a \iff a = a\\
+	(a*a)*b=a*(a*b) \iff a*b=a*b \iff b = b\\
+	(a*b)*a=a*(b*a) \iff b*a=a*b \iff b = b\\
+	(a*b)*b=a*(b*b) \iff b*b=a*a \iff a = a\\
+	(b*a)*a=b*(a*a) \iff b*a=b*a \iff b = b\\
+	(b*a)*b=b*(a*b) \iff b*b=b*b \iff a = a\\
+	(b*b)*a=b*(b*a) \iff a*a=b*b \iff a = a\\
+	(b*b)*b=b*(b*b) \iff a*b=b*a \iff b = b\\
 \end{align*}
 
 

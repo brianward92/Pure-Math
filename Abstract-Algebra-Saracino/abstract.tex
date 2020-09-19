@@ -821,4 +821,115 @@ Finally, for each $f\in G$ we need an inverse function $f^\prime$ such that $f\t
 
 \subsection{Q14}
 
+
+
+
+
+\newpage
+
+\section{Fundamental Theorems about Groups}
+
+\subsection{Q1}
+
+In $(\Z_n,\oplus)$, the inverse of $x\neq0$ is $n-x$ and the identity is $0$ (cf. page 22 of the textbook.) We use this fact to cancel the constants on either side of $x$ in the given equation, $2 \oplus x \oplus 7 = 1$. Recalling that we can group the operations in any way we like (cf. Problem 2.13), we begin by canceling the $2$ by adding $10$ to both sides of the equation on the left as
+\begin{align*}
+	10 \oplus 2 \oplus x \oplus 7 = 10 \oplus 1 \iff 0 \oplus x \oplus 7 = 11 \iff x \oplus 7 = 11.
+\end{align*}
+Then, we can cancel the $7$ by adding $5$ to both sides of the equation on the right as 
+\begin{align*}
+	x \oplus 7 \oplus 5 = 11 \oplus 5 \iff x \oplus 0 = 4 \iff x = 4.
+\end{align*}
+As a check, $2 \oplus 4 \oplus 7 = 6 \oplus 7 = 1$. 
+
+
+
+\subsection{Q2}
+
+In $\left(P(X),\triangle\right)$, the inverse of $A$ is $A$ and the identity is $\emptyset$ (cf. page 20 of the textbook.) Using this fact, we can can cancel $A$ from the left hand side of the given equation, $A*x=B$ as
+\begin{align*}
+	A*A*x=A*B\iff\emptyset * x= A*B\iff x = A*B & = A \triangle B \\
+	& = A \cup B - A \cap B \\
+	& = \left\{1,4,5,7,8\right\}\cup\left\{2,4,6\right\} - \left\{1,4,5,7,8\right\}\cap\left\{2,4,6\right\} \\
+	& = \left\{1,2,4,5,6,7,8\right\}- \left\{4\right\}\\
+	& = \left\{1,2,5,6,7,8\right\}.
+\end{align*}
+As a check 
+\begin{align*}
+	A*\left\{1,2,5,6,7,8\right\} = A\triangle\left\{1,2,5,6,7,8\right\}  & = A\cup\left\{1,2,5,6,7,8\right\} - A\cap\left\{1,2,5,6,7,8\right\}\\
+	& = \left\{1,4,5,7,8\right\}\cup\left\{1,2,5,6,7,8\right\} - \left\{1,4,5,7,8\right\}\cap\left\{1,2,5,6,7,8\right\}\\
+	& = \left\{1,2,4,5,6,7,8\right\} - \left\{1,5,7,8\right\}\\
+	& = \left\{2,4,6\right\} = B.\\
+\end{align*}
+
+
+
+\subsection{Q3}
+
+\subsection{Q4}
+
+Because $G$ is a group, each element $x\in G$ has an inverse, $x^{-1}$. Thus, we can left multiply both sides of the equation $x*g=x$ by $x^{-1}$ to obtain 
+\begin{align*}
+	x^{-1}*x*g=x^{-1}*x\iff e*g=e \iff g = e. 
+\end{align*}
+
+
+
+\subsection{Q5}
+
+First, we apply Theorem 3.4 with $x:=x$ and $y:=y*z$. We have
+\begin{align*}
+	\left(x*y*z\right)^{-1}=\left(x*(y*z)\right)^{-1}=\left(y*z\right)^{-1}*x^{-1}.
+\end{align*}
+Second, applying Theorem 3.4 with $x:=y$ and $y:=z$. We have
+\begin{align*}
+	\left(y*z\right)^{-1}=z^{-1}*y^{-1}.
+\end{align*}
+Finally, putting these two equations together we have
+\begin{align*}
+	\left(x*y*z\right)^{-1}=\left(y*z\right)^{-1}*x^{-1}=\left(z^{-1}*y^{-1}\right)*x^{-1}=z^{-1}*y^{-1}*x^{-1}.
+\end{align*}
+
+
+
+\subsection{Q6}
+
+\subsection{Q7}
+
+\subsection{Q8}
+
+\subsection{Q9}
+
+$\left(\implies\right)$ 
+
+We know from Theorem 3.4 that for any $x,y\in G$, $\left(x*y\right)^{-1}=y^{-1}*x^{-1}$. Since $x^{-1},y^{-1}\in G$, the fact that $(G,*)$ is abelian implies $y^{-1}*x^{-1}=x^{-1}*y^{-1}$. Thus, the fact that $(G,*)$ is abelian implies for all $x,y\in G$, $\left(x*y\right)^{-1}=y^{-1}*x^{-1}=x^{-1}*y^{-1}.$
+
+\noindent $\left(\impliedby\right)$ 
+
+Let $x,y\in G$ then we have $\left(x*y\right)^{-1}=x^{-1}*y^{-1}$ (by assumption). However, by Theorem 3.4, the left hand side expands as $\left(x*y\right)^{-1}=y^{-1}*x^{-1}$. We conclude that for all $x,y\in G$ that $x^{-1}*y^{-1}=y^{-1}*x^{-1}$ (both being equal to $\left(x*y\right)^{-1}$.) By Theorem 3.2, the inverse is unique so we can take the inverse of both sides to obtain 
+\begin{align*}
+	\left(x^{-1}*y^{-1}\right)^{-1}=\left(y^{-1}*x^{-1}\right)^{-1} & \implies \left(y^{-1}\right)^{-1}* \left(x^{-1}\right)^{-1}=\left(x^{-1}\right)^{-1}* \left(y^{-1}\right)^{-1}\\
+	&\implies y*x = x*y.
+\end{align*}
+The first implication is due to Theorem 3.4, while the second is due to Theorem  3.3. Thus, we have shown for all $x,y\in G$ we have $x*y=y*x$. I.e. $(G,*)$ is abelian. 
+
+\subsection{Q10}
+
+\subsection{Q11}
+
+\subsection{Q12}
+
+\subsection{Q13}
+
+\subsection{Q14}
+
+\subsection{Q15}
+
+\subsection{Q16}
+
+\subsection{Q17}
+
+
+
+
+
 \end{document}

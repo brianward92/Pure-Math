@@ -608,8 +608,21 @@ Recall that for any $A\subseteq X$ and $B\subseteq X$, the definition of $A\cap 
 	\item[(b)]{It is neither commutative nor associative. Let $a=1, b=2, c=3$ then $a*b=1*2=1^2\cdot2^3=1\cdot8=8$, while $b*a=2*1=2^2\cdot1^3=4\cdot1=4$. Moreover, $(a*b)*c=(1*2)*3=(1^2\cdot2^3)*3=8*3=8^2\cdot3^3=64\cdot27=1728$, while $a*(b*c)=1*(2*3)=1*(2^2\cdot3^3)=1*108=1^2\cdot108^3=1259712$.}
 	\item[(e)]{It is both commutative and associative. Observe that $a*b=a+b-ab=b+a-ba=b*a$ so $*$ is commutative. Moreover, $(a*b)*c=(a+b-ab)*c=(a+b-ab)+c-(a+b-ab)c=a+b+c-ab-ac-bc+abc$ and $a*(b*c)=a*(b+c-bc)=a+(b+c-bc)-a(b+c-bc)=a+b+c-bc-ab-ac+abc$ so $*$ is associative.}
 	\item[(f)]{It is associative but not commutative. Let $a=1, b=2, c=3$ then $a*b=1*2=2\neq 1 = 2*1=b*a$. Observe that $(a*b)*c=b*c=c$ and $a*(b*c)=a*c=c$ so $*$ is associative.}
-	\item[(i)]{}
-	\item[(j)]{It is associative but not commutative. In Problem 1.8 we verify that $\triangle$ is an associative binary operation. That implies that $(A\triangle B)\triangle B=A\triangle (B \triangle B)$. However, $B \triangle B= \emptyset$ (f it were not empty then we would have an element that is both in $B$ and not in $B$). Thus, $A*B=A\triangle (B \triangle B)=A \triangle \emptyset = (A\cup \emptyset)-A\cap\emptyset=A-\emptyset=A$. With this simpler form, it is trivial to prove the result here (in fact, it follows from the same proof as in (e)).}
+	\item[(i)]{It is both commutative and associative. Let $a,b,c\in S$, where $a=\begin{pmatrix} d_1 & d_2 \\ d_3 & d_4 \end{pmatrix}$, $b=\begin{pmatrix} e_1 & e_2 \\ e_3 & e_4 \end{pmatrix}$, and $c=\begin{pmatrix} f_1 & f_2 \\ f_3 & f_4 \end{pmatrix}$. Then
+		\begin{align*}
+			a*b=\begin{pmatrix} d_1+e_1 & d_2+e_2 \\ d_3+e_3 & d_4+e_4 \end{pmatrix}=\begin{pmatrix} e_1+d_1 & e_2+d_2 \\ e_3+d_3 & e_4+d_4 \end{pmatrix}=b*a,
+		\end{align*}
+	so $*$ is associative. Moreover,
+		\begin{align*}
+			(a*b)*c=\begin{pmatrix} d_1+e_1 & d_2+e_2 \\ d_3+e_3 & d_4+e_4 \end{pmatrix}*c&=\begin{pmatrix} (d_1+e_1)+f_1 & (d_2+e_2)+f_2 \\ (d_3+e_3)+f_3 & (d_4+e_4)+f_4 \end{pmatrix}\\
+			&=\begin{pmatrix} d_1+(e_1+f_1) & d_2+(e_2+f_2) \\ d_3+(e_3+f_3) & d_4+(e_4+f_4) \end{pmatrix},
+		\end{align*}
+	where the final equality uses associativity of real number addition. Finally, 
+		\begin{align*}
+			a*(b*c)=a*\begin{pmatrix} e_1+f_1 & e_2+f_2 \\ e_3+f_3 & e_4+f_4 \end{pmatrix}=\begin{pmatrix} d_1+(e_1+f_1) & d_2+(e_2+f_2) \\ d_3+(e_3+f_3) & d_4+(e_4+f_4) \end{pmatrix},
+		\end{align*}
+	which is the right hand side of $(a*b)*c$ calculated above, so $*$ is associative.}
+	\item[(j)]{It is associative but not commutative. In Problem 1.8 we verify that $\triangle$ is an associative binary operation. That implies that $(A\triangle B)\triangle B=A\triangle (B \triangle B)$. However, $B \triangle B= B \cup B - B\cap B = B - B = \emptyset$. Thus, $A*B=A\triangle (B \triangle B)=A \triangle \emptyset = (A\cup \emptyset)-A\cap\emptyset=A-\emptyset=A$. Now consider $A,B,C\subseteq$ we have $(A*B)*C=A*C=A$ and $A*(B*C)=A*B=A$ so $*$ is associative.}
 \end{itemize}
 
 \subsection{Q7}

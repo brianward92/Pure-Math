@@ -653,15 +653,23 @@ Now to solve Problem 1.7. To show $\triangle$ is commutative, we must show $A \t
 \subsection{Q8}
 
 \begin{remark}
-	This exercise is made a lot easier by utilizing the following.
-	\begin{center}
-		For any sets, $C$ and $D$, $(C \triangle D)^c = (C \cap D) \cup (C \cup D)^c$.
-	\end{center}
+	For any element $x$ and sets $C$ and $D$ there are four possibilities:
+	\begin{itemize}
+		\item[(a)]{$x\in C$, $x\notin D$,}
+		\item[(b)]{$x\notin C$, $x\in D$,}
+		\item[(c)]{$x\in C$, $x\in D$,}
+		\item[(d)]{$x\notin C$, $x\notin D$.}
+	\end{itemize}
+	Cases (a) and (b) comprise the two possibilities for $x\in C\triangle D$ as demonstrated in the prior remark. Therefore $x\notin C\triangle D$ is equivalent to the two possibilities (c) and (d). This fact will be used in the proof below. 
 \end{remark}
 
-The proof started on page 13. The only thing remaining is the reverse inclusion $A \triangle (B \triangle C) \subseteq (A \triangle B) \triangle C$. If we prove this, it then follows that $A \triangle (B \triangle C) = (A \triangle B) \triangle C$. That is precisely what it means for $\triangle$ to be an associative operation.
+The full proof started on page 13. The only thing remaining is the reverse inclusion $A \triangle (B \triangle C) \subseteq (A \triangle B) \triangle C$. If we prove this, it then follows that $A \triangle (B \triangle C) = (A \triangle B) \triangle C$. That is precisely what it means for $\triangle$ to be an associative operation. Suppose $x \in A \triangle (B \triangle C)$. Then either (a) $x\in A$, $x \notin B \triangle C$ or (b) $x\notin A$, $x \in B \triangle C$. 
 
-Suppose $x \in A \triangle (B \triangle C)$. Then either (a) $x\in A$, $x \notin B \triangle C$ or (b) $x\in A$, $x \notin B \triangle C$. In case (a), there are two 
+In case (a), there are two subcases (a1) $x\in A$, $x\in B$ and $x\in C$ or (a2) $x\notin A$, $x\notin B$, and $x\notin C$. In case (a1), $x\in A$ and $x\in B$ implies (cf. case (c) of the above remark) that $x\notin A\triangle B$. Thus, $x\notin A \triangle B$ and $x\in C$ so $x\in (A\triangle B) \triangle C$. In case (a2) $x\notin A$, $x\notin B$ implies (cf. case (d) of the above remark) that $x\notin A\triangle B$. Once again, $x\notin A\triangle B$ and $x\in C$ so $x\in (A\triangle B) \triangle C$. Therefore, in case (a) $x\in (A\triangle B) \triangle C$.
+
+In case (b), there are two subcases (b1) $x\notin A$, $x\in B$ and $x\notin C$ or (b2) $x\notin A$, $x\notin B$, and $x\in C$. In case (b1), $x\notin A$ and $x\in B$ implies (cf. case (b) of the above remark) that $x\in A\triangle B$. Thus, $x\in A \triangle B$ and $x\notin C$ so $x\in (A\triangle B) \triangle C$. In case (b2) $x\notin A$, $x\notin B$ implies (cf. case (d) of the above remark) that $x\notin A\triangle B$. Thus, $\notin A\triangle B$ and $x\in C$ so $x\in (A\triangle B) \triangle C$. Therefore, in case (b) $x\in (A\triangle B) \triangle C$.
+
+Thus, in both case (a) and (b) we have shown $x\in (A\triangle B) \triangle C$ which implies $A \triangle (B \triangle C) \subseteq (A \triangle B) \triangle C$. 
 
 
 
@@ -877,6 +885,22 @@ As a check
 
 
 \subsection{Q3}
+
+Consider $A = \begin{pmatrix}1 & 2 \\3 & 4\end{pmatrix}$, $B = \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}$ and $C = \begin{pmatrix}4 & 3 \\2 & 1\end{pmatrix}$. Then,
+\begin{align*}
+	AB = \begin{pmatrix}1 & 2 \\3 & 4\end{pmatrix} \cdot \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix} = \begin{pmatrix}2 & 1\\4 & 3\end{pmatrix},
+\end{align*}
+and
+\begin{align*}
+	BC = \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix} \cdot \begin{pmatrix}4 & 3 \\2 & 1\end{pmatrix}= \begin{pmatrix}2 & 1\\4 & 3\end{pmatrix}.
+\end{align*}
+Thus, for these three matrices $A,B,C\in GL(2\R)$ we have $AB=BC$, yet $A\neq C$. 
+
+\vspace{\baselineskip}
+
+\noindent (*) One may wonder how to ``derive" these matrices from first principles. There is no direct way to do this, but we can motivate how to think about the above. First, we know $B$ is the most important matrix to get the property $AB=BC$ to hold so we focus on that. To keep it simple, one first considers matrices with 0s and 1s as entries. The identity matrix immediately comes to mind. However, this is not a choice for $B$ because then $AB=BC$ \emph{implies} $A=C$. To try to retain the simplicity, we try flipping and using a matrix with 1s only on the off diagonal (i.e. $B$ above). Finally, if one considers arbitrary matrices $A$ and $C$ and explicitly writes out the four equations derived from $AB=BC$ we find a set of conditions on $C$, given the values of $A$. Specifically, $a_1=c_4$, $a_2=c_3$, $a_3=c_2$, and $a_4=c_1$.  Thus, $A$ can be any matrix you like, and you know immediately what $C$ must be. 
+
+
 
 \subsection{Q4}
 

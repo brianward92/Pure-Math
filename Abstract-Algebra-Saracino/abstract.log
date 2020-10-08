@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  6 OCT 2020 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  7 OCT 2020 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,15 +588,15 @@ Overfull \hbox (10.08174pt too wide) detected at line 883
  []
 
 [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 972.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 976.
  [21] [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 972.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 976.
  (./abstract.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 972.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 972.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 976.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 976.
 Package rerunfilecheck Info: File `abstract.out' has not changed.
 (rerunfilecheck)             Checksum: E129D56D8489998014F911B69F8DF785;214.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 972.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 976.
  ) 
 Here is how much of TeX's memory you used:
  10579 strings out of 480608
@@ -628,7 +628,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020
 /texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on abstract.pdf (22 pages, 283387 bytes).
+Output written on abstract.pdf (22 pages, 284437 bytes).
 PDF statistics:
  298 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams

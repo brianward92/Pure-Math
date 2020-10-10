@@ -956,7 +956,24 @@ Let $(G,*)$ be a group and $x,y,z\in G$. To prove (i) we assume $x*y=x*z$ and we
 
 \subsection{Q7}
 
+Suppose for some row there is an element, say $x$, such that it appears more than once in that row. Further suppose that this row represents the left multiplication table for $a$. I.e. reading this row gives you the values of $a*g$ for all $g$ in $G$. Thus, the assumption that $x$ appears more than once means there must be more than one solution $g$ to $a*g=x$. This implies there must exist elements $y$ and $z$ with $y\neq z$ such that $a*y=a*z$ because both sides equal $x$. However, the left Cancellation Law implies $y=z$ contradicting our assumption that for some row there is an element appearing more than once. Now suppose for some row there is an element that never appears in that row. By the Pigeonhole Principle there must be some other element that appears more than once in that row and we have already seen that is not possible. Thus, it also cannot be possible that for some row there is an element that never appears in that row or appears more than once. Finally, we can conclude that every element of $G$ occurs precisely once in each row of the table. 
+
+The proof that every element of $G$ occurs precisely once in each column of the table is exactly the same as the above proof replacing the word ``row" with the word ``column." These two facts together comprise our desired result.
+
+\vspace{\baselineskip}
+
+\noindent (*) We can spell out the application of the Pigeonhole Principle more carefully. Suppose $|G|=n$. We are assumping for some row there is an element that never appears in that row. Suppose further that each of the other $n-1$ elements appear at most once in each row. Then there are at most $n-1$ entries to fill a row that needs to contain $n$ total entries. Thus, it cannot be the case that the other $n-1$ elements appear at most once and there is some other element that appears more than once.
+
+
+
 \subsection{Q8}
+
+\begin{itemize}
+	\item[(a)]{By way of contradiction assume there are two identity elements $e$ and $e^\prime$ with $e\neq e^\prime$. Because $e$ is an identity, for all $x\in G$, $e*x=x*e=x$. Setting $x=e^\prime$ we have (i) $e*e^\prime=e^\prime*e=e^\prime$. Similarly, because $e^\prime$ is an identity, for all $x\in G$, $e^\prime*x=x*e^\prime=x$. Setting $x=e^\prime$ we have (ii) $e^\prime*e^\prime=e^\prime$. Thus, observe that $e*e^\prime=e^\prime*e^\prime$ because both sides are $e^\prime$. (The left hand side equals $e^\prime$ by (i) and the right hand side equals $e^\prime$ by (ii).) Finally using the right Cancellation Law we can cancel $e^\prime$ from both sides to obtain $e=e^\prime$, contradicting that $e\neq e^\prime$. Thus, there is only one identity element in $G$.}
+	\item[(b)]{Suppose $x,y\in G$. Then there exist $x^{-1},y^{-1}$ such that $x*x^{-1}=x^{-1}*x=e$ and $y*y^{-1}=y^{-1}*y=e$, where $e$ is the identity element in $G$. Thus, we can write down the equation $x*x^{-1}=y*y^{-1}$ because both sides equal $e$. Now we use the assumption $x^{-1}=y^{-1}$ and denote their common value as $z$. Thus, we can write $x*z=y*z$ and use the right Cancellation Law to cancel $z$ and obtain $x=y$, exactly as desired.}
+\end{itemize}
+
+
 
 \subsection{Q9}
 
@@ -971,7 +988,7 @@ Let $x,y\in G$ then we have $\left(x*y\right)^{-1}=x^{-1}*y^{-1}$ (by assumption
 	\left(x^{-1}*y^{-1}\right)^{-1}=\left(y^{-1}*x^{-1}\right)^{-1} & \implies \left(y^{-1}\right)^{-1}* \left(x^{-1}\right)^{-1}=\left(x^{-1}\right)^{-1}* \left(y^{-1}\right)^{-1}\\
 	&\implies y*x = x*y.
 \end{align*}
-The first implication is due to Theorem 3.4, while the second is due to Theorem  3.3. Thus, we have shown for all $x,y\in G$ we have $x*y=y*x$. I.e. $(G,*)$ is abelian. 
+The first implication is due to Theorem 3.4, while the second is due to Theorem 3.3. Thus, we have shown for all $x,y\in G$ we have $x*y=y*x$. I.e. $(G,*)$ is abelian. 
 
 \subsection{Q10}
 

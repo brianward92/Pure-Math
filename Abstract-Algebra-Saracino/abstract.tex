@@ -832,6 +832,26 @@ Finally, for each $f\in G$ we need an inverse function $f^\prime$ such that $f\t
 
 \subsection{Q9}
 
+\begin{itemize}
+	\item[(a)]{Let $A=\begin{pmatrix}a_1 & a_2\\ a_3 & a_4 \end{pmatrix}$ and $B=\begin{pmatrix}b_1 & b_2\\ b_3 & b_4 \end{pmatrix}$. Then of course, $\text{det}(A)=a_1a_4-a_2a_3$ and $\text{det}(B)=b_1b_4-b_2b_3$ and
+		\begin{align*}
+			A\cdot B = \begin{pmatrix}a_1 & a_2\\ a_3 & a_4 \end{pmatrix}\cdot \begin{pmatrix}b_1 & b_2\\ b_3 & b_4 \end{pmatrix} = \begin{pmatrix}a_1 b_1+a_2b_3& a_1b_2+a_2b_4\\ a_3b_1+a_4b_3 & a_3b_2+a_4b_4 \end{pmatrix}.
+		\end{align*}
+	Thus, 	
+		\begin{align*}
+			\text{det}(A\cdot B) & = (a_1 b_1+a_2b_3)(a_3b_2+a_4b_4) - (a_1b_2+a_2b_4) (a_3b_1+a_4b_3) \\
+			& = a_1b_1a_3b_2+a_1b_1a_4b_4+a_2b_3a_3b_2+a_2b_3a_4b_4-a_1b_2a_3b_1-a_1b_2a_4b_3-a_2b_4a_3b_1-a_2b_4a_4b_3\\
+			& = (a_1a_4b_1b_4-a_1a_4b_2b_3)+(a_2a_3b_2b_3-a_2a_3b_1b_4)\\
+			&\qquad\qquad\qquad\qquad\qquad\qquad+(a_1a_3b_1b_2-a_1a_3b_1b_2)+(a_2a_4b_3b_4-a_2a_4b_3b_4)\\
+			& = a_1a_4(b_1b_4-b_2b_3)-a_2a_3(b_1b_4-b_2b_3)\\
+			& = (a_1a_4-a_2a_3)(b_1b_4-b_2b_3)\\
+			& = \text{det}(A)\cdot\text{det}(B),\\
+		\end{align*}
+	exactly as desired.}
+\end{itemize}
+
+
+
 \subsection{Q10}
 
 \subsection{Q11}
@@ -954,6 +974,14 @@ Let $x,y\in G$ then we have $\left(x*y\right)^{-1}=x^{-1}*y^{-1}$ (by assumption
 The first implication is due to Theorem 3.4, while the second is due to Theorem  3.3. Thus, we have shown for all $x,y\in G$ we have $x*y=y*x$. I.e. $(G,*)$ is abelian. 
 
 \subsection{Q10}
+
+Let $(G,*)$ be a group and $g\in G$ be a fixed element. Denote $\widetilde{G}:=\{g*x:x\in G\}$. We will show $G=\widetilde{G}$ by showing (i) $G\subseteq\widetilde{G}$ and  (ii) $\widetilde{G}\subseteq G$. 
+\begin{itemize}
+	\item[(i)]{Suppose $y\in G$. To show that $y\in\widetilde{G}$, we must find an $x\in G$ such that $y=g*x$. Because $g\in G$, we know there is a $g^{-1}\in G$ such that $g*g^{-1}=g^{-1}*g=e$, where $e$ is the identity element in $G$. Left multiplying the equation $y=g*x$ by $g^{-1}$ yields $g^{-1}*y=g^{-1}*(g*x)=(g^{-1}*g)*x=e*x=x$. Thus, for $x=g^{-1}*y$, we can write $y=g*x$. Thus, $y\in\widetilde{G}$.}
+	\item[(ii)]{Suppose $y\in\widetilde{G}$. By definition of $\widetilde{G}$, there is an $x\in G$ such that $y=x*g$. However, because $*$ is a binary operation and $x,g\in G$ we know $y=x*g\in G$.}
+\end{itemize}
+
+
 
 \subsection{Q11}
 

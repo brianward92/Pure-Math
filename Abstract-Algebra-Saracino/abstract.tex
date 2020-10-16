@@ -1043,5 +1043,109 @@ exactly as desired. (Note the use of the Cancellation Laws in the second and fou
 
 
 
+\newpage
+
+\section{Powers of an Element; Cyclic Groups}
+
+We use the following definition for the first two problems. In general, for a group $G$ and an element $g\in G$, we have $\langle g \rangle:=\{g^n:n\in\Z\}$, where $g^n:=\underbrace{g*g*g*\ldots*g}_{n\text{ times}}$.
+
+\subsection{Q1}
+
+In the case of $(\Z_{10},+)$, $\langle g \rangle=\{ng:n\in\Z,\text{ and }0\le ng<10\}$, where the added condition guarantees that we only deal with elements within $\Z_{10}$. Thus,
+\begin{itemize}
+	\item{$\langle 0 \rangle=\{n\cdot0:n\in\Z,\text{ and }0\le n\cdot0<10\}=\{0:n\in\Z,\text{ and }0\le 0<10\}=\{0:n\in\Z\}=\{0\}$, where the second to last equality follows because the statement $0\le 0 < 10$ is always true, independent of $n$. The final equality is because the typical term preceding the colon does not vary with $n$.}
+	\item{$\langle 1 \rangle=\{n\cdot1:n\in\Z,\text{ and }0\le n\cdot1<10\}=\{n:n\in\Z,\text{ and }0\le n<10\}=\{0,1,2,3,4,5,6,7,8,9\}$ because the typical term enumerates all integers, and the second condition requires those integers be between 0 (inclusive) and 10 (exclusive).}
+	\item{$\langle 2 \rangle=\{n\cdot2:n\in\Z,\text{ and }0\le n\cdot2<10\}=\{2n:n\in\Z,\text{ and }0\le 2n<10\}=\{0,2,4,6,8\}$ because the typical term enumerates all multiples of $2$ so we list all multiples of $2$ between 0 (inclusive) and 10 (exclusive).}
+	\item{$\langle 3 \rangle=\{n\cdot3:n\in\Z,\text{ and }0\le n\cdot3<10\}=\{3n:n\in\Z,\text{ and }0\le 3n<10\}=\{0,3,6,9\}$ because the typical term enumerates all multiples of $3$ so we list all multiples of $3$ between 0 (inclusive) and 10 (exclusive).}
+	\item{$\langle 4 \rangle=\{n\cdot4:n\in\Z,\text{ and }0\le n\cdot4<10\}=\{4n:n\in\Z,\text{ and }0\le 4n<10\}=\{0,4,8\}$ because the typical term enumerates all multiples of $4$ so we list all multiples of $4$ between 0 (inclusive) and 10 (exclusive).}
+	\item{$\langle 5 \rangle=\{n\cdot5:n\in\Z,\text{ and }0\le n\cdot5<10\}=\{5n:n\in\Z,\text{ and }0\le 5n<10\}=\{0,5\}$ because the typical term enumerates all multiples of $5$ so we list all multiples of $5$ between 0 (inclusive) and 10 (exclusive).}
+\end{itemize}
+
+\vspace{\baselineskip}
+
+\noindent (*) Note we could also have simplified some of the expressions to figure out which values of $n$ to use and then list the typical terms based on this. For example, we had that $\langle 2 \rangle=\{2n:n\in\Z,\text{ and }0\le 2n<10\}=$. The second condition can be re-written $0\le n < 5$. Thus, the condition says $n\in\{0,1,2,3,4\}$. We insert those to the typical term of $2n$ to obtain $\{0,2,4,6,8\}$.
+
+
+
+
+
+\subsection{Q2}
+
+In the case of $(G,+)$, where $G$ is the set of all real valued functions on the real line under addition of functions, $\langle g \rangle:=\{ng:n\in\Z\}$. Here $ng$ denotes a function such that $(ng)(x) = n\cdot g(x)$ for all $x\in\R$.  Therefore, with $g=f$ as given in the problem (defined such that $f(x)=1$ for all $x$), we have $(nf)(x)=n\cdot f(x)=n\cdot1=n$ for all $x$. Thus, the set $\langle f \rangle$ is simply the set of constant, integer valued functions. It follows that the configuration from drawing all such functions on one set of axes would be a set of horizontal straight lines, each spaced 1 unit apart vertically from the closest other lines. 
+
+
+
+\subsection{Q3}
+
+\subsection{Q4}
+
+In the case of $(\Z_{30},+)$, we write $g^n$ as $ng$ and the identity element is $0$ (cf. page 22 of the textbook). Thus, we seek the smallest $n>0$ such that $ng\equiv0(\text{mod }{30})$ or equivalently, such that $ng$ is a multiple of 30.
+\begin{itemize}
+	\item{Setting $g=3$ we have $ng=n\cdot3=3n$. Since $n>0$, $3n>0$ so we consider positive multiples of 30. Can $3n=30$? Yes, for $n=10$. Thus, $o(3)=10$.}
+	\item{Setting $g=4$ we have $ng=n\cdot4=4n$. Since $n>0$, $4n>0$ so we consider positive multiples of 30. Can $4n=30$? No, because then $n=15/2$ which is not an integer. How about 60? Yes, for $n=15$. Thus, $o(4)=15$.}
+	\item{Setting $g=6$ we have $ng=n\cdot6=6n$. Similar to $g=3$ we observe that 6 divides 30 so certainly it is possible for $6n=30$, and it is for $n=5$. Thus, $o(6)=5$}
+	\item{Setting $g=7$ we have $ng=n\cdot7=7n$. In order for $7n$ to be a multiple of . Thus, $o(3)=10$.}
+	\item{Setting $g=18$ we have $ng=n\cdot3=3n$. Since $n>0$, $3n>0$ so we consider positive multiples of 30. Can $3n=30$? Yes, for $n=10$. Thus, $o(3)=10$.}
+\end{itemize}
+
+
+
+\subsection{Q5}
+
+\subsection{Q6}
+
+\subsection{Q7}
+
+\subsection{Q8}
+
+\subsection{Q9}
+
+\subsection{Q10}
+
+\subsection{Q11}
+
+\subsection{Q12}
+
+\subsection{Q13}
+
+\subsection{Q14}
+
+\subsection{Q15}
+
+\subsection{Q16}
+
+\subsection{Q17}
+
+\subsection{Q18}
+
+\subsection{Q19}
+
+\subsection{Q20}
+
+\subsection{Q21}
+
+\subsection{Q22}
+
+\subsection{Q23}
+
+\subsection{Q24}
+
+\subsection{Q25}
+
+\subsection{Q26}
+
+\subsection{Q27}
+
+\subsection{Q28}
+
+\subsection{Q29}
+
+\subsection{Q30}
+
+\subsection{Q31}
+
+\subsection{Q32}
+
+\subsection{Q33}
 
 \end{document}

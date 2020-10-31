@@ -708,15 +708,39 @@ commutative binary operations on a set of $n$ elements.
 \subsection{Q1}
 
 \begin{itemize}
-	\item[(a)]{Yes, adding any two non-negative real numbers results in a non-negative real number so this is a binary operation. It is associative because addition of real numbers is associative. $0$ serves as an identity element because $0*x=0+x=x$ and $x*0=x+0=x$ for all $x\in\R^+$. Finally, we can define $x^{-1}=\frac{1}{x}$, which is }
-	\item[(b)]{}
-	\item[(c)]{No there can be no identity element. If there were it would satisfy $x*e=x$ for all $x$ or $|xe|=x$. However, if $x<0$ then the right hand side is $<0$ but the left hand side is \emph{always} $\ge 0$.}
+	\item[(a)]{No this is not a group because there can be no identity. An identity element $e$ must satisfy $x*e=x$ for all $x\in\R^+$. Thus, $x+e=x$ which implies $e=0$, which is not in $\R^+$.}
+	\item[(b)]{Yes, let $x,y\in3\Z$. Then there exist $k_x,k_y\in\Z$ such that $x=3k_x$ and $y=3k_y$. Thus, $x*y=x+y=3k_x+3k_y=3(k_x+k_y)$, which is a multiple of 3 so is in $3\Z$. Thus, we have a binary operation on $3\Z$. Associativity follows because addition of integers is associative. $0$ serves as an identity because for any $x\in3\Z$ we have $0*x=0+x=x$ and $x*0=x+0=x$. Finally, for any $x\in3\Z$, $-x\in3\Z$. That is because there is a $k_x\in\Z$ such that $x=3k_x$. Thus, $-x=-3k_x=3(-k_x)$ is in $3\Z$. Moreover, $-x$ serves as an inverse because $x*(-x)=x+(-x)=x-x=0$ and $(-x)*x=-x+x=0$.}
+	\item[(c)]{No this is not a group because there can be no identity. An identity element $e$ must satisfy $x*e=x$ for all $x\in\R-\{0\}$. Thus, we must have $|xe|=x$. However, if $x<0$ then the right hand side is $<0$ but the left hand side is \emph{always} $\ge 0$ so this equation can never be satisfied for any $x<0$.}
 	\item[(d)]{Yes, multiplying any pair of elements in $\{-1,1\}$ returns an element in $\{-1,1\}$ so this is a binary operation. It is associative because multiplication of real numbers is associative. $1$ serves as an identity element because $1*x=1\cdot x=x$ and $x*1=x\cdot 1=x$ for all $x\in\{-1,1\}$. Finally $1$ is its own inverse, and $-1$ is its own inverse: $1*1=1\cdot1=1$ and $(-1)*(-1)=(-1)\cdot(-1)=1$.}
-	\item[(e)]{}
-	\item[(f)]{}
-	\item[(g)]{}
-	\item[(h)]{}
-	\item[(i)]{}
+	\item[(e)]{Yes, let $q_1,q_2$ be two positive rational numbers and $r_1,r_2$ be their rational square roots. Thus, $r_1^2=q_1$ and $r_2^2=q_2$. Moreover, $q_1*q_2=q_1\cdot q_2$, which has the rational square root $r_1\cdot r_2$. To show this, first note that $r_1\cdot r_2$ is rational because the rational numbers are closed under multiplication. Moreover, $(r_1\cdot r_2)^2=r_1^2\cdot r_2^2=q_1\cdot q_2$. It is associative because multiplication of rational numbers is associative. The number $1$ is a positive rational number with rational square root $1$ and serves as an identity. In particular, for any positive rational $q$ with a rational square root, $q*1=q\cdot1=q$ and $1*q=1\cdot q=q$. Finally, if $q$ is a rational number with rational square root $r$ then $r^2=q$. Thus, $\frac{1}{q}$ has square root $\frac{1}{r}$ because $\left(\frac{1}{r}\right)^2=\frac{1}{r^2}=\frac{1}{q}$. Moreover, both $\frac{1}{q}$ and $\frac{1}{r}$ are rational. That is because if $x$ is a rational number, it can be expressed as $\frac{p}{q}$ for integers, $p$ and $q$. It follows that $\frac{1}{x}=\frac{q}{p}$ is also a rational number. Finally, $\frac{1}{q}$ serves as an inverse for any $q$. That is because $q*\frac{1}{q}=q\cdot\frac{1}{q}=1$ and $\frac{1}{q}*q=\frac{1}{q}\cdot q=1$. Note also that $\frac{1}{q}$ is well-defined for any rational $q$ because $q$ is positive, hence non-zero (and similarly for $\frac{1}{r}$).}
+	\item[(f)]{No this is not a group because there can be no identity. An identity element $e:=(e_1,e_2)$ must satisfy $x*e=x$ for all pairs of real numbers $x:=(x_1,x_2)$. Thus, $(x_1,x_2)*(e_1,e_2)=(x_1,x_2)$ which implies $(x_1+e_1,x_2-e_2)=(x_1,x_2)$. Componentwise we must have $x_1+e_1=x_1$ and $x_2-e_2=x_2$. That implies $e_1=e_2=0$. However, $(0,0)*x=(0,0)*(x_1,x_2)=(0+x_1,0-x_2)=(x_1,-x_2)$ which does not equal $(x_1,x_2)$ for all $x$. In particular, whenever $x_2\neq0$ we cannot have this equality.}
+	\item[(g)]{Yes, consider $(a_1,b_1),(a_2,b_2)$ with $b_1\neq0$ and $b_2\neq0$. We have $(a_1,b_1)*(a_2,b_2)=(a_1+a_2,b_1\cdot b_2)$. For this to be in the group we must have $b_1\cdot b_2\neq0$. That is indeed the case because both multiplicants are non-zero. Thus, we have a binary operation. Consider also $(a_3,b_3)$ then,
+		\begin{align*}
+			\left[(a_1,b_1)*(a_2,b_2)\right]*(a_3,b_3)=(a_1+a_2,b_1\cdot b_2)*(a_3,b_3)=(a_1+a_2+a_3,b_1\cdot b_2\cdot b_3)
+		\end{align*}
+	and
+		\begin{align*}
+			(a_1,b_1)*\left[(a_2,b_2)*(a_3,b_3)\right]=(a_1,b_1)*(a_2 + a_3,b_2\cdot b_3)=(a_1+a_2+a_3,b_1\cdot b_2\cdot b_3).
+		\end{align*}
+	Thus, $*$ is associative\footnote{Note we can unambiguously write $a_1+a_2+a_3$ and $b_1\cdot b_2\cdot b_3$ because addition and multiplication of real numbers are associative operations.}. For an element $e:=(e_1,e_2)$ to be an identity we must have $(a,b)*(e_1,e_2)=(a,b)$ for all pairs of real numbers $a$ and $b$. Thus, $(a+e_1,b\cdot e_2)=(a,b)$. Componentwise we must have $a+e_1=a$ and $b\cdot e_2=b$ which implies $e_1=0$ and $e_2=1$ (the latter follows from $b\neq0$.) Indeed $(a,b)*(0,1)=(a+0,b\cdot1)=(a,b)$ and $(0,1)*(a,b)=(0+a,1\cdot b)=(a,b)$. One may observe that this group is simply pairs of elements of the groups $(\R,+)$ and $(\R-\{0\},\cdot)$ from examples $1$ and $2$ in the textbook. For this reason, we immediately suggest that the inverse element of $(a,b)$ must be $\left(-a,\frac{1}{b}\right)$. Indeed $(a,b)*\left(-a,\frac{1}{b}\right)=\left(a-a,b\cdot\frac{1}{b}\right)=(0,1)$ and $\left(-a,\frac{1}{b}\right)*(a,b)=\left(-a+a,\frac{1}{b}\cdot b\right)=(0,1)$.}
+	\item[(h)]{Yes, consider $a,b\in\R-\{1\}$ then we must show $a*b\in\R-\{1\}$. Suppose to the contrary that $a*b=1$ for some $a,b$. Then we have $a+b-ab=1$, which implies $(1-a)b=1-a$. Because $a\neq1$, we can divide both sides by $1-a$ and we obtain $b=1$, which is a contradiction since $b\in\R-\{1\}$. Thus, it can never be the case that $a*b=1$ so $*$ is indeed a binary operation. Consider also $c\in\R-\{1\}$ then,
+		\begin{align*}
+			(a*b)*c=(a+b-ab)*c=(a+b-ab) + c - (a+b-ab)\cdot c = a + b + c - ab -ac - bc + abc,
+		\end{align*}
+	and
+		\begin{align*}
+			a*(b*c)=a*(b+c-bc)=a + (b+c-bc) - a\cdot (b+c-bc) = a + b + c - ab - ac - bc + abc.
+		\end{align*}
+	Thus, $*$ is associative\footnote{Similar to the prior footnote, addition and multiplication of real numbers are associative so we can be ambiguous about the way we write the sum $a+b+c$ and the product $abc$.}. An identity element $e$ must satisfy $x*e=x$ for all $x\in\R-\{1\}$. Thus, $x+e-xe=x$ which implies $e=xe$. For this to hold we need $e=0$. Indeed $x*0=x+0-x\cdot0=x$ and $0*x=0+x-0\cdot x=x$ for all $x\in\R-\{1\}$. Let $x^{-1}$ denote an inverse element. We must have $x*x^{-1}=0$ which implies $x+x^{-1}-x\cdot x^{-1}=0$ or $x^{-1}=\frac{-x}{1-x}$. Note this element is well defined because $x\neq1$. Moreover, if $x^{-1}=1$ we would have $\frac{-x}{1-x}=1$, which implies $-x=1-x\implies0=1$, which is of course a contradiction so $x^{-1}\neq1$ for any $x$. Thus, $x^{-1}\in\R-\{1\}$. Finally, we have $x^{-1}*x=\left(\frac{-x}{1-x}\right)*x=\frac{-x}{1-x}+x-\frac{-x}{1-x}\cdot x=\frac{-x}{1-x}+\frac{x-x^2}{1-x}+\frac{x^2}{1-x}=0$.}
+	\item[(i)]{Yes, consider $a,b\in\Z$. Then $a*b=a+b-1\in\Z$ so $*$ is a binary operation. Consider also $c\in\Z$ then,
+		\begin{align*}
+			(a*b)*c=(a+b-1)*c=(a+b-1)+c-1=a+b+c-2
+		\end{align*}
+	and
+		\begin{align*}
+			a*(b*c)=a*(b+c-1)=a+(b+c-1)-1=a+b+c-2.
+		\end{align*}
+	Thus, $*$ is associative\footnote{For the final time on this problem, we can be ambiguous about $a+b+c$ because addition of integers is associative.}. An identity element $e$ must satisfy $x*e=x$ for all $x\in\Z$. Thus, $x+e-1=x$, which implies $e=1$. Indeed $x*1=x+1-1=x$ and $1*x=1+x-1=x$ for all $x\in\Z$. Let $x^{-1}$ denote an inverse element. We must have $x*x^{-1}=1$ which implies $x+x^{-1}-1=1$ or $x^{-1}=2-x$ and this is an element of $\Z$. Indeed $x*x^{-1}=x*(2-x)=x+(2-x)-1=1$ and $x^{-1}*x=(2-x)*x=(2-x)+x-1=1$.}
 \end{itemize}
 
 \subsection{Q2}
@@ -1048,6 +1072,13 @@ An example is $(\Z^{+},\cdot)$. This is the set of positive integers together wi
 
 \subsection{Q17}
 
+The first condition tells us there is a unique value $e\in G$ such that for all $x\in G$, $x*e=x$ (unique right identity). The second condition tells us for any $x\in G$ there is an $x^\prime\in G$ such that $x^\prime * x = e$ (existence of a left inverse). We will show that $x^\prime$ is also a right inverse. Then Theorem 3.7 tells us that $(G,*)$ is a group. That is because we already have a right identity and our proof will demonstrate that every element has a right inverse and those are the conditions of Theorem 3.7. 
+
+By way of contradiction, assume that $x*x^\prime = z$, where $z\in G$ is not equal to $e$. Left multiplying both sides of this equation by $x^\prime$, we have
+\begin{align*}
+	x^\prime*(x*x^\prime) = x^\prime*z \implies (x^\prime*x)*x^\prime = x^\prime*z \implies e*x^\prime = x^\prime* z \implies x^\prime * z = x^\prime,
+\end{align*}
+where the first implication is due to associativity, the second is due to $x^\prime$ being a left inverse, and the final one due to $e$ being the unique right identity and a little re-arrangement. Now, the equation $x^\prime * z = x^\prime$ implies that $z$ is a right identity different from $e$, which is a contradiction of the uniqueness of the right identity. Thus, it must be the case that $x*x^\prime = e$ so that $x^\prime$ is a right inverse, exactly as desired. 
 
 
 
@@ -1113,6 +1144,31 @@ In the case of $(\Z_{30},+)$, we write $g^n$ as $ng$ and the identity element is
 \subsection{Q11}
 
 \subsection{Q12}
+
+Consider the sequence of elements $\{a^n\}_{n=-\infty}^\infty$. We have $a^0=e$, the identity element in this group. What is the identity in this group? An identity $e$ must satisfy $a*e=a$ for all $a\in G$. Thus, $a+e-1=a$, which implies $e=1$. Indeed $a*1=a+1-1=a$ and $1*a=1+a-1=a$. Next we ask, what is $a^{-1}$? It must satisfy $a*a^{-1}=1$. Thus, $a+a^{-1}-1=1$, which implies $a^{-1}=2-a$. 
+
+
+
+
+where $a_0=a\in G$ and for all $n\ge1$, $a_{n}=a_{n-1}*a_{n-1}=a_{n-1}+a_{n-1}-1=2a_{n-1}-1$. Observe that
+\begin{align*}
+	a_n=2a_{n-1}-1=2\left(2a_{n-2}-1\right)-1=4a_{n-2}-2-1&=4\left(2a_{n-3}-1\right)-2-1\\
+	&=8a_{n-3}-4-2-1,
+\end{align*}
+where in the first, second, and fourth equalities we used the recursive definitiona of $a_n$, $a_{n-1}$, and $a_{n-2}$, respectively. The equations suggest that $a_n=2^na-\sum_{j=0}^{n-1}2^j$, which we shall prove by induction. 
+
+When $n=0$ the left hand side is $a_0=a$, while the right hand side is $2^0a-\sum_{j=0}^{0-1}2^j=a$. Suppose that $a_n=2^na-\sum_{j=0}^{n-1}2^j$ for fixed $n$. Then using the recursive definition of $a_n$, we have
+\begin{align*}
+	a_{n+1}=2a_{n}-1=2\left(2^na-\sum_{j=0}^{n-1}2^j\right)-1=2^{n+1}a-\sum_{j=0}^{n-1}2^{j+1}-1=2^{n+1}a-\sum_{j=1}^{n}2^{j}-1=2^{n+1}a-\sum_{j=0}^{n}2^{j},
+\end{align*}
+which is exactly the equation for $n+1$. 
+
+Recall also from the formula for a finite geometric series we have $\sum_{j=0}^{n-1}2^j=\frac{1-2^n}{1-2}=2^n-1$. Therefore, the formula for $a_n$ simplifies to $a_n=2^na-\sum_{j=0}^{n-1}2^j=a_n=2^na-(2^n-1)=2^n(a-1)+1$. Finally, we can solve the problem. 
+
+What is 
+For $\left(\Z,*\right)$ to be a cyclic group we must be able to find an element $a$ such that $\langle a \rangle=\Z$. As we have just shown, $\langle a \rangle=\left\{a^n:n\in\Z\right\}$. 
+
+
 
 \subsection{Q13}
 

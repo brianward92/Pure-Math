@@ -745,6 +745,48 @@ commutative binary operations on a set of $n$ elements.
 
 \subsection{Q2}
 
+\begin{itemize}
+	\item[(a)]{They are all Abelian.
+		\begin{itemize}
+			\item[(b)]{Let $a,b\in3\Z$. Then $a*b=a+b=b+a=b*a$, where the second equality follows because addition of integers is commutative.}
+			\item[(d)]{Let $a,b\in\{-1,1\}$. Then $a*b=a\cdot b = b\cdot a=b*a$, where the second equality follows because multiplication of integers is commutative.}
+			\item[(e)]{Let $a,b\in\Q^+$ be two positive rational numbers with rational square roots. Then $a*b=a\cdot b = b\cdot a = b*a$, where the second equality follows because multiplication of rational numbers is commutative.}
+			\item[(g)]{Let $(a_1,b_1),(a_2,b_2)$ be two pairs of real numbers. Then,
+				\begin{align*}
+					(a_1,b_1)*(a_2,b_2)=(a_1+a_2,b_1\cdot b_2)=(a_2+a_1,b_2\cdot b_1)=(a_2,b_2)*(a_1,b_1),
+				\end{align*}
+			where the second equality follows because addition/multiplication of real numbers is commutative.}
+			\item[(h)]{Let $a,b\in\R-\{1\}$. Then $a*b=a+b-ab=b+a-ba=b*a$, where the second equality follows because addition/multiplication of real numbers is commutative.}
+			\item[(i)]{Let $a,b\in\Z$. Then, $a*b=a+b-1=b+a-1=b*a$, where the second equality follows because addition of integers is commutative.}
+		\end{itemize}}
+	\item[(b)]{Each example is actually multiple examples. We address only the examples that are actually groups and skip the non-groups as identified on pages 17-20 of the textbook.
+		\begin{itemize}
+			\item[1.]{All three of $(\Z,+)$, $(\Q,+)$ and $(\R,+)$ are Abelian groups. That follows because for any integer, rational or real numbers $a,b$, we have $a+b=b+a$.}
+			\item[2.]{All four of $(\Q^+,\cdot)$, $(\R^+,\cdot)$, $(\R-\{0\},\cdot)$, and $(\Q-\{0\},\cdot)$ are Abelian groups. That follows because for any rational or real numbers $a,b$ (positive, zero, or otherwise), we have $a\cdot b=b\cdot a$.}
+			\item[3.]{$\R^n$ with componentwise addition is an Abelian group. Let $(a_1,\ldots,a_n),(b_1,\ldots,b_n)\in\R^n$. Then,
+				\begin{align*}
+					(a_1,\ldots,a_n)*(b_1,\ldots,b_n)=(a_1+b_1,\ldots,a_n+b_n)&=(b_1+a_1,\ldots,b_n+a_n)\\
+					&=(b_1,\ldots,b_n)*(a_1,\ldots,a_n),
+				\end{align*}
+			where the second equality follows because addition of real numbers is commutative.}
+			\item[4.]{$\R-\{0\}$ with the binary operation $a*b=2ab$ is an Abelian group. Let $a,b\in\R-\{0\}$. Then, $a*b=2ab=2ba=b*a$, where the second equality follows because multiplication of real numbers is commutative.}
+			\item[5.]{}
+			\item[6.]{This is an Abelian group. Let $f,g\in G$. To show that $G$ is Abelian we must show that $f+g=g+f$. To show the functions $f+g$ and $g+f$ are equal requires us to show that $(f+g)(x)=(g+f)(x)$ for all $x\in\R$. To wit,
+				\begin{align*}
+					(f+g)(x)=f(x)+g(x)=g(x)+f(x)=(g+f)(x),
+				\end{align*}
+			where the second equality follows because addition of real numbers is commutative.}
+			\item[7.]{This is an Abelian group. Let $A,B\in P(X)$. Then, using the second equivalent definition of symmetric difference on page 12 of the textbook, we have
+				\begin{align*}
+					A\triangle B = A\cup B - A \cap B = B\cup A - B\cap A = B\triangle A,
+				\end{align*}
+			where the second equality follows because unions and intersections of sets are commutative operations\footnote{Unlike the prior uses of commutativity of e.g. real numbers, this one is not axiomatic, but still pretty obvious. We provide a heuristic proof here. $A\cup B$ is the set of elements either in $A$ or $B$. The set of elements either in $A$ or $B$ is the same as the set of elements in $B$ or $A$, which is $B\cup A$. $A\cap B$ is the set of elements in both $A$ and $B$. The set of elements in both $A$ and $B$ is the same as the set of elements in $B$ and $A$, which is $A\cap B$.}.}
+			\item[8.]{ d}
+		\end{itemize}}
+\end{itemize}
+
+
+
 \subsection{Q3}
 
 \subsection{Q4}
@@ -885,6 +927,10 @@ Finally, for each $f\in G$ we need an inverse function $f^\prime$ such that $f\t
 \subsection{Q13}
 
 \subsection{Q14}
+
+When $n=1$ we have one set in $A_1\triangle A_2\ldots \triangle A_n$ so we simply have $A_1\triangle A_2\ldots \triangle A_n=A_1$. Thus, if $x\in A_1\triangle A_2\ldots \triangle A_n=A_1$ then $x\in A_1$, which is an odd number of sets. When $n=2$ we have $A_1\triangle A_2$. We have seen that if $x\in A_1\triangle A_2$ it is in \emph{exactly} one of $A_1$ or $A_2$, which is again an odd number.
+
+Suppose that for fixed $n\ge 1$, if $x\in A_1\triangle A_2\ldots \triangle A_n$ then $x\in A_j$ for an odd number of $j$s. Now consider $A_1\triangle A_2\ldots \triangle A_n\triangle A_{n+1}$. Although we can write this unambiguously without parentheses, it is helpful to write this as $(A_1\triangle A_2\ldots \triangle A_n) \triangle A_{n+1}$. Now suppose $x\in(A_1\triangle A_2\ldots \triangle A_n) \triangle A_{n+1}$. Then, we know $x$ is in \emph{exactly} one of $A_1\triangle A_2\ldots \triangle A_n$ or $A_{n+1}$. In the first case, we know $x\notin A_{n+1}$ and $x\in A_1\triangle A_2\ldots \triangle A_n$. by the inductive hypothesis that $x$ is in $A_j$ for an odd number of $j$. In the second case, we know 
 
 
 
@@ -1055,6 +1101,15 @@ exactly as desired. (Note the use of the Cancellation Laws in the second and fou
 
 
 \subsection{Q13}
+
+The assumption that there is a left identity, $e$ means for every $g\in G$ we have $e*g=g$. The assumption that every element has a left inverse means for every $g\in G$ there is a $g^{-1}$ such that $g^{-1}*g=e$. Similar to the proof of Theorem 3.7, we must show (i) that $e$ is also a right identity (that is, for every $g\in G$, we have $g*e=g$) and (ii) that $g^{-1}$ is also a right inverse (that is, $g*g^{-1}=e$). 
+
+\begin{itemize}
+	\item[(i)]{Letting $g=e$ in the assumption for a left identity means $e*e=e$. Consider an arbitary $x\in G$. Then there is an $x^{-1}$ such that $x^{-1}*x=e$. We can insert this into the equation $e*e=e$ to obtain $(x^{-1}*x)*e=x^{-1}*x$. Using associativity we obtain $x^{-1}*(x*e)=x^{-1}*x$. Since $x^{-1}\in G$ it also has a left inverse, say $y$, such that $y*x^{-1}=e$. Multiplying by $y$ we have $y*(x^{-1}*(x*e))=y*(x^{-1}*x)$. Again using associativity we obtan $(y*x^{-1})*(x*e)=(y*x^{-1})*x$. Thus we obtain $e*(x*e)=e*x$. Because $e$ is a left inverse we have $x*e=x$ for all $x\in G$. I.e., $e$ is a right identity.}
+	\item[(ii)]{}
+\end{itemize}
+
+
 
 \subsection{Q14}
 

@@ -61,9 +61,9 @@
 \contentsline {subsection}{\numberline {3.11}Q11}{26}{subsection.3.11}%
 \contentsline {subsection}{\numberline {3.12}Q12}{26}{subsection.3.12}%
 \contentsline {subsection}{\numberline {3.13}Q13}{26}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Q14}{26}{subsection.3.14}%
-\contentsline {subsection}{\numberline {3.15}Q15}{26}{subsection.3.15}%
-\contentsline {subsection}{\numberline {3.16}Q16}{26}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.14}Q14}{27}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Q15}{27}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Q16}{27}{subsection.3.16}%
 \contentsline {subsection}{\numberline {3.17}Q17}{27}{subsection.3.17}%
 \contentsline {section}{\numberline {4}Powers of an Element; Cyclic Groups}{28}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Q1}{28}{subsection.4.1}%

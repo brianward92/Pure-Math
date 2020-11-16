@@ -755,8 +755,8 @@ commutative binary operations on a set of $n$ elements.
 				\begin{align*}
 					(a_1,b_1)*(a_2,b_2)=(a_1+a_2,b_1\cdot b_2)=(a_2+a_1,b_2\cdot b_1)=(a_2,b_2)*(a_1,b_1),
 				\end{align*}
-			where the second equality follows because addition/multiplication of real numbers is commutative.}
-			\item[(h)]{Let $a,b\in\R-\{1\}$. Then $a*b=a+b-ab=b+a-ba=b*a$, where the second equality follows because addition/multiplication of real numbers is commutative.}
+			where the second equality follows because addition and multiplication of real numbers are commutative operations.}
+			\item[(h)]{Let $a,b\in\R-\{1\}$. Then $a*b=a+b-ab=b+a-ba=b*a$, where the second equality follows because addition and multiplication of real numbers are commutative operations.}
 			\item[(i)]{Let $a,b\in\Z$. Then, $a*b=a+b-1=b+a-1=b*a$, where the second equality follows because addition of integers is commutative.}
 		\end{itemize}}
 	\item[(b)]{Each example is actually multiple examples. We address only the examples that are actually groups and skip the non-groups as identified on pages 17-20 of the textbook.
@@ -770,7 +770,15 @@ commutative binary operations on a set of $n$ elements.
 				\end{align*}
 			where the second equality follows because addition of real numbers is commutative.}
 			\item[4.]{$\R-\{0\}$ with the binary operation $a*b=2ab$ is an Abelian group. Let $a,b\in\R-\{0\}$. Then, $a*b=2ab=2ba=b*a$, where the second equality follows because multiplication of real numbers is commutative.}
-			\item[5.]{}
+			\item[5.]{This is not an Abelian group. Consider $A=\begin{pmatrix}0 & 1\\ 1 & 0 \end{pmatrix}$ and $B=\begin{pmatrix}1 & 2\\ 3 & 4 \end{pmatrix}$. Notice that $\det{A}=0\cdot0-1\cdot1=-1$ and $\det{B}=1\cdot4-2\cdot3=4-6=-2$ so both $A$ and $B$ are members of $GL(2,\R)$. However,
+				\begin{align*}
+					A\cdot B = \begin{pmatrix}0 & 1\\ 1 & 0 \end{pmatrix} \cdot \begin{pmatrix}1 & 2\\ 3 & 4 \end{pmatrix} = \begin{pmatrix}3 & 4\\ 1 & 2 \end{pmatrix},
+				\end{align*}
+			while
+				\begin{align*}
+					B\cdot A =  \begin{pmatrix}1 & 2\\ 3 & 4 \end{pmatrix} \cdot \begin{pmatrix}0 & 1\\ 1 & 0 \end{pmatrix}= \begin{pmatrix}2 & 1\\ 4 & 3 \end{pmatrix},
+			\end{align*}
+			so $A\cdot B \neq B\cdot A$.}
 			\item[6.]{This is an Abelian group. Let $f,g\in G$. To show that $G$ is Abelian we must show that $f+g=g+f$. To show the functions $f+g$ and $g+f$ are equal requires us to show that $(f+g)(x)=(g+f)(x)$ for all $x\in\R$. To wit,
 				\begin{align*}
 					(f+g)(x)=f(x)+g(x)=g(x)+f(x)=(g+f)(x),
@@ -780,8 +788,8 @@ commutative binary operations on a set of $n$ elements.
 				\begin{align*}
 					A\triangle B = A\cup B - A \cap B = B\cup A - B\cap A = B\triangle A,
 				\end{align*}
-			where the second equality follows because unions and intersections of sets are commutative operations\footnote{Unlike the prior uses of commutativity of e.g. real numbers, this one is not axiomatic, but still pretty obvious. We provide a heuristic proof here. $A\cup B$ is the set of elements either in $A$ or $B$. The set of elements either in $A$ or $B$ is the same as the set of elements in $B$ or $A$, which is $B\cup A$. $A\cap B$ is the set of elements in both $A$ and $B$. The set of elements in both $A$ and $B$ is the same as the set of elements in $B$ and $A$, which is $A\cap B$.}.}
-			\item[8.]{ d}
+			where the second equality follows because unions and intersections of sets are commutative operations\footnote{Unlike the prior uses of commutativity of e.g. real numbers, this one is not axiomatic, but still pretty obvious. We provide a heuristic proof here. $A\cup B$ is the set of elements either in $A$ or $B$. The set of elements either in $A$ or $B$ is the same as the set of elements in $B$ or $A$, which is $B\cup A$. $A\cap B$ is the set of elements in both $A$ and $B$. The set of elements in both $A$ and $B$ is the same as the set of elements in $B$ and $A$, which is $B\cap A$.}.}
+			\item[8.]{This is an Abelian group. Let $a,b\in\Z_n$. Then suppose that $a+b=kn+c$, where $c\in\Z_n$ (i.e. $0\le c < n$). It follows that $a\bigoplus b = c$, where $\bigoplus$ indicates we are adding modulo $n$. Observe that $b+a=a+b=kn+c$ so it follows that $b\bigoplus a = c$ and hence, $a\bigoplus b=c=b\bigoplus a$.}
 		\end{itemize}}
 \end{itemize}
 

@@ -35,13 +35,13 @@
 \contentsline {section}{\numberline {2}Groups}{17}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Q1}{17}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Q2}{18}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Q3}{19}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Q4}{19}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.3}Q3}{20}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Q4}{20}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Q5}{20}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Q6}{20}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Q7}{20}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Q8}{21}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Q9}{21}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.9}Q9}{22}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}Q10}{22}{subsection.2.10}%
 \contentsline {subsection}{\numberline {2.11}Q11}{22}{subsection.2.11}%
 \contentsline {subsection}{\numberline {2.12}Q12}{22}{subsection.2.12}%

@@ -1239,6 +1239,15 @@ An element $g\in\Z_{45}$ has order 15 if $15g=0\mod{45}$. Or put another way, we
 
 \subsection{Q9}
 
+The proof of this is very similar to the proof that $(\Q,+)$ is not cyclic on page 39 of the textbook. The only difference is that our special case is $q=1$ rather than $q=0$. $q=1$ could not be a generator of the group because $1^i=1$ for all $i$ so it cannot generate all positive rational numbers. 
+
+Now suppose that some positive $q\neq1$ were a generator for $(\Q^+,\cdot)$. If $q>1$, then $q^i > q$ for all $i>1$ and $q^i < q$ for all $i<1$. In particular $q^2 > q$ so that $\frac{q^2+q}{2}$ is a positive rational number\footnote{This is so because the positive rationals are closed under multiplication so $q^2$ is a positive rational. The sum of two positive rational numbers is a positive rational number so $q+q^2$ is a positive rational number. Finally the positive rational numbers are closed under multiplication so multiplying $q+q^2$ and $\frac{1}{2}$ yields a positive rational number.} halfway between $q$ and $q^2$. Thus, it is obviously not equal to $q^i$ for $i\in\{1,2\}$. Moreover, since $q^i\ge q^2>\frac{q^2+q}{2}$ for all $i\ge 2$, $\frac{q^2+q}{2}$ cannot be equal to $q^i$ for any $i\ge 1$. Finally, since $q^i \le q < \frac{q^2+q}{2}$ for all $i\le 1$, $\frac{q^2+q}{2}$ cannot be equal to $q^i$ for any $i\le 1$. Consequently, no $q>1$ can be a generator for $(\Q^+,\cdot)$.
+
+A symmetric argument applies if $q < 1$. In this case $q^i < q$ for all $i>1$ and $q^i > q$ for all $i<1$. Thus, $\frac{q+q^2}{2}$ will be a positive rational halfway between $q^2$ and $q$ (this time with $q^2<q$.) Thus, it is obviously not equal to $q^i$ for $i\in\{1,2\}$. Moreover, since $q^i \le q^2$ for all $i\ge 2$, $\frac{q+q^2}{2}$ cannot be equal to $q^i$ for any $i\ge 1$. Finally, since $q^i \ge q > \frac{q+q^2}{2}$ for all $i\le 1$, $\frac{q+q^2}{2}$ cannot be equal to $q^i$ for any $i\le 1$. Thus, there can be no generator $q<1$ either and we finally conclude that $(\Q^+,\cdot)$ is not cyclic. 
+
+
+
+
 \subsection{Q10}
 
 \subsection{Q11}

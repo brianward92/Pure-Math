@@ -928,6 +928,25 @@ Finally, for each $f\in G$ we need an inverse function $f^\prime$ such that $f\t
 
 \subsection{Q10}
 
+Let $A=\begin{pmatrix}a_1 & a_2 \\ -a_2 & a_1 \end{pmatrix}$ and $B=\begin{pmatrix}b_1 & b_2 \\ -b_2 & b_1 \end{pmatrix}$ with both $a_1^2+a_2^2\neq 0$ and $b_1^2+b_2^2\neq 0$. Then,
+\begin{align*}
+	A\cdot B = \begin{pmatrix}a_1 & a_2 \\ -a_2 & a_1 \end{pmatrix} \cdot \begin{pmatrix}b_1 & b_2 \\ -b_2 & b_1 \end{pmatrix} = \begin{pmatrix}a_1b_1-a_2b_2 & a_1b_2+a_2b_1 \\ -a_2b_1-a_1b_2 & -a_2b_2+a_1b_1 \end{pmatrix}.
+\end{align*}
+Indeed $A\cdot B$ is in this group because (i) the diagonal entries are equal, (ii) the off-diagonal entries are negatives of each other and (iii) we have
+\begin{align*}
+	\det{A\cdot B} & = \det{\begin{pmatrix}a_1b_1-a_2b_2 & a_1b_2+a_2b_1 \\ -a_2b_1-a_1b_2 & -a_2b_2+a_1b_1 \end{pmatrix}} \\
+	& = (a_1b_1-a_2b_2)(-a_2b_2+a_1b_1)-(-a_2b_1-a_1b_2)(-a_2b_2+a_1b_1)\\
+	& = (a_1b_1-a_2b_2)^2+(-a_2b_1-a_1b_2)^2\\
+	& = a_1^2b_1^2-2a_1b_1a_2b_2+a_2^2b_2^2+a_2^2b_1^2+2a_ab_1a_2b_2+a_1^2b_2^2\\
+	& = a_1^2b_1^2+a_2^2b_2^2+a_2^2b_1^2+a_1^2b_2^2\\
+	& = a_1^2b_1^2+a_2^2b_1^2+a_2^2b_2^2+a_1^2b_2^2\\
+	& = b_1^2(a_1^2+a_2^2)+b_2^2(a_2^2+a_1^2)\\
+	& = (b_1^2+b_2^2)(a_2^2+a_1^2),\\
+\end{align*}
+which is non-zero because both terms in the product are non-zero by assumption. Thus, we have a valid binary operation on this set of matrices. 
+
+
+
 \subsection{Q11}
 
 \subsection{Q12}
@@ -1234,6 +1253,16 @@ For $\left(\Z,*\right)$ to be a cyclic group we must be able to find an element 
 
 
 \subsection{Q13}
+
+Let $g$ be an arbitrary element of a finite group $G$. Then consider the sequence of elements $g,g^2,g^3,\ldots$ Observe that each $g^i\in G$. This is clearly true when $i=1$ because $g\in G$. Now suppose it is true for arbitrary $i$ that $g^i \in G$. Then, $g^{i+1}:=g*g^i$ is an element of $G$ because the right hand side is the binary operation $*$ applied to a pair of elements, $g$ and $g^i$, both of which are in $G$. Thus, $g^{i+1}\in G$ and the induction is complete. 
+
+With that observation we can now show that there must be a repeat element at some point in the sequence $g,g^2,g^3,\ldots$ In fact, by the pigeonhole principle, $g^{|G|+1}$ must be equal to some $g^i$ with $i\le |G|$. If that were not the case, then $g,g^2,\ldots, g^{|G|},g^{|G|+1}$ would be a set of $|G|+1$ unique elements all of which belong to $G$. However, there are only $|G|$ such unique elements so this cannot be possible. Thus, we have $g^i = g^{|G|+1}$, which we can write as $g^i * e= g^{|G|+1} * e$. We can apply the left Cancellation Law to this equation $i$ times to obtain $e = g^{|G|+1-i} * e$ or $g^{|G|+1-i} = e$ which shows that $g$ has finite order. Because $g$ was arbitrary, we conclude that every element of a finite group must have finite order. 
+
+\vspace{\baselineskip}
+
+\noindent (*) It is worth noting that $|G|+1-i\ge 1$ because $1\le i \le |G|$. That implies that $-|G| \le -i \le -1$, which in turn implies $1 \le |G|+1-i \le |G|$. Thus, we have not only shown that $g$ has finite order (because $|G|+1-i\ge 1$), but we have also shown that the order of $g$ is at most $|G|$.
+
+
 
 \subsection{Q14}
 

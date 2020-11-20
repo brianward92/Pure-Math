@@ -1301,6 +1301,23 @@ With that observation we can now show that there must be a repeat element at som
 
 \subsection{Q18}
 
+\begin{itemize}
+	\item[(ii)]{The statement of this part of the Theorem is equivalent to saying that the inverse of $x^n$ is $x^{-n}$. To wit,
+	\begin{align*}
+		x^n * x^{-n} = x^{n+(-n)}=x^{n-n}=x^0=e,
+	\end{align*}
+	and
+	\begin{align*}
+		x^{-n} * x^n = x^{(-n)+n}=x^{-n+n}=x^0=e,
+	\end{align*}
+	where we used the first part of the Theorem to add exponents. These equations are sufficient to show that the inverse of $x^n$ is $x^{-n}$.}
+	\item[(iii)]{We take a different approach and prove (a) $(x^m)^n=x^{nm}$ (for all $n,m$) and (b) $x^{nm}=(x^n)^m$ (for all $n,m$) by induction on $n$ for an arbitrary $m$.
+	\begin{itemize}
+		\item[(a)]{When $n=1$ the left hand side is $(x^m)^n=(x^m)^1=x^m$ and the right hand side is $x^{nm}=x^{1\cdot m}=x^m$. Now suppose that $(x^m)^n=x^{nm}$ and multiply both sides by $x^m$. The left hand side simply becomes $(x^m)^{n+1}$ since we have an additional copy of $x^m$. The right hand side is $x^m*x^{nm}=x^{m+nm}=x^{(n+1)m}$. Thus, $(x^m)^{n+1}=x^{(n+1)m}$, which is exactly the statement for $n+1$.}
+		\item[(b)]{}
+	\end{itemize}}
+\end{itemize}
+
 \subsection{Q19}
 
 \subsection{Q20}

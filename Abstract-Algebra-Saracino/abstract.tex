@@ -797,6 +797,18 @@ commutative binary operations on a set of $n$ elements.
 
 \subsection{Q3}
 
+In the footnote to Problem 2.2, we show informally that both unions and intersections are binary operations. However, we briefly state here that it is intuitively clear the union and intersection of two subsets $A,B$ of another set $X$ will also be subsets of $X$. That is because we have elements that are in $X$ that we are combining (union) or subsetting (intersection) so of course all elements in those combinations or subsets will be in $X$ as well. 
+
+An identity element $e$ for $A\cup B$ must satisfy $A\cup e = e \cup A = A$ for every $A\subseteq X$. Clearly $e=\emptyset$ satisfies this requirement because if $x\in A\cup\emptyset$ then either (a) $x\in A$ or (b) $x\notin A$. However, case (b) is actually not possible because then we must have $x\in\emptyset$, which is not possible. Thus, $x\in A\cup\emptyset$ implies $x\in A$ so that $A\cup\emptyset \subseteq A$. If $x\in A$ then clearly $x\in A\cup\emptyset$ so $A\subseteq A\cup\emptyset$ so $A\cup\emptyset = A$. The proof that $\emptyset\cup A = A$ is symmetric (and also obvious because $A\cup B = B \cup A$ for any sets $A$ and $B$). However, that implies that an inverse $A^{-1}$ must satisfy $A\cup A^{-1} = \emptyset$. We trivially have $A\subseteq A \cup A^{-1}$ so that implies $A\subseteq \emptyset$. But that implies that $A$ is in fact equal to $\emptyset$, which need not be the case. Thus, this cannot be a group because there can be no inverse. 
+
+An identity element $e$ for $A\cap B$ must satisfy $A\cap e = e \cap A = A$ for every $A\subseteq X$. Clearly $e=X$ satisfies this requirement because if $x\in A \cap X$ then $x\in A$ and $x\in X$ so clearly $x\in A$. This implies $A \cap X \subseteq A$. The proof that $A \cap X \subseteq A$ is symmetric. Thus, $A \cap X = A$. However, that implies that an inverse $A^{-1}$ must satisfy $A\cap A^{-1} = X$. 
+
+\vspace{\baselineskip}
+
+\noindent (*) The group with the operation $A\cup B$ can be salvaged if it is always the case that $A=\emptyset$. I.e. every subset of $X$ must be $\emptyset$. The \emph{only} set $X$ satisfying this is $X=\emptyset$ so that $P(X)=\{\emptyset\}$. However, this is a trivial group since it contains only one element. Thus, we learn absolutely nothing about unions from this ``group" since it may as well be the set containing $0$, $7$, or a french bulldog with the operation $e*e=e$. 
+
+
+
 \subsection{Q4}
 
 \begin{itemize}
@@ -1198,11 +1210,31 @@ In the case of $(G,+)$, where $G$ is the set of all real valued functions on the
 
 \subsection{Q3}
 
+In the discussion that $\left(P(X),\triangle\right)$ is a group on page 20 of the textbook, it was established that $A^{-1}=A$ for every $A\subseteq X$ and that $\emptyset$ is the identity element. Thus, $A\triangle A = \emptyset$ for every $A\subseteq X$. Moreover, $\emptyset\triangle A = A$ (again because $\emptyset$ is the identity element). It is now clear that $A^n$ equals $A$ when $n$ is odd. When $n=1$, $A^n=A^1=A$. Consider now an abitrary odd value of $n\ge1$. Then, $A^{n+1}=A*A^n=A*A=A\triangle A = \emptyset$, implying that $A^{n+2}=A*A^{n+1}=A*\emptyset=A$. As $n+2$ is the next odd integer after $n$, the induction is complete. We can similarly show that $A^n$ equals $\emptyset$ when $n$ is even. When $n=2$, $A^n=A^2=A*A=A\triangle A = \emptyset$. Consider now an arbitrary even value of $n\ge 2$. Then, $A^{n+1}=A^n*A=\emptyset*A=\emptyset\triangle A=A$, implying that $A^{n+2}=A^{n+1}*A=A*A=A\triangle A=\emptyset$. As $n+2$ is the next even integer after $n$, the inducton is complete. 
+
+Finally, we can show that $A^n=A^{-n}$ for every $n$. This is obviously true when $n=1$ because $A^n=A^1=A$ and $A^{-n}=A^{-1}=A$. Suppose $A^n=A^{-n}$ for arbitrary $n$. Assume $n$ is odd, then $A^n=A$ by the above. It then follows that
+\begin{align*}
+	A^{-(n+1)}=A^{-n-1}=A^{-n}*A^{-1}=A^n*A^{-1}=A^n*A=A^{n+1},
+\end{align*}
+which is the statement for $n+1$. Next assume $n$ is even, then $A^n=\emptyset$ by the above. It then follows that 
+\begin{align*}
+	A^{-(n+1)}=A^{-n-1}=A^{-n}*A^{-1}=A^n*A^{-1}=A^n*A=\emptyset*A=\emptyset = A^{n+1},
+\end{align*}
+where the final equality follows because $n+1$ is odd so $A^{n+1}=A$. This is the statement for $n+1$. All of this shows that $A^n$ is either $\emptyset$ or $A$ for any integer $n$ in the group $\left(P(X),\triangle\right)$. 
+
+With the above proof complete, the answer is obvious: there are exactly two elements in $\langle x \rangle$, $\emptyset$ and $\{1,4,5\}$. 
+
+\vspace{\baselineskip}
+
+\noindent (*) We have extensively used part (i) of Theorem 4.1.
+
+
+
 \subsection{Q4}
 
 In the case of $(\Z_{30},+)$, we write $g^n$ as $ng$ and the identity element is $0$ (cf. page 22 of the textbook). Thus, we seek the smallest $n>0$ such that $ng\equiv0(\text{mod }{30})$ or equivalently, such that $ng$ is a multiple of 30.
 \begin{itemize}
-	\item{Setting $g=3$ we have $ng=n\cdot3=3n$. Since $n>0$, $3n>0$ so we consider positive multiples of 30. Can $3n=30$? Yes, for $n=10$. Thus, $o(3)=10$.}
+	\item{Setting $g=3$ we have $ng=n\cdot3=3n$. In order to have $3n=0$ in $(\Z_{30},+)$, we must have $3n$ equal to a multiple of $30$. I.e. we must have $3n=30k$ for some $k$. Equivalently, we require $n=10k$.}
 	\item{Setting $g=4$ we have $ng=n\cdot4=4n$. Since $n>0$, $4n>0$ so we consider positive multiples of 30. Can $4n=30$? No, because then $n=15/2$ which is not an integer. How about 60? Yes, for $n=15$. Thus, $o(4)=15$.}
 	\item{Setting $g=6$ we have $ng=n\cdot6=6n$. Similar to $g=3$ we observe that 6 divides 30 so certainly it is possible for $6n=30$, and it is for $n=5$. Thus, $o(6)=5$}
 	\item{Setting $g=7$ we have $ng=n\cdot7=7n$. In order for $7n$ to be a multiple of . Thus, $o(3)=10$.}

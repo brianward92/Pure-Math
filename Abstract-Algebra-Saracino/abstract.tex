@@ -1354,7 +1354,21 @@ With that observation we can now show that there must be a repeat element at som
 
 \subsection{Q20}
 
+First, we show for any $a,x\in G$ and $n\ge 1$, we have $(xax^{-1})^n=xa^nx^{-1}$. When $n=1$, the left hand side is $(xax^{-1})^n=(xax^{-1})^1=xax^{-1}$, while the right hand side is $xa^nx^{-1}=xa^1x^{-1}=xax^{-1}$. Now suppose for arbitrary $n\ge1$ that $(xax^{-1})^n=xa^nx^{-1}$. Right multiplying by $xax^{1}$ we obtain
+\begin{align*}
+	(xax^{-1})^{n+1}=xa^nx^{-1}xax^{-1}=xa^neax^{-1}=xa^nax^{-1}=xa^{n+1}x^{-1},
+\end{align*}
+which is the equation for $n+1$ so the induction is complete. 
+
+Now suppose $o(a)=n<\infty$. Then, we know $a^n=e$. Left multiplying both sides by $x$ and right multiplying by $x^{-1}$ we obtain $xa^nx^{-1}=xex^{-1}=xx^{-1}=e$. From the above we conclude that $(xax^{-1})^n=xa^nx^{-1}=e$, which implies $o(xax^{-1})\le n$. Now suppose (by way of contradiction) that there is an $m<n$ such that $(xax^{-1})^m=e$. By the above, we have $xa^mx^{-1}=(xax^{-1})^m=e$, which implies $xa^mx^{-1}=e$. Left multiplying by $x^{-1}$ and right multiplying by $x$ we have $a^m=e$, which implies $o(a)\le m<n$, which is a contradiction. Thus, we conclude there is no such $m<n$ and $o(xax^{-1})\ge n$. Combining this with our proof that $o(xax^{-1})\le n$, we conclude $o(xax^{-1})=n=o(a)$.
+
+Next suppose $o(a)=\infty$. Then, $a^n\neq e$ for every $n\ge 1$. Suppose (by way of contradiction) that there is an $n\ge 1$ such that $(xax^{-1})^n=e$. Then, by the above, we have $xa^nx^{-1}=(xax^{-1})^n=e$, which implies $xa^nx^{-1}=e$. Left multiplying by $x^{-1}$ and right multiplying by $x$ we have $a^n=e$, which implies $o(a)\le n<\infty$. That contradicts $o(a)=\infty$, so the assumption cannot be true and we conclude $(xax^{-1})^n\neq e$ for every $n\ge1$, i.e. $o(xax^{-1})=\infty$.
+
 \subsection{Q21}
+
+Suppose $o(xy)=n$
+
+
 
 \subsection{Q22}
 

@@ -1234,11 +1234,11 @@ With the above proof complete, the answer is obvious: there are exactly two elem
 
 In the case of $(\Z_{30},+)$, we write $g^n$ as $ng$ and the identity element is $0$ (cf. page 22 of the textbook). Thus, we seek the smallest $n>0$ such that $ng\equiv0(\text{mod }{30})$ or equivalently, such that $ng$ is a multiple of 30.
 \begin{itemize}
-	\item{Setting $g=3$ we have $ng=n\cdot3=3n$. In order to have $3n=0$ in $(\Z_{30},+)$, we must have $3n$ equal to a multiple of $30$. I.e. we must have $3n=30k$ for some $k$. Equivalently, we require $n=10k$.}
-	\item{Setting $g=4$ we have $ng=n\cdot4=4n$. Since $n>0$, $4n>0$ so we consider positive multiples of 30. Can $4n=30$? No, because then $n=15/2$ which is not an integer. How about 60? Yes, for $n=15$. Thus, $o(4)=15$.}
-	\item{Setting $g=6$ we have $ng=n\cdot6=6n$. Similar to $g=3$ we observe that 6 divides 30 so certainly it is possible for $6n=30$, and it is for $n=5$. Thus, $o(6)=5$}
-	\item{Setting $g=7$ we have $ng=n\cdot7=7n$. In order for $7n$ to be a multiple of . Thus, $o(3)=10$.}
-	\item{Setting $g=18$ we have $ng=n\cdot3=3n$. Since $n>0$, $3n>0$ so we consider positive multiples of 30. Can $3n=30$? Yes, for $n=10$. Thus, $o(3)=10$.}
+	\item{($n=10$) Setting $g=3$ we have $ng=n\cdot3=3n$. In order to have $3n=0$ in $(\Z_{30},+)$, we must have $3n$ equal to a multiple of $30$. I.e. we must have $3n=30k$ for some $k$. Equivalently, we require $n=10k$. Minimizing $n$ requires minimizing $k$ so consider $k=1$, implying $n=10$. Indeed $ng=10\cdot 3=30$ is a multiple of 30.}
+	\item{($n=15$) Setting $g=4$ we have $ng=n\cdot4=4n$. In order to have $4n=0$ in $(\Z_{30},+)$, we must have $4n$ equal to a multiple of $30$. I.e. we must have $4n=30k$ for some $k$. Equivalently, we require $2n=15k$. Because the right hand side has factors of $3$ and $5$, so too must the left hand side. The smallest $n$ satisfying this is $n=15$ and hence, $k=2$. Indeed $ng=15\cdot4=60$ is a multiple of 30.}
+	\item{($n=5$) Setting $g=6$ we have $ng=n\cdot6=6n$. In order to have $6n=0$ in $(\Z_{30},+)$, we must have $6n$ equal to a multiple of $30$. I.e. we must have $6n=30k$ for some $k$. Equivalently, we require $n=5k$. Minimizing $n$ requires minimizing $k$ so consider $k=1$, implying $n=5$. Indeed $ng=5\cdot 6=30$ is a multiple of 30.}
+	\item{($n=30$) Setting $g=7$ we have $ng=n\cdot7=7n$. In order to have $7n=0$ in $(\Z_{30},+)$, we must have $7n$ equal to a multiple of $30$. I.e. we must have $7n=30k$ for some $k$. Because the left hand side has a factor of 7, so too must the right hand side. The smallest $k$ satisfying this is $k=7$ and hence, $n=30$. Indeed $ng=30\cdot7=210$ is a multiple of 30.}
+	\item({$n=5$) Setting $g=18$ we have $ng=n\cdot18=18n$. In order to have $18n=0$ in $(\Z_{30},+)$, we must have $18n$ equal to a multiple of $30$. I.e. we must have $18n=30k$ for some $k$. Equivalently, we require $3n=5k$. Because the right hand side has a factor of $5$, so too must the left hand side. The smallest $n$ satisfying this is $n=5$ and hence, $k=3$. Indeed, $ng=5\cdot18=90$ is a multiple of 30.}
 \end{itemize}
 
 
@@ -1372,7 +1372,30 @@ Suppose $o(xy)=n$
 
 \subsection{Q22}
 
+First, we show for any $x,y\in G$ and $n\ge 1$, that $(xy)^n=x^ny^n$. When $n=1$, the left hand side is $(xy)^n=(xy)^1=xy$, while the right hand side is $x^ny^n=x^1y^1=xy$. Now suppose for arbitrary $n\ge1$ that $(xy)^n=x^ny^n$. Right multiplying by $xy$ we obtain
+\begin{align*}
+	(xy)^{n+1}=x^ny^nxy=x^ny^nyx=x^ny^{n+1}x=x^nxy^{n+1}=x^{n+1}y^{n+1},
+\end{align*}
+which is exactly the equation for $n+1$ so the induction is complete.
+
+Now consider $(xy)^{o(x)o(y)}$. By the above, we have
+\begin{align*}
+	(xy)^{o(x)o(y)}=x^{o(x)o(y)}y^{o(x)o(y)}=\left(x^{o(x)}\right)^{o(y)}\left(y^{o(y)}\right)^{o(x)}=e^{o(y)}e^{o(x)}=ee=e,
+\end{align*}
+which shows $o(xy)\le o(x)o(y)$ and is thus, finite. By the division algorithm, we can find integers $q,r$ such that $o(x)o(y)=qo(xy)+r$ and $0\le r < o(xy)$. We have
+\begin{align*}
+	e=(xy)^{o(x)o(y)}=(xy)^{qo(xy)+r}=(xy)^{qo(xy)}(xy)^{r}=\left((xy)^{o(xy)}\right)^q(xy)^{r}=e^q(xy)^r=e(xy)^r=(xy)^r.
+\end{align*}
+If $r>0$ then we have $1\le r < o(xy)$ with $(xy)^r=e$. However, $o(xy)$ is the smallest integer $n$ such that $(xy)^n=e$ so we must have $r=0$. Thus, $o(x)o(y)=qo(xy)$, which implies $o(xy)$ divides $o(x)o(y)$. 
+
 \subsection{Q23}
+
+From Problem 4.22, we know that there is a $q$ such that $o(xy)=qo(x)o(y)$. Since $o(xy),o(x),o(y)\ge1$ it must also be the case that $q\ge1$. Moreover, because $(o(x),o(y))=1$ we know there exist $n_x,n_y$ such that $n_xo(x)+n_yo(y)=1$. Multiplying both sides by $o(y)$ we obtain
+\begin{align*}
+	n_xo(x)o(y)+n_yo(y)^2=o(y) \implies n_xqo(xy)+n_yo(y)^2=o(y) \implies 
+\end{align*}
+
+
 
 \subsection{Q24}
 

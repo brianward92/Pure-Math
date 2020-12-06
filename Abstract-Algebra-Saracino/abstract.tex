@@ -1154,6 +1154,11 @@ The assumption that there is a left identity, $e$ means for every $g\in G$ we ha
 
 \subsection{Q15}
 
+Recall that we can represent a binary operation on a finite set via a multiplication table. Now consider any given row of that table. I.e. we consider all elements of the form $a*x$ for some fixed $a\in G$. Suppose for some $x\neq y$ we have $a*x=a*y$. Since the left Cancellation Law holds, we conclude $x=y$, which is a contradiction. It follows that in any given row, all elements are unique. Since a row contains exactly $|G|$ elements, each row must contain all unique elements of $G$. Symmetrically, consider any given column of the table. I.e. consider all elements of the form $x*a$ for some fixed $a\in G$. If $x*a=y*a$, then because the right Cancellation Law holds, we have $x=y$. It follows each column contains all unique elements of $G$.
+
+Now consider arbitrary $a,b\in G$. By the above, we know that $b$ must be somewhere on $a$'s row. That is, there exists an element $x$ such that $a*x=b$. Similarly by the above, we know that $b$ must be somewhere on $a$'s column. That is, there exists an element $y$ such that $y*a=b$. Thus, we have all of the conditions of Problem 3.14 ($G$ has been assumed non-empty, and $*$ is assumed to be an associative binary operation) so we can conclude that $(G,*)$ is a group. 
+
+
 \subsection{Q16}
 
 An example is $(\Z^{+},\cdot)$. This is the set of positive integers together with multiplication. Clearly $\Z^{+}$ is not finite, but is non-empty. Moreover, $+$ is an associative binary operation on $Z^+$ since the sum of any two positive integers is positive, and addition of integers is associative. Let $x,y,z\in\Z^{+}$, and suppose $x\cdot y = x\cdot z$. Since $x>0$ we can divide both sides by $x$ to obtain $y=z$ so the left Cancellation Law holds. Now suppose $y\cdot x = z\cdot x$. Again, since $x>0$ we can divide both sides by $x$ to obtain $y=z$ so the right Cancellation Law holds. However, as discussed on page 17 of the textbook, ``$(\Z^{+},\cdot)$ is \emph{not} a group, since no element other 1 has an inverse."

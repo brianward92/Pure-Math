@@ -1301,8 +1301,36 @@ A symmetric argument applies if $q < 1$. In this case $q^i < q$ for all $i>1$ an
 
 
 
-
 \subsection{Q10}
+
+\begin{itemize}
+	\item[(a)]{Consider any $a,b\in\{1,2,3,4,5,6\}$, then $ab>0$ because $a,b>0$. In particular, we have $ab\ge1$. It follows that $\overline{ab}\ge1$ and since $\overline{ab}$ is the remainder of $ab$ when divided by $7$ we have $\overline{ab}<7$. Thus, $1\le\overline{ab}\le6$ so that $\bigodot$ is a binary operation. Let $a,b,c\in\{1,2,3,4,5,6\}$, then
+		\begin{align*}
+			a\bigodot(b\bigodot c)=a\bigodot\overline{b\cdot c}=\overline{a\cdot\overline{b\cdot c}}
+		\end{align*}
+	Let us suppose that $b\cdot c = 7q+r$, with $0\le r < 7$ by the Division Algorithm. Then, $\overline{b\cdot c}=r$. Consequently, $a\cdot b\cdot c = 7aq+a\cdot\overline{b\cdot c}$. This implies that $\overline{a\cdot b \cdot c}=\overline{a\cdot\overline{b\cdot c}}$. Thus, the right hand side of the above is $\overline{a\cdot b \cdot c}$. Now consider
+		\begin{align*}
+			(a\bigodot )\bigodot c=\overline{a\cdot b}\bigodot c=\overline{\overline{a\cdot b}\cdot c}.
+		\end{align*}
+	By a similar argument as above, the right hand side is $\overline{a\cdot b \cdot c}$. Thus, $a\bigodot(b\bigodot c)=(a\bigodot b)\bigodot c$ and $\bigodot$ is associative. Clearly, $1$ is an identity because for any $a\in\{1,2,3,4,5,6\}$ we have $a\bigodot1=\overline{a\cdot 1}=\overline{a}=a$ and $1\bigodot a=\overline{1\cdot a}=\overline{a}=a$. Finally, we can directly observe the following inverse pairs:
+		\begin{itemize}
+			\item[]{$1\bigodot1=\overline{1\cdot1}=\overline{1}=1$.}
+			\item[]{$2\bigodot4=\overline{2\cdot4}=\overline{8}=1$. Similarly, $4\bigodot2=1$.}
+			\item[]{$3\bigodot5=\overline{3\cdot5}=\overline{15}=1$. Similarly, $5\bigodot3=1$.}
+			\item[]{$6\bigodot6=\overline{6\cdot6}=\overline{36}=1$.}
+		\end{itemize}
+	}
+	\item[(b)]{Yes it is cyclic and $3$ generates the group:
+		\begin{itemize}
+			\item[]{$3^1=3$.}
+			\item[]{$3^2=\overline{3\cdot3}=\overline{9}=2$.}
+			\item[]{$3^3=3*3^2=3*2=\overline{3\cdot2}=\overline{6}=6$.}
+			\item[]{$3^4=3*3^3=3*6=\overline{3\cdot6}=\overline{18}=4$.}
+			\item[]{$3^5=3*3^4=3*4=\overline{3\cdot4}=\overline{12}=5$.}
+			\item[]{$3^6=3*3^5=3*5=\overline{3\cdot5}=\overline{15}=1$.}
+		\end{itemize}
+	$5$ also generates the group. One can check that in a similar manner.}
+\end{itemize}
 
 \subsection{Q11}
 

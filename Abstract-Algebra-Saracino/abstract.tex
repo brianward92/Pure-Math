@@ -1156,7 +1156,7 @@ The assumption that there is a left identity, $e$ means for every $g\in G$ we ha
 
 \subsection{Q16}
 
-An example is $(\Z^{+},\cdot)$. This is the set of positive integers together with multiplication. Clearly $\Z^{+}$ is not finite. Let $x,y,z\in\Z^{+}$, and suppose $x\cdot y = x\cdot z$. Since $x>0$ we can divide both sides by $x$ to obtain $y=z$ so the left Cancellation Law holds. Now suppose $y\cdot x = z\cdot x$. Again, since $x>0$ we can divide both sides by $x$ to obtain $y=z$ so the right Cancellation Law holds. However, as discussed on page 17 of the textbook, ``$(\Z^{+},\cdot)$ is \emph{not} a group, since no element other 1 has an inverse."
+An example is $(\Z^{+},\cdot)$. This is the set of positive integers together with multiplication. Clearly $\Z^{+}$ is not finite, but is non-empty. Moreover, $+$ is an associative binary operation on $Z^+$ since the sum of any two positive integers is positive, and addition of integers is associative. Let $x,y,z\in\Z^{+}$, and suppose $x\cdot y = x\cdot z$. Since $x>0$ we can divide both sides by $x$ to obtain $y=z$ so the left Cancellation Law holds. Now suppose $y\cdot x = z\cdot x$. Again, since $x>0$ we can divide both sides by $x$ to obtain $y=z$ so the right Cancellation Law holds. However, as discussed on page 17 of the textbook, ``$(\Z^{+},\cdot)$ is \emph{not} a group, since no element other 1 has an inverse."
 
 \vspace{\baselineskip}
 
@@ -1166,13 +1166,21 @@ An example is $(\Z^{+},\cdot)$. This is the set of positive integers together wi
 
 \subsection{Q17}
 
-The first condition tells us there is a unique value $e\in G$ such that for all $x\in G$, $x*e=x$ (unique right identity). The second condition tells us for any $x\in G$ there is an $x^\prime\in G$ such that $x^\prime * x = e$ (existence of a left inverse). We will show that $x^\prime$ is also a right inverse. Then Theorem 3.7 tells us that $(G,*)$ is a group. That is because we already have a right identity and our proof will demonstrate that every element has a right inverse and those are the conditions of Theorem 3.7. 
+The first condition tells us there is a unique value $e\in G$ such that for all $x\in G$, $x*e=x$ (unique right identity). The second condition tells us for any $x\in G$ there is an $x^\prime\in G$ such that $x^\prime * x = e$ (existence of a left inverse). 
+
+%We will show that $x^\prime$ is also a right inverse. Then Theorem 3.7 tells us that $(G,*)$ is a group. That is because we already have a right identity and our proof will demonstrate that every element has a right inverse and those are the conditions of Theorem 3.7. 
+
+Because $e\in G$, it has a left inverse, say $e^\prime$, such that $e^\prime * e = e$. However, because $e$ is a right identity, we must have $e^\prime*e=e^\prime$. Thus, $e=e^\prime$. Now for any $x,y$, denote by $x^\prime,y^\prime$ their left inverses (respectively). What is the left inverse of $x*y$? By Theorem 3.4, we guess that it should be $y^\prime * x^\prime$. We demonstrate that as follows
+\begin{align*}
+	(x*y)*(y^\prime * x^\prime)=(x*y)*(y^\prime * x^\prime)
+\end{align*}
 
 By way of contradiction, assume that $x*x^\prime = z$, where $z\in G$ is not equal to $e$. Left multiplying both sides of this equation by $x^\prime$, we have
 \begin{align*}
 	x^\prime*(x*x^\prime) = x^\prime*z \implies (x^\prime*x)*x^\prime = x^\prime*z \implies e*x^\prime = x^\prime* z \implies x^\prime * z = x^\prime,
 \end{align*}
 where the first implication is due to associativity, the second is due to $x^\prime$ being a left inverse, and the final one due to $e$ being the unique right identity and a little re-arrangement. Now, the equation $x^\prime * z = x^\prime$ implies that $z$ is a right identity different from $e$, which is a contradiction of the uniqueness of the right identity. Thus, it must be the case that $x*x^\prime = e$ so that $x^\prime$ is a right inverse, exactly as desired. 
+
 
 
 
@@ -1266,6 +1274,16 @@ An element $g\in\Z_{45}$ has order 15 if $15g=0\mod{45}$. Or put another way, we
 
 
 \subsection{Q7}
+
+By the finite case of Theorem 4.5, the unique elements of $\langle x \rangle$ are $e,x,x^2,\ldots x^{23}$. By Theorem 4.4, part (iii), we can directly compute the order of every such element, $x^m$, by computing $d=(m,24)$. The result will give $o(x^m)=24/d$. The question at hand is, for which $m\in\{0,1,\ldots,23\}$, do we obtain $o(x^m)=4$? I.e. for which $m$ do we have $24/(m,24)=4$ or $(m,24)=6$. Because $6$ must divide $m$, we consider $m\in\{6,12,18\}$:
+\begin{itemize}
+	\item[($m=6$)]{We have $(6,24)=6$ so $o(x^6)=4$.}
+	\item[($m=12$)]{We have $(12,24)=12$ so $o(x^{12})\neq4$.}
+	\item[($m=18$)]{We have $(18,24)=6$ so $o(x^{18})=4$.}
+\end{itemize}
+Thus, the only elements of order $4$ are $x^6$ and $x^{18}$.
+
+
 
 \subsection{Q8}
 

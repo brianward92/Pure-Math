@@ -1546,6 +1546,15 @@ which is a contradiction. Thus, $o(x)\ge3$. Now consider the given equation and 
 
 \subsection{Q27}
 
+The statement is clearly true when $s=1$ because there is only one term in $q_1\ldots q_s=q_1$. Thus, if $p$ divides $q_1\ldots q_s$ it divides $q_1$, i.e. some $q_i$. Assume the statement is true for fixed, but arbitrary $s\ge1$. Now suppose $p$ divides $q_1\ldots q_s\cdot q_{s+1}$. There are two cases:
+\begin{itemize}
+	\item{Case 1: $p$ divides $q_{s+1}$. Then clearly $p$ divides some $q_i$, namely $i=s+1$.}
+	\item{Case 2: $p$ does not divide $q_{s+1}$. Then because $p$ is prime, the greatest common divisor of $p$ and $q_{s+1}$ is 1. By Theorem 4.3\footnote{Take $r=p$, $s=q_{s+1}$ and $t=q_1\ldots q_s$.}, $p$ must divide $q_1\ldots q_s$. By the inductive hypothesis, $p$ must divide some $q_i$ (where $1\le i \le s$).}
+\end{itemize}
+In either case we have shown that $p$ divides $q_i$ for some $i$, exactly as desired. 
+
+
+
 \subsection{Q28}
 
 \subsection{Q29}

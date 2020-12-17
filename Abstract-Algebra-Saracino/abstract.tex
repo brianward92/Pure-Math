@@ -1173,6 +1173,11 @@ An example is $(\Z^{+},\cdot)$. This is the set of positive integers together wi
 
 The first condition tells us there is a unique value $e\in G$ such that for all $x\in G$, $x*e=x$ (unique right identity). The second condition tells us for any $x\in G$ there is an $x^\prime\in G$ such that $x^\prime * x = e$ (existence of a left inverse). 
 
+Consider any $x\in G$. As above, there is an $x^\prime$ such that $x^\prime * x = e$. Similarly, there is an $x^{\prime\prime}$ such that $x^{\prime\prime}*x^\prime=e$. Left multiplying $x^\prime * x = e$ by $x^{\prime\prime}$, we obtain
+\begin{align*}
+	x^{\prime\prime}*(x^\prime* x) = x^{\prime\prime} * e \implies (x^{\prime\prime}*x^\prime)* x = x^{\prime\prime} * e \implies e * x = x^{\prime\prime} * e \implies e * x = x^{\prime\prime}
+\end{align*}
+
 %We will show that $x^\prime$ is also a right inverse. Then Theorem 3.7 tells us that $(G,*)$ is a group. That is because we already have a right identity and our proof will demonstrate that every element has a right inverse and those are the conditions of Theorem 3.7. 
 
 Because $e\in G$, it has a left inverse, say $e^\prime$, such that $e^\prime * e = e$. However, because $e$ is a right identity, we must have $e^\prime*e=e^\prime$. Thus, $e=e^\prime$. Now for any $x,y$, denote by $x^\prime,y^\prime$ their left inverses (respectively). What is the left inverse of $x*y$? By Theorem 3.4, we guess that it should be $y^\prime * x^\prime$. We demonstrate that as follows
@@ -1341,28 +1346,27 @@ A symmetric argument applies if $q < 1$. In this case $q^i < q$ for all $i>1$ an
 
 \subsection{Q12}
 
-Consider the sequence of elements $\{a^n\}_{n=-\infty}^\infty$. We have $a^0=e$, the identity element in this group. What is the identity in this group? An identity $e$ must satisfy $a*e=a$ for all $a\in G$. Thus, $a+e-1=a$, which implies $e=1$. Indeed $a*1=a+1-1=a$ and $1*a=1+a-1=a$. Next we ask, what is $a^{-1}$? It must satisfy $a*a^{-1}=1$. Thus, $a+a^{-1}-1=1$, which implies $a^{-1}=2-a$. 
-
-
-
-
-where $a_0=a\in G$ and for all $n\ge1$, $a_{n}=a_{n-1}*a_{n-1}=a_{n-1}+a_{n-1}-1=2a_{n-1}-1$. Observe that
+First consider $a^n$ for $n\ge1$. We have $a^2=a*a=a+a-1=2a-1$. Thus, $a^3=a*a^2=a*(2a-1)=a+(2a-1)-1=3a-2$. It appears that $a^n=na-n+1$. We already have a few base cases, so assume $a^n=na-n+1$ for arbitrary $n\ge1$. Then, 
 \begin{align*}
-	a_n=2a_{n-1}-1=2\left(2a_{n-2}-1\right)-1=4a_{n-2}-2-1&=4\left(2a_{n-3}-1\right)-2-1\\
-	&=8a_{n-3}-4-2-1,
+	a^{n+1}=a*a^n=a*(na-n+1)=a+(na-n+1)-1=(n+1)a-n=(n+1)a-(n+1)+1,
 \end{align*}
-where in the first, second, and fourth equalities we used the recursive definitiona of $a_n$, $a_{n-1}$, and $a_{n-2}$, respectively. The equations suggest that $a_n=2^na-\sum_{j=0}^{n-1}2^j$, which we shall prove by induction. 
+which is exactly the statement for $n+1$. This statement is also true for $n\le0$. To prove that, we need to find $a^{-1}$, which in turn means we need to find the identity element $e$ in this group. If the above is to be correct for $n\le0$, then setting $n=0$ suggests that $e=a^0=0\cdot a-0+1=1$. Indeed, $a*1=a+1-1=a$ and $1*a=1+a-1=a$. 
 
-When $n=0$ the left hand side is $a_0=a$, while the right hand side is $2^0a-\sum_{j=0}^{0-1}2^j=a$. Suppose that $a_n=2^na-\sum_{j=0}^{n-1}2^j$ for fixed $n$. Then using the recursive definition of $a_n$, we have
+Next, setting $n=-1$ in the above suggests $a^{-1}=(-1)\cdot a -(-1)+1=2-a$. Indeed $a*(2-a)=a+(2-a)-1=1$ and $(2-a)*a=(2-a)+a-1=1$. Thus, replacing $a$ by $a^{-1}$ in $a^n=na-n+1$, we obtain
 \begin{align*}
-	a_{n+1}=2a_{n}-1=2\left(2^na-\sum_{j=0}^{n-1}2^j\right)-1=2^{n+1}a-\sum_{j=0}^{n-1}2^{j+1}-1=2^{n+1}a-\sum_{j=1}^{n}2^{j}-1=2^{n+1}a-\sum_{j=0}^{n}2^{j},
+	a^{-n}=(a^{-1})^n=na^{-1}-n+1=n(2-a)-n+1=2n-na-n+1=(-n)a-(-n)+1,
 \end{align*}
-which is exactly the equation for $n+1$. 
+which is exactly the statement for $-n$. Together with our proof that $a^0=e=1$, we have shown that for all $n$, $a^n=na-n+1$. 
 
-Recall also from the formula for a finite geometric series we have $\sum_{j=0}^{n-1}2^j=\frac{1-2^n}{1-2}=2^n-1$. Therefore, the formula for $a_n$ simplifies to $a_n=2^na-\sum_{j=0}^{n-1}2^j=a_n=2^na-(2^n-1)=2^n(a-1)+1$. Finally, we can solve the problem. 
+Now, if $a$ is to be a generator for $\Z$, we need $a$ to be such that for all $x\in\Z$, we can find an $n$ such that $a^n=x$. This implies
+\begin{align*}
+	na-n+1=x\implies n(a-1)=x-1 \implies n = \frac{x-1}{a-1}.
+\end{align*}
+However, for this $n$ to be an integer, we need $a-1$ to be either $1$ or $-1$. Were it not one of those values, then $ \frac{x-1}{a-1}$ would, in general, be non-integral. It follows that either 2 ($a-1=1$) or 0 ($a-1=-1$) can be a generator and that this group is cyclic. Indeed, with $a=0$, we have $a^n=n\cdot0-n+1$. To obtain $x\in\Z$ we need $x=a^n=-n+1$, which implies $n=1-x$.
 
-What is 
-For $\left(\Z,*\right)$ to be a cyclic group we must be able to find an element $a$ such that $\langle a \rangle=\Z$. As we have just shown, $\langle a \rangle=\left\{a^n:n\in\Z\right\}$. 
+\vspace{\baselineskip}
+
+\noindent (*) It is worth noting that 0 and 2 are inverses of each other in this group. In this case, Problem 4.16 guarantees that if 0 generates the group, then $0^{-1}=2$ also generates the group. Because $\Z$ is infinite, Problem 4.17 guarantees that \emph{only} 0 and 2 can generate this group. 
 
 
 
@@ -1514,6 +1518,27 @@ From Problem 4.22, we know that there is a $q$ such that $o(xy)=qo(x)o(y)$. Sinc
 
 
 \subsection{Q24}
+
+The result is that $o(x)=\infty$. First, we claim that $x^{2n}=yx^ny^{-1}$ for every $n\ge1$. The base case $n=1$ is given by assumption. Now suppose this holds for arbitrary $n\ge1$. Then,
+\begin{align*}
+	x^{2n}=yx^ny^{-1}\implies x^{2n}x^2=(yx^ny^{-1})(yxy^{-1}) \implies x^{2n+2}=yx^ny^{-1}yxy^{-1} \implies x^{2(n+1)}=yx^{n+1}y^{-1},
+\end{align*}
+which is precisely the statement for $n+1$.
+
+Next, we show by induction that $x^n\neq e$ for every $n\ge 1$. Observe that we are given $x\neq e$. Suppose $x^2=e$. Then, we have
+\begin{align*}
+	e=x^2=yxy^{-1} \implies e*y=(yxy^{-1})y \implies y = (yx)(y^{-1}y) = (yx)e = yx \implies x = e,
+\end{align*}
+which is a contradiction. Thus, $o(x)\ge3$. Now consider the given equation and square both sides to obtain
+\begin{align*}
+	(x^2)^2=(yxy^{-1})^2 \implies x^4 = (yxy^{-1})(yxy^{-1}) = yx^2y^{-1}=y(yxy^{-1})y^{-1}
+\end{align*}
+
+\begin{align*}
+	(x^2)^2=(yxy^{-1})^2 \implies x^4 = (yxy^{-1})(yxy^{-1}) = yx^2y^{-1}=y(yxy^{-1})y^{-1}
+\end{align*}
+
+
 
 \subsection{Q25}
 

@@ -799,13 +799,25 @@ commutative binary operations on a set of $n$ elements.
 
 In the footnote to Problem 2.2, we show informally that both unions and intersections are binary operations. However, we briefly state here that it is intuitively clear the union and intersection of two subsets $A,B$ of another set $X$ will also be subsets of $X$. That is because we have elements that are in $X$ that we are combining (union) or subsetting (intersection) so of course all elements in those combinations or subsets will be in $X$ as well. 
 
-An identity element $e$ for $A\cup B$ must satisfy $A\cup e = e \cup A = A$ for every $A\subseteq X$. Clearly $e=\emptyset$ satisfies this requirement because if $x\in A\cup\emptyset$ then either (a) $x\in A$ or (b) $x\notin A$. However, case (b) is actually not possible because then we must have $x\in\emptyset$, which is not possible. Thus, $x\in A\cup\emptyset$ implies $x\in A$ so that $A\cup\emptyset \subseteq A$. If $x\in A$ then clearly $x\in A\cup\emptyset$ so $A\subseteq A\cup\emptyset$ so $A\cup\emptyset = A$. The proof that $\emptyset\cup A = A$ is symmetric (and also obvious because $A\cup B = B \cup A$ for any sets $A$ and $B$). However, that implies that an inverse $A^{-1}$ must satisfy $A\cup A^{-1} = \emptyset$. We trivially have $A\subseteq A \cup A^{-1}$ so that implies $A\subseteq \emptyset$. But that implies that $A$ is in fact equal to $\emptyset$, which need not be the case. Thus, this cannot be a group because there can be no inverse. 
+\vspace{\baselineskip}
 
-An identity element $e$ for $A\cap B$ must satisfy $A\cap e = e \cap A = A$ for every $A\subseteq X$. Clearly $e=X$ satisfies this requirement because if $x\in A \cap X$ then $x\in A$ and $x\in X$ so clearly $x\in A$. This implies $A \cap X \subseteq A$. The proof that $A \cap X \subseteq A$ is symmetric. Thus, $A \cap X = A$. However, that implies that an inverse $A^{-1}$ must satisfy $A\cap A^{-1} = X$. 
+\noindent ($A\cup B$) An identity element $e$ for $A\cup B$ must satisfy $A\cup e = e \cup A = A$ for every $A\subseteq X$. Clearly $e=\emptyset$ satisfies this requirement because if $x\in A\cup\emptyset$ then either (a) $x\in A$ or (b) $x\notin A$. However, case (b) is actually not possible because then we must have $x\in\emptyset$, which is not possible. Thus, $x\in A\cup\emptyset$ implies $x\in A$ so that $A\cup\emptyset \subseteq A$. If $x\in A$ then clearly $x\in A\cup\emptyset$ so $A\subseteq A\cup\emptyset$ so $A\cup\emptyset = A$. The proof that $\emptyset\cup A = A$ is symmetric (and also obvious because $A\cup B = B \cup A$ for any sets $A$ and $B$). 
+
+However, that implies that an inverse $A^{-1}$ must satisfy $A\cup A^{-1} = \emptyset$. We trivially have $A\subseteq A \cup A^{-1}$ so that implies $A\subseteq \emptyset$. This in turn implies that $A$ is in fact equal to $\emptyset$, which need not be the case. Thus, this cannot be a group because there can be no inverse. 
+
+\vspace{\baselineskip}
+
+\noindent ($A\cap B$) An identity element $e$ for $A\cap B$ must satisfy $A\cap e = e \cap A = A$ for every $A\subseteq X$. Clearly $e=X$ satisfies this requirement because if $x\in A \cap X$ then $x\in A$ and $x\in X$ so clearly $x\in A$. This implies $A \cap X \subseteq A$. Now suppose $x\in A$. Then because $A\subseteq X$ we have $x\in X$ which implies $x\in A\cap X$ and hence, $A\subseteq A \cap X$ and we have $A\cap X = A$. The proof that $X\cap A = A$ is symmetric (and also obvious because $A\cap B=B\cap A$ for any sets A and B). 
+
+However, that implies that an inverse $A^{-1}$ must satisfy $A\cap A^{-1} = X$. Here we can just provide a concrete counterexample. Suppose $X=\{0,1\}$ and $A=\{1\}$. No matter what set $A^{-1}$ we choose, we will always have $A\cap A^{-1}\subseteq A = \{1\}\subsetneq \{0,1\}=X$. The more general concept is that if $A$ is a \emph{proper} subset of $X$ then we will always have $A\cap A^{-1} \subseteq A \subsetneq X$. Thus, this cannot be a group because there can be no inverse. 
 
 \vspace{\baselineskip}
 
 \noindent (*) The group with the operation $A\cup B$ can be salvaged if it is always the case that $A=\emptyset$. I.e. every subset of $X$ must be $\emptyset$. The \emph{only} set $X$ satisfying this is $X=\emptyset$ so that $P(X)=\{\emptyset\}$. However, this is a trivial group since it contains only one element. Thus, we learn absolutely nothing about unions from this ``group" since it may as well be the set containing $0$, $7$, or a french bulldog with the operation $e*e=e$. 
+
+\vspace{\baselineskip}
+
+\noindent (**) It is also worth noting that in Section 3 of the book we prove that the identity element is unique. A careful reading of that proof shows us that it only depends on properties (i) and (iii) from page 16. In particular, this means that the unique identity can be obtained \emph{only} using properties of the binary operation. The reason to note that here is that in showing that $\cup$ and $\cap$ cannot be operations on a group, we first derived an identity by looking at the equation $a*e=e*a=a$ for all $A$. One could ask: is this identity ``wrong" in the sense that there is some other identity element for which inverses \emph{do} exist? The proof in Section 3 shows the answer is no. If $\cup$ and $\cap$ are to be valid operations to form groups, then their identity elements \emph{must be} $\emptyset$ and $X$, respectively. 
 
 
 
@@ -1448,6 +1460,10 @@ We simply apply the Division Algorithm directly.
 \end{itemize}
 
 \subsection{Q16}
+
+If $G=\langle x \rangle$ then for any $g\in G$ we have $g=x^j$ for some $j\in\Z$. 
+
+
 
 \subsection{Q17}
 

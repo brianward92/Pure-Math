@@ -946,6 +946,18 @@ Finally, for each $f\in G$ we need an inverse function $f^\prime$ such that $f\t
 			& = \text{det}(A)\cdot\text{det}(B),\\
 		\end{align*}
 	exactly as desired.}
+	\item[(b)]{The reverse implication is obvious from the top of page 19 of the textbook (second paragraph): if the determinant of $A$ is not $0$ then the matrix given in the textbook is an inverse of $A$. Namely,
+	\begin{align*}
+		A\cdot A^{-1} = \begin{pmatrix}a & b \\ c & d \end{pmatrix} \cdot \begin{pmatrix}\frac{d}{ad-bc} & \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} & \frac{a}{ad-bc} \end{pmatrix} = \begin{pmatrix}\frac{ad-bc}{ad-bc} &  \frac{-ab+ab}{ad-bc}\\ \frac{cd-cd}{ad-bc} & \frac{-bc+ad}{ad-bc} \end{pmatrix} = \begin{pmatrix}1 &  0 \\ 0 & 1 \end{pmatrix} = I
+	\end{align*}
+	and
+	\begin{align*}
+		A^{-1}\cdot A = \begin{pmatrix}\frac{d}{ad-bc} & \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} & \frac{a}{ad-bc} \end{pmatrix} \cdot \begin{pmatrix}a & b \\ c & d \end{pmatrix} = \begin{pmatrix}\frac{ad-bc}{ad-bc} &  \frac{bd-bd}{ad-bc}\\ \frac{-ac+ac}{ad-bc} & \frac{-bc+ad}{ad-bc} \end{pmatrix} = \begin{pmatrix}1 &  0 \\ 0 & 1 \end{pmatrix} = I.
+	\end{align*}
+	\,\,\,\, Now suppose $A$ is invertible (i.e. that $A\in GL(2,\R)$). Then there is an $A^{-1}$ such that $AA^{-1}=I$. By part (a) we know that $\text{det}(AA^{-1})=\text{det}(A)\cdot\text{det}(A^{-1})$. On the other hand, $\text{det}(I)=1$ by direct computation and since $AA^{-1}=I$ are equal matrices, their determinants must be equal as well. That follows because matrices are equal if and only if they are equal entry by entry. Thus, $\text{det}(A)\cdot\text{det}(A^{-1})=1$. It follows that neither $\text{det}(A)$ nor $\text{det}(A^{-1})$ can be 0 because otherwise the product cannot equal 1. Thus, $\text{det}(A)\neq0$, exactly as desired.}
+	\item[(c)]{The fact we need to prove here is that (a) and (b) imply the following: if $A$ and $B$ are two invertible matrices, then $AB$ is invertible. If we have that, then we know we have a binary operation, it is associative, and there are inverses as well. All of that follows simply from the same discussion from the bottom of page 18 to the top of page 19 of the textbook. Thus, if we prove that fact, then we prove that $GL(2,\R)$ would be a group. 
+		
+	\,\,\,\, Suppose $A,B$ are two invertible matrices. Then by part (b) ($\implies$ direction) we have $\text{det}(A)\neq0$ and $\text{det}(B)\neq0$. By part (a), $\text{det}(AB)=\text{det}(A)\cdot\text{det}(B)$. The right hand side is not 0, otherwise one of the two determinants must be 0. Thus, $\text{det}(AB)\neq0$ and it follows that $AB$ is invertible by part (b) ($\impliedby$ direction). This is what we needed to show, so $GL(2,\R)$ is a group.}
 \end{itemize}
 
 

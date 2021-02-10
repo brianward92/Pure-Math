@@ -1164,11 +1164,24 @@ The assumption that there is a left identity, $e$ means for every $g\in G$ we ha
 
 \subsection{Q14}
 
+Let us take $a=b$ in the given conditions. Then there is an element\footnote{The notation is meant to emphasize that as of right now, we believe that $e_a^{(R)}$ is a \emph{right} (superscript $(R)$) identity (named $e$) for $a$ only (subscript $a$). Our proof goes on to show that we can drop the subscript so that $e^{(R)}$ is a right identity for \emph{every} element. Being able to drop the superscript will be due to Theorem 3.7.} $e_a^{(R)}$ such that $a*e_a^{(R)}=a$. Now consider any other element $b$. Then, we know there is a $y$ such that $y*a=b$ (from the second condition). We use this to show that $b*e_a^{(R)}=b$ as follows
+\begin{align*}
+	b*e_a^{(R)} = (y*a) * e_a^{(R)} = y* \left(a * e_a^{(R)}\right) = y * a = b.
+\end{align*}
+The first equality follows from $y*a=b$, the second by associativity, the third by $a*e_a^{(R)}=a$, and the final equality by $y*a=b$ once again. As $b$ was arbitrary, we have shown that there is an element, $e_a^{(R)}$ such that $b*e_a^{(R)}=b$ for all $b\in G$ (right identity). Next, for any $x\in G$, we set $a=x$ and $b=e_a^{(R)}$ in the given condition to find a $y\in G$ such that $x*y=e_a^{(R)}$ (first condition with $x$ now taking the place of $y$). Thus, we have all the conditions of Theorem 3.7, so $(G,*)$ is a group. 
+
+
+
 \subsection{Q15}
 
 Recall that we can represent a binary operation on a finite set via a multiplication table. Now consider any given row of that table. I.e. we consider all elements of the form $a*x$ for some fixed $a\in G$. Suppose for some $x\neq y$ we have $a*x=a*y$. Since the left Cancellation Law holds, we conclude $x=y$, which is a contradiction. It follows that in any given row, all elements are unique. Since a row contains exactly $|G|$ elements, each row must contain all unique elements of $G$. Symmetrically, consider any given column of the table. I.e. consider all elements of the form $x*a$ for some fixed $a\in G$. If $x*a=y*a$, then because the right Cancellation Law holds, we have $x=y$. It follows each column contains all unique elements of $G$.
 
 Now consider arbitrary $a,b\in G$. By the above, we know that $b$ must be somewhere on $a$'s row. That is, there exists an element $x$ such that $a*x=b$. Similarly by the above, we know that $b$ must be somewhere on $a$'s column. That is, there exists an element $y$ such that $y*a=b$. Thus, we have all of the conditions of Problem 3.14 ($G$ has been assumed non-empty, and $*$ is assumed to be an associative binary operation) so we can conclude that $(G,*)$ is a group. 
+
+\vspace{\baselineskip}
+
+\noindent (*) It is worth emphasizing that the proof does not stop after the first paragraph here. One might think we can appeal to Problem 3.7 here and conclude that we are done. However, that is a misreading of Problem 3.7. Finiteness of $G$ is useful to prove the \emph{result} of Problem 3.7, which in turn is useful to prove the \emph{conditions} of Problem 3.14.
+
 
 
 \subsection{Q16}

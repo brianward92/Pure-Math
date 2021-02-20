@@ -1655,11 +1655,27 @@ Text for last problem in Section 3 ...
 
 \subsection{Q14}
 
+First, $H\cap K$ is non-empty because the identity element $e$ is in both $H$ and $K$ (they are subgroups) and therefore $e\in H\cap K$. Now suppose $x\in H\cap K$. Then $x\in H$ and $x\in K$. Since $H$ and $K$ are subgroups, we have $x^{-1}\in H$ and $x^{-1}\in K$. Thus, $x^{-1}\in H \cap K$ so $H\cap K$ is closed under inverses. Finally suppose $x,y\in H\cap K$. Then, $x\in H$ and $y\in H$, and because $H$ is a subgroup, $xy\in H$. Similarly, $x \in K$ and $y \in K$, and because $K$ is a subgroup, $xy\in K$. Thus, $xy\in H\cap K$ so that $H\cap K$ is closed under multiplication. 
+
+
+
 \subsection{Q15}
+
+Suppose $x\in H \cup K$. Then either $x\in H$ or $x\notin H$ and hence $x\in K$. In the first case, $x\in H$ and $H$ is a subgroup implies $x^{-1}\in H$, which implies $x^{-1}\in H\cup K$. In the second case, $x\in K$ and $K$ is a subgroup implies $x^{-1}\in K$, which implies $x^{-1}\in H\cup K$. Thus, $H\cup K$ is closed under inverses. 
+
+
 
 \subsection{Q16}
 
+Consider $(\R^+,\cdot)$, the set of positive real numbers together with multiplication. Then consider the subset $H:=\{2^j:j\in\Z^+\}$, all powers of two. Consider any $x,y\in H$. Then $x=2^{j_x}$ and $y=2^{j_y}$ so that $xy=2^{j_x+j_y}$ implies that $xy\in H$. However, $H$ is clearly not a group because no element can have an inverse. 
+
+
+
 \subsection{Q17}
+
+Consider $(\Z_{4},\bigoplus)$. This is the group of integers $\{0,1,2,3\}$ with addition taken modulo 4. Then consider $H=\{2\}$. This is closed under inverses because the inverse of $2$ is $2$ as $2\bigoplus2=0$. However, it is clearly not closed under multiplication as $0\notin H$. 
+
+
 
 \subsection{Q18}
 
@@ -1672,6 +1688,22 @@ Text for last problem in Section 3 ...
 \subsection{Q22}
 
 \subsection{Q23}
+
+First, $Z(g)$ is clearly not empty because $e\in G$ is also in $Z(g)$. This is true because $e*g=g*e=g$ for any $g\in G$. Thus, $x\in Z(g)$. Second, suppose $x\in Z(g)$. Then we know $xg=gx$. We can left multiply both sides of this equation and right multiply both sides of this equation by $x^{-1}$ to obtain
+\begin{align*}
+	\left(x^{-1}(xg)\right)x^{-1}=\left(x^{-1}(gx)\right)x^{-1} \implies \left((x^{-1}x)g\right)x^{-1}=x^{-1}\left((gx)x^{-1}\right) & \implies \left(eg\right)x^{-1}=x^{-1}\left(g(xx^{-1})\right) \\
+	& \implies gx^{-1}=x^{-1}(ge) \\
+	& \implies gx^{-1}=x^{-1}g, \\
+\end{align*}
+which implies $x^{-1}\in Z(g)$.
+
+Finally, let $x,y\in Z(g)$. Then, we have $xg=gx$ and $yg=gy$. Thus,
+\begin{align*}
+	(xy)g=x(yg)=x(gy)=(xg)y=(gx)y=g(xy),
+\end{align*}
+which implies $xy\in Z(g)$. 
+
+
 
 \subsection{Q24}
 

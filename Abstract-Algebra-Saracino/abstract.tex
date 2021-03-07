@@ -1231,7 +1231,7 @@ Consider any $x\in G$. As above, there is an $x^\prime$ such that $x^\prime * x 
 
 Because $e\in G$, it has a left inverse, say $e^\prime$, such that $e^\prime * e = e$. However, because $e$ is a right identity, we must have $e^\prime*e=e^\prime$. Thus, $e=e^\prime$. Now for any $x,y$, denote by $x^\prime,y^\prime$ their left inverses (respectively). What is the left inverse of $x*y$? By Theorem 3.4, we guess that it should be $y^\prime * x^\prime$. We demonstrate that as follows
 \begin{align*}
-	(x*y)*(y^\prime * x^\prime)=(x*y)*(y^\prime * x^\prime)
+	(y^\prime * x^\prime)*(x*y)=y^\prime * (x^\prime*(x*y))=y^\prime * ((x^\prime*x)*y)=y^\prime * (e*y)=(y^\prime * e)*y=y^\prime*y=e.
 \end{align*}
 
 By way of contradiction, assume that $x*x^\prime = z$, where $z\in G$ is not equal to $e$. Left multiplying both sides of this equation by $x^\prime$, we have
@@ -1398,7 +1398,7 @@ First consider $a^n$ for $n\ge1$. We have $a^2=a*a=a+a-1=2a-1$. Thus, $a^3=a*a^2
 \begin{align*}
 	a^{n+1}=a*a^n=a*(na-n+1)=a+(na-n+1)-1=(n+1)a-n=(n+1)a-(n+1)+1,
 \end{align*}
-which is exactly the statement for $n+1$. This statement is also true for $n\le0$. To prove that, we need to find $a^{-1}$, which in turn means we need to find the identity element $e$ in this group. If the above is to be correct for $n\le0$, then setting $n=0$ suggests that $e=a^0=0\cdot a-0+1=1$. Indeed, $a*1=a+1-1=a$ and $1*a=1+a-1=a$. 
+which is exactly the statement for $n+1$. This statement is also true for $n\le0$. To prove that, we need to find $a^{-1}$, which in turn means we need to find the identity element $e$ in this group. If the above is to be correct for $n\le0$, then setting $n=0$ suggests that $e=a^0=0\cdot a-0+1=1$. Indeed, $a*1=a+1-1=a$ and $1*a=1+a-1=a$ for any $a$.
 
 Next, setting $n=-1$ in the above suggests $a^{-1}=(-1)\cdot a -(-1)+1=2-a$. Indeed $a*(2-a)=a+(2-a)-1=1$ and $(2-a)*a=(2-a)+a-1=1$. Thus, replacing $a$ by $a^{-1}$ in $a^n=na-n+1$, we obtain
 \begin{align*}
@@ -1517,7 +1517,7 @@ If $G=\langle x \rangle$ then for any $g\in G$ we have $g=x^j$ for some $j\in\Z$
 	where we used the first part of the Theorem to add exponents. These equations are sufficient to show that the inverse of $x^n$ is $x^{-n}$.}
 	\item[(iii)]{We take a different approach and prove (a) $(x^m)^n=x^{nm}$ (for all $n,m$) and (b) $x^{nm}=(x^n)^m$ (for all $n,m$) by induction on $n$ for an arbitrary $m$.
 	\begin{itemize}
-		\item[(a)]{When $n=1$ the left hand side is $(x^m)^n=(x^m)^1=x^m$ and the right hand side is $x^{nm}=x^{1\cdot m}=x^m$. Now suppose that $(x^m)^n=x^{nm}$ and multiply both sides by $x^m$. The left hand side simply becomes $(x^m)^{n+1}$ since we have an additional copy of $x^m$. The right hand side is $x^m*x^{nm}=x^{m+nm}=x^{(n+1)m}$. Thus, $(x^m)^{n+1}=x^{(n+1)m}$, which is exactly the statement for $n+1$.}
+		\item[(a)]{When $n=1$ the left hand side is $(x^m)^n=(x^m)^1=x^m$ and the right hand side is $x^{nm}=x^{1\cdot m}=x^m$. Now suppose that $(x^m)^n=x^{nm}$ and multiply both sides by $x^m$. The left hand side simply becomes $(x^m)^{n+1}$ since we have an additional copy of $x^m$. The right hand side is $x^m*x^{nm}=x^{m+nm}=x^{(n+1)m}$, where we used the first part of the Theorem to add exponents. Thus, $(x^m)^{n+1}=x^{(n+1)m}$, which is exactly the statement for $n+1$.}
 		\item[(b)]{}
 	\end{itemize}}
 \end{itemize}
@@ -1706,6 +1706,10 @@ which implies $xy\in Z(g)$.
 
 
 \subsection{Q24}
+
+Because $H$ is non-empty there is some element $z\in H$. Thus, applying the defining property of $H$ with $x=z$ and $y=z$, we observe that $xy^{-1}=zz^{-1}=e\in H$. Now consider any arbitrary $z\in H$. Then, applying the defining property of $H$ with $x=e$ and $y=z$, we have $xy^{-1}=ez^{-1}=z^{-1}\in H$ so that $H$ is closed under inverses. Now consider any $z,w\in H$. Since $H$ is closed under inverses, $w^{-1}\in H$. Finally, applying the defining property of $H$ with $x=z$ and $y=w^{-1}$ we have $xy^{-1}=z\left(w^{-1}\right)^{-1}=zw$ so $H$ is closed under multiplication. Since $H$ is a non-empty subset of $G$ closed under inverses and multiplication, $H$ is a subgroup. 
+
+
 
 \subsection{Q25}
 

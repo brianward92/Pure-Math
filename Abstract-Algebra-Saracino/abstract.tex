@@ -1725,7 +1725,47 @@ Because $H$ is non-empty there is some element $z\in H$. Thus, applying the defi
 
 \newpage
 
-\section{}
+\section{Direct Products}
+
+\subsection{Q1}
+
+\subsection{Q2}
+
+\subsection{Q3}
+
+\subsection{Q4}
+
+\subsection{Q5}
+
+\subsection{Q6}
+
+\subsection{Q7}
+
+\subsection{Q8}
+
+\subsection{Q9}
+
+\subsection{Q10}
+
+\subsection{Q11}
+
+\subsection{Q12}
+
+\subsection{Q13}
+
+\subsection{Q14}
+
+First, without loss of generality we can assume $0\le k_i < m_i$. Were that not the case, we can apply the division algorithm to find the unique value of $0\le r_j < m_j$ such that $k_j=q_jm_j+r_j$. That implies $r_j\equiv k_j\mod{m_j}$ and because congruence modulo $n$ is an equivalence relation, $x$ is a solution to $x\equiv k_j \mod{m_j}$ for all $j$ if and only if it is a solution to $x\equiv r_j \mod{m_j}$ for all $j$.
+
+Second, consider $G_i:=\Z_{m_i}$ for all $i$. We have $|G_i|=m_i$ and by assumption, all $m_i$ are pairwise relatively prime. Thus, part (ii) of Theorem 6.1 tells us that $G:=G_1\times G_2\times \ldots \times G_n$ is cyclic. Moreover Problem 6.4 tells us that $|G|=m_1\cdot m_2\dots m_n$ because each $Z_{m_i}$ is finite. 
+
+Third, the element $1$ has order $m_i$ in $Z_{m_i}$ for each $i$. Thus, part (i) of Theorem 6.1 tells us that the element $(1,1,\ldots,1)$ in $G$ has order equal to the least common multiple of $m_1,m_2,\ldots, m_n$. However, because the $m_j$ are pairwise relatively prime, their least common multiple is simply\footnote{This is an obvious extension of Problem 4.31, part (b).} $m_1\cdot m_2  \dots  m_n$. Because $G$ is cyclic with order $m_1\cdot m_2  \dots  m_n$ and $(1,1,\ldots,1)$ has order equal to this value, we conclude that $G = \langle (1,1,\ldots,1) \rangle$. 
+
+Thus, because the element $(1,1,\ldots,1)$ generates $G$, we conclude there exists an $x$ such that $x(1,1,\ldots,1) = (k_1,k_2,\ldots,k_n)$. However, that is equivalent to the existence of an $x$ such that $x\equiv k_j \mod{m_j}$ for all $j$. 
+
+
+
+\subsection{Q15}
 
 \newpage
 

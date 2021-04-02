@@ -970,10 +970,10 @@ Let $A=\begin{pmatrix}a_1 & a_2 \\ -a_2 & a_1 \end{pmatrix}$ and $B=\begin{pmatr
 \end{align*}
 Indeed $A\cdot B$ is in this group because (i) the diagonal entries are equal, (ii) the off-diagonal entries are negatives of each other and (iii) we have
 \begin{align*}
-	\det{A\cdot B} & = \det{\begin{pmatrix}a_1b_1-a_2b_2 & a_1b_2+a_2b_1 \\ -a_2b_1-a_1b_2 & -a_2b_2+a_1b_1 \end{pmatrix}} \\
-	& = (a_1b_1-a_2b_2)(-a_2b_2+a_1b_1)-(-a_2b_1-a_1b_2)(-a_2b_2+a_1b_1)\\
-	& = (a_1b_1-a_2b_2)^2+(-a_2b_1-a_1b_2)^2\\
-	& = a_1^2b_1^2-2a_1b_1a_2b_2+a_2^2b_2^2+a_2^2b_1^2+2a_ab_1a_2b_2+a_1^2b_2^2\\
+	\det\left(A\cdot B\right) & = \det{\begin{pmatrix}a_1b_1-a_2b_2 & a_1b_2+a_2b_1 \\ -a_2b_1-a_1b_2 & -a_2b_2+a_1b_1 \end{pmatrix}} \\
+	& = (a_1b_1-a_2b_2)(-a_2b_2+a_1b_1)-(-a_2b_1-a_1b_2)(a_1b_2+a_2b_1)\\
+	& = (a_1b_1-a_2b_2)^2+(a_2b_1+a_1b_2)^2\\
+	& = a_1^2b_1^2-2a_1b_1a_2b_2+a_2^2b_2^2+a_2^2b_1^2+2a_2b_1a_1b_2+a_1^2b_2^2\\
 	& = a_1^2b_1^2+a_2^2b_2^2+a_2^2b_1^2+a_1^2b_2^2\\
 	& = a_1^2b_1^2+a_2^2b_1^2+a_2^2b_2^2+a_1^2b_2^2\\
 	& = b_1^2(a_1^2+a_2^2)+b_2^2(a_2^2+a_1^2)\\
@@ -981,9 +981,30 @@ Indeed $A\cdot B$ is in this group because (i) the diagonal entries are equal, (
 \end{align*}
 which is non-zero because both terms in the product are non-zero by assumption. Thus, we have a valid binary operation on this set of matrices. 
 
+Associativity follows from associativity in $GL(2,\R)$. The identity matrix is the same as in $GL(2,\R)$ as we can take $a=1$, and $b=0$. Clearly for this choice of $a$ and $b$ we have $a^2+b^2=1^2+0^2=1\neq0$ so the identity in $GL(2,\R)$ is the identity matrix in $G$. Finally, the inverse matrix in $GL(2,\R)$ takes the form
+\begin{align*}
+	\begin{pmatrix}\frac{a}{a^2+b^2} & \frac{-b}{a^2+b^2} \\ \frac{b}{a^2+b^2} & \frac{a}{a^2+b^2} \end{pmatrix},
+\end{align*}
+which has (i) equal diagonal entries and (ii) off-diagonal entries that are negatives of each other. Moreover, 
+\begin{align*}
+	\left(\frac{a}{a^2+b^2}\right)^2+\left(\frac{b}{a^2+b^2}\right)^2=\frac{1}{a^2+b^2}\neq0,
+\end{align*}
+which implies that the inverse matrix is also in $G$. Thus, $G$ is a group. 
+
+\vspace{\baselineskip}
+
+\noindent (*) Note that associativity in $GL(2,\R)$ is more general than associativity in $G$. In particular, all matrices in $G$ are also in $GL(2,\R)$ so the equations for associativity automatically hold true for $G$ as they do in $GL(2,\R)$. Similarly, the identity matrix in $GL(2,\R)$ is an identity for any matrix in that group including the subset $G$ we are considering here. Thus, as long as the identity matrix in $GL(2,\R)$ is also in $G$ (as we have shown) it is automatically the identity matrix in $G$. Finally, the inverse matrix given by the formula on the top of page 19 of the textbook is an inverse matrix for any element of $GL(2,\R)$ including the subset $G$ we are considering here. Thus, as long as this inverse is also in $G$ (as we have shown) it is automatically the inverse matrix in $G$ as well. 
+
 
 
 \subsection{Q11}
+
+
+\vspace{\baselineskip}
+
+\noindent (*) As in Problem 2.10, we automatically have associativity because that holds for all matrices in $GL(2,\R)$ including our subset here. Moreover, we only need to show that the identity and inverse in $GL(2,\R)$ are also in $G$ because then we automatically know they are the identity and inverse in $G$. 
+
+
 
 \subsection{Q12}
 

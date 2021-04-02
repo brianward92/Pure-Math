@@ -1773,7 +1773,53 @@ Thus, because the element $(1,1,\ldots,1)$ generates $G$, we conclude there exis
 
 \newpage
 
-\section{}
+\section{Functions}
+
+\subsection{Q1}
+
+\subsection{Q2}
+
+\subsection{Q3}
+
+\subsection{Q4}
+
+This function is not one-to-one. Consider $p_1$ defined such that $p_1(x)=x$ for all $x\in\R$ and $p_2$ defined such that $p_2(x)=x+1$ for all $x\in\R$. Both $f(p_1)$ and $f(p_2)$ equal the function $p_3$ such that $p_3(x)=1$ for all $x\in\R$. However, clearly $p_1\neq p_2$ so $f$ cannot be one-to-one.
+
+On the other hand, $f$ is onto. Consider any polynomial $p$ defined such that $p(x)=\sum_{i=0}^na_ix^i$ for all $x\in\R$. Next consider $q(x)$ defined such that $q(x)=\sum_{i=0}^n\frac{a_i}{i+1}x^{i+1}$. Clearly $p$ is the derivative of $q$, which shows $f(q)=p$ so that $f$ is onto. 
+
+
+
+\subsection{Q5}
+
+\subsection{Q6}
+
+\subsection{Q7}
+
+Yes, $f$ is one-to-one and onto. Suppose $f(x)=f(y)$ or $axa^{-1}=aya^{-1}$. Right canceling $a^{-1}$ and then left canceling $a$, we conclude $x=y$ so $f$ is one-to-one. Now let $x\in X$ and consider $y:=a^{-1}xa$. Then, $f(y)=a\left(a^{-1}xa\right)a^{-1}=aa^{-1}xaa^{-1}=x$ so $f$ is onto. 
+
+
+
+\subsection{Q8}
+
+Yes, $f$ is one-to-one and onto from $G$ to $G$. First of all, for any $x\in X$, $x^{-1}\in G$ because $G$ is a group. Thus, $f:G\rightarrow G$. Now suppose $f(x)=f(y)$ or $x^{-1}=y^{-1}$. By the uniqueness of inverses, we conclude $x=y$ so $f$ is one-to-one. Now let any $x\in G$. Once again because $G$ is a group, $x^{-1}\in G$ and we have $f(x^{-1})=\left(x^{-1}\right)^{-1}=x$. Thus, for any $x\in X$ there is a $y\in X$ (namely, $y=x^{-1}$) such that $f(y)=x$ so $f$ is onto. 
+
+
+
+\subsection{Q9}
+
+To show that $f\circ g$ is onto, we must show for any $x\in X$ there exists $y\in X$ such that $(f\circ g)(y)=x$. Since $f$ is onto, there exists a $z\in X$ such that $f(z)=x$. Now because $g$ is onto, there exists a $y\in X$ such that $g(y)=z$. Taking $f$ of both sides we obtain $f(g(y))=f(z)=x$. Thus, for any $x\in X$ there is a $y\in X$ such that $f(g(y))=x$ or $(f\circ g)(y)=x$, exactly as desired.
+
+To show that $f\circ g$ is one-to-one, we must show that if $(f\circ g)(x)=(f\circ g)(y)$ then $x=y$. From $(f\circ g)(x)=(f\circ g)(y)$, we have $f(g(x))=f(g(y))$. Let $x^\prime=g(x)$ and $y^\prime=g(y)$. Thus, we have $f(x^\prime)=f(y^\prime)$ and because $f$ is one-to-one, we conclude $x^\prime=y^\prime$ or $g(x)=g(y)$. Because $g$ is one-to-one, we conclude $x=y$, exactly as desired. 
+
+Thus, $f\circ g$ is one-to-one and onto from $X$ to $X$, which means that $\circ$ is a binary operation. 
+
+
+
+\subsection{Q10}
+
+\subsection{Q11}
+
+\subsection{Q12}
 
 \newpage
 

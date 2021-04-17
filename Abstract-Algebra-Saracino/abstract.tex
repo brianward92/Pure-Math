@@ -1713,9 +1713,17 @@ Consider $(\Z_{4},\bigoplus)$. This is the group of integers $\{0,1,2,3\}$ with 
 
 \subsection{Q22}
 
+First, $Z(G)$ is clearly not empty because $e\in G$ is also in $Z(G)$. This is true because $e*g=g*e=g$ (by definition of the identity element) for any $g\in G$. Suppose $a,b\in Z(G)$, then $a*g=g*a$ and $b*g=g*b$ for every $g\in G$. Thus, for any $g\in G$
+\begin{align*}
+	(a*b)*g  = a*(b*g) = a*(g*b) = (a*g)*b = (g*a)*b = g*(a*b),
+\end{align*}
+which implies $a*b\in Z(G)$. Next, from $a*g=g*a$ for every $g\in G$ we can left multipy by $a^{-1}$ and then right multiply by $a^{-1}$ to conclude that $g*a^{-1}=a^{-1}*g$ for every $g\in G$, which implies $a^{-1}\in Z(G)$. Thus, by Theorem 5.1, $Z(G)$ is a subgroup of $G$.
+
+
+
 \subsection{Q23}
 
-First, $Z(g)$ is clearly not empty because $e\in G$ is also in $Z(g)$. This is true because $e*g=g*e=g$ for any $g\in G$. Thus, $x\in Z(g)$. Second, suppose $x\in Z(g)$. Then we know $xg=gx$. We can left multiply both sides of this equation and right multiply both sides of this equation by $x^{-1}$ to obtain
+First, $Z(g)$ is clearly not empty because $e\in G$ is also in $Z(g)$. This is true because $e*g=g*e=g$ (by definition of the identity element) for any $g\in G$. Thus, $x\in Z(g)$. Second, suppose $x\in Z(g)$. Then we know $xg=gx$. We can left multiply both sides of this equation and right multiply both sides of this equation by $x^{-1}$ to obtain
 \begin{align*}
 	\left(x^{-1}(xg)\right)x^{-1}=\left(x^{-1}(gx)\right)x^{-1} \implies \left((x^{-1}x)g\right)x^{-1}=x^{-1}\left((gx)x^{-1}\right) & \implies \left(eg\right)x^{-1}=x^{-1}\left(g(xx^{-1})\right) \\
 	& \implies gx^{-1}=x^{-1}(ge) \\
@@ -1727,7 +1735,7 @@ Finally, let $x,y\in Z(g)$. Then, we have $xg=gx$ and $yg=gy$. Thus,
 \begin{align*}
 	(xy)g=x(yg)=x(gy)=(xg)y=(gx)y=g(xy),
 \end{align*}
-which implies $xy\in Z(g)$. 
+which implies $xy\in Z(g)$. Thus, by Theorem 5.1, $Z(g)$ is a subgroup of $G$.
 
 
 

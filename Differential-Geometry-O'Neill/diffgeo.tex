@@ -105,17 +105,37 @@
 
 \newpage
 
-%\setcounter{section}{-1}
-
 \section{Calculus on Euclidean Space}
 \subsection{Euclidean Space}
 \begin{enumerate}
 	\item{
 		\begin{enumerate}
-		\item[(a)]{$(x^2y)(y\sin(z))^2=x^2y^3\sin^2(z)$}
-		\item[(b)]{$(2xy)(y\sin(z))+\sin(z)(x^2y)=(2xy+x^2y)\sin(z)$}
-		\item[(c)]{}
-		\item[(c)]{}
+			\item[(a)]{$fg^2=(x^2y)(y\sin(z))^2=x^2y^3\sin^2(z)$}
+			\item[(b)]{$\frac{\partial f}{\partial x}g+\frac{\partial g}{\partial y}f=(2xy)(y\sin(z))+\sin(z)(x^2y)=(2xy^2+x^2y)\sin(z)$}
+			\item[(c)]{$fg=(x^2y)(y\sin(z))=x^2y^2\sin(z)\implies\frac{\partial (fg)}{\partial z}=x^2y^2\cos(z)\implies\frac{\partial^2 (fg)}{\partial y \partial z}=2x^2y\cos(z)$}
+			\item[(d)]{$\frac{\partial}{\partial y}\sin(f)=\cos(f)\frac{\partial f}{\partial y}=\cos(x^2y)\cdot2xy$}
+		\end{enumerate}
+	}
+	\item{
+		\begin{enumerate}
+			\item[(a)]{$1^2\cdot1-1^2\cdot1=0$}
+			\item[(b)]{$3^2\cdot(-1)-(-1)^2\cdot\frac{1}{2}=-9.5$}
+			\item[(c)]{$a^2\cdot1-1^2\cdot(1-a)=a^2+a-1$}
+			\item[(d)]{$t^2\cdot t^2-(t^2)^2\cdot t^3=t^4-t^7$}
+		\end{enumerate}
+	}
+	\item{
+		\begin{enumerate}
+			\item[(a)]{$\sin(xy)+x\cos(xy)y-y\sin(xz)z=\sin(xy)+xy\cos(xy)-yz\sin(xz)$}
+			\item[(b)]{$\frac{\partial f}{\partial x}=\cos(g)\frac{\partial g}{\partial x}=\cos(e^h)e^h\frac{\partial h}{\partial x}=\cos(e^{x^2+y^2+z^2})e^{x^2+y^2+z^2}2x$}
+		\end{enumerate}
+	}
+	\item{
+		With a slight abuse of notation\footnote{The abuse is that when we say for example $\frac{\partial f}{\partial x}$ we really mean ``partial derivative of $f$ with respect to the first component." (And similarly for $\frac{\partial f}{\partial y}$ and $\frac{\partial f}{\partial z}$).}, the chain rule in this case gives us $\frac{\partial f}{\partial x}=\frac{\partial h}{\partial x}\frac{\partial g_1}{\partial x}+\frac{\partial h}{\partial y}\frac{\partial g_2}{\partial x}+\frac{\partial h}{\partial z}\frac{\partial g_3}{\partial x}$. For the given $h$, we can write this as $\frac{\partial f}{\partial x}=2x\frac{\partial g_1}{\partial x}-z\frac{\partial g_2}{\partial x}-y\frac{\partial g_3}{\partial x}.$ We need only compute the the partial derivatives with respect to $x$ of each coordinate function.
+		\begin{enumerate}
+			\item[(a)]{$\frac{\partial f}{\partial x}=2x\cdot 1-z\cdot 0-y\cdot 1=2x$}
+			\item[(b)]{$\frac{\partial f}{\partial x}=2x\cdot 0-ze^{x+y}-ye^x=-ze^{x+y}-ye^x$}
+			\item[(c)]{$\frac{\partial f}{\partial x}=2x\cdot 1-z\cdot (-1)-y\cdot 1 = 2x+z-y$}
 		\end{enumerate}
 	}
 \end{enumerate}

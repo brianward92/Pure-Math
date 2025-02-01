@@ -82,10 +82,20 @@
 \def\Vhat{{\hat{V}}}
 \def\Mhat{{\hat{M}}}
 
+\lstset{
+  language=Python,               % Set language
+  basicstyle=\ttfamily\footnotesize, % Use monospaced font
+  keywordstyle=\color{blue},      % Keywords in blue
+  stringstyle=\color{red},        % Strings in red
+  commentstyle=\color{gray},      % Comments in gray
+  breaklines=true,                % Allow line breaking
+  frame=single                    % Add border around code block
+}
+
 %\addtolength{\hoffset}{-1.8cm} \addtolength{\voffset}{-2cm}
 %\addtolength{\textheight}{4cm} \addtolength{\textwidth}{3.6cm}
 
-\newcommand{\ward}[1]{\textcolor{red}{#1}}
+\newcommand{\ward}[1]{\textcolor{blue}{#1}}
 
 \numberwithin{theorem}{section}
 \numberwithin{equation}{section}
@@ -95,7 +105,11 @@
 \numberwithin{lemma}{section}
 \numberwithin{example}{section}
 
+
+
 \begin{document}
+
+
 \title{Solutions Guide to Differential Geometry}
 \author{Brian Ward\thanks{Email: {bmw2150@columbia.edu}. Corresponding author. }} 
 \maketitle
@@ -136,6 +150,58 @@
 			\item[(a)]{$\frac{\partial f}{\partial x}=2x\cdot 1-z\cdot 0-y\cdot 1=2x$}
 			\item[(b)]{$\frac{\partial f}{\partial x}=2x\cdot 0-ze^{x+y}-ye^x=-ze^{x+y}-ye^x$}
 			\item[(c)]{$\frac{\partial f}{\partial x}=2x\cdot 1-z\cdot (-1)-y\cdot 1 = 2x+z-y$}
+		\end{enumerate}
+	}
+\end{enumerate}
+
+\subsection{Tangent Vectors}
+\begin{enumerate}
+	\item{
+		\begin{enumerate}
+			\item[(a)]{First, $\textbf{v}_p=-2U_1(\textbf{p})+U_2(\textbf{p})-U_3(\textbf{p})$ and $\textbf{w}_p=U_2(\textbf{p})+3U_3(\textbf{p})$. Therefore, $3\textbf{v}_p-2\textbf{w}_p=-6U_1(\textbf{p})+U_2(\textbf{p})-9U_3(\textbf{p})$.}
+			\item[(b)]{Here is a code listing 
+				\begin{lstlisting}
+import numpy as np
+
+from pure_math import diff_geo
+
+if __name__ == "__main__":
+	p = np.array([1,1,0])
+	v = np.array([-2, 1, -1])
+	w = np.array([0, 1, 3])
+	diff_geo.plot_arrows(p, [v, w, -2*v, v+w])
+				\end{lstlisting}
+			}
+			And here is a plot in Figure \ref{fig:01_02_prob_01_b}.
+			\begin{figure}[ht]
+				\centering
+				\includegraphics[width=0.8\textwidth]{fig/sec_01_02_prob_01_b.png}
+				\caption{Plot for problem 1, part b in section 1.2.}
+  				\label{fig:01_02_prob_01_b}
+			\end{figure}
+
+		\end{enumerate}
+	}
+	\item{$W - xV = 2x^2U_2 - U_3-x\left(xU_1+yU_2\right)=-x^2U_1+(2x^2-xy)U_2-U_3$. At $\textbf{p}=(-1,0,2)$ we have $(W-xV)(\textbf{p})=-U_1(\textbf{p})+2U_2(\textbf{p})-U_3(\textbf{p})$.}
+	\item{
+		\begin{enumerate}
+			\item[(a)]{$V=\frac{2}{7}z^2U_1+0U_2-\frac{1}{7}xyU_3$}
+			\item[(b)]{$V=xU_1+(z-x)U_2+0U_3$}
+			\item[(c)]{$V=xU_1+2yU_2+xy^2U_3$}
+			\item[(d)]{First we have to compute the difference between the points to construct the vector field, then make the standard conversion. In particular, $V(\textbf{p})=(1+p_1,p_2p_3,p_2)-(p_1,p_2,p_3)=(1,p_2(p_3-1),p_3-p_2)$. Thus, $V=1U_1+y(z-1)U_2+(z-y)U_3$.}
+			\item[(e)]{As above we have $V(\textbf{p})=(0,1,1)-(p_1,p_2,p_3)=(-p_1,-p_2,-p_3)$. Thus, $V=-xU_1-yU_2-zU_3$.}
+		\end{enumerate}
+	}
+	\item{We do not care about any components of $fV+gW$ outside the $U_1$ term. That is equal to $f(x,y,z)y^2+g(x,y,z)x^2$. Technically, without further restrictions we could just say $f=g=0$. But that would be trivial and I think the question meant to emphasize that the $U_1$ term is 0, but the others are not. In particular, the $U_2$ term would only come from the $fV$ part of $fV+gW$ and the $U_3$ term would only come from the $gW$ part of $fV+gW$. It is clear these are non-zero if $f$ and $g$ are non-zero functions. In particular, $f(x,y,z)=x^2$ and $g(x,y,z)=-y^2$ will suffice to make $f(x,y,z)y^2+g(x,y,z)x^2$ identically 0 without making $f$ and $g$ themselves 0.}
+	\item{
+		\begin{enumerate}
+			\item[(a)]{Suppose $c_1V_1(\textbf{p})+c_2V_2(\textbf{p})+c_3V_3(\textbf{p})=0$. Writing this in standard form, we have $(c_1+c_3x)U_1(\textbf{p})+(c_2)U_2(\textbf{p})+(-c_1x+c_3)U_3(\textbf{p})=0.$ For this to occur, each coefficient must be identically 0\footnote{I.e., the zero function.}. That is, $c_1+c_3x=0$ for all $x$ so that $c_1=c_3=0$ from the $U_1$ constraint. The $U_2$ immediately yields $c_2=0$. For the $U_3$ constraint we also require that $c_1=c_3=0$. Thus, $V_1,V_2,V_3$ are linearly independent.
+			
+			\qquad If this ``identically 0" business is confusing to you, then recall from the problem we must have $0$ at \emph{every} point $\textbf{p}$ so take $\textbf{p}=(1,0,0)$. Then the vector field at that point is $(c_1+c_3)U_1(\textbf{p})+c_2U_2+(c_3-c_1)U_3(\textbf{p})$. For this to be zero we need to solve $c_1+c_3=0$, $c_2=0$, and $c_3-c_1=0$. The solution is clearly $c_1=c_2=c_3=0$.}
+			\item[(b)]{We need to invert the definitions. Observe that $xV_1-V_3=-(x^2+1)U_3$ and $xV_3+V_1=(x^2+1)U_1$. For all $x\in\R$, we know $x^2+1 > 0$. Therefore, $U_3=\frac{-1}{x^2+1}(xV_1-V_3)$ and $U_1=\frac{1}{x^2+1}(V_1+xV_3)$. Trivially we observe $U_2=V_2$.
+			
+			\qquad Thus, $xU_1+yU_2+zU_3=\left(\frac{x-zx}{x^2+1}\right)V_1+yV_2\left(\frac{x^2+z}{x^2+1}\right)V_3$.
+		}
 		\end{enumerate}
 	}
 \end{enumerate}

@@ -96,6 +96,9 @@
 %\addtolength{\textheight}{4cm} \addtolength{\textwidth}{3.6cm}
 
 \newcommand{\ward}[1]{\textcolor{blue}{#1}}
+\newcommand{\dfdx}{\frac{\partial f}{\partial x}}
+\newcommand{\dfdy}{\frac{\partial f}{\partial y}}
+\newcommand{\dfdz}{\frac{\partial f}{\partial z}}
 
 \numberwithin{theorem}{section}
 \numberwithin{equation}{section}
@@ -204,6 +207,42 @@ if __name__ == "__main__":
 		}
 		\end{enumerate}
 	}
+\end{enumerate}
+
+
+\subsection{Directional Derivatives}
+\begin{enumerate}
+	\item{For each, we must compute $g(t):=f(\textbf{p}+t\textbf{v})$, compute the derivative with respect to $t$, and evaluate the resulting expression at $t=0$. In this case $\textbf{v}=(2,-1,3)$ and $\textbf{p}=(2,0,-1)$ so that $\textbf{p}+t\textbf{v}=(2,0,-1)+t(2,-1,3)=(2+2t,-t,-1+3t)$. Thus, we set $x=2+2t$, $y=-t$, and $z=-1+3t$.
+		\begin{enumerate}
+			\item[(a)]{$f(x,y,z)=y^2z \implies g(t)=f(\textbf{p}+t\textbf{v})=(-t)^2(-1+3t)=t^2(-1+3t)=3t^3-t^2$. Thus, $g'(t)=9t^2-2t$ and $g'(0)=0$.}
+			\item[(b)]{$f(x,y,z)=x^7 \implies g(t)=f(\textbf{p}+t\textbf{v})=(2+2t)^7$. Thus, $g'(t)=7(2+2t)^6\cdot 2= 14(2+2t)^6$ and $g'(0)=14\cdot 2^6=896$.}
+			\item[(c)]{$f(x,y,z)=e^x\cos(y) \implies g(t)=f(\textbf{p}+t\textbf{v}) = e^{2+2t}\cos(-t)=e^{2+2t}\cos(t).$ Thus, $g'(t)=2e^{2+2t}\cos(t)-e^{2+2t}\sin(t)$ and $g'(0)=2e^{2+2\cdot 0}\cos(0)-e^{2+2\cdot 0}\sin(0)=2e^2$.}
+		\end{enumerate}
+	}
+	\item{For each, we need to compute $\dfdx$, $\dfdy$, and $\dfdz$. Then evaluate at $\textbf{p}=(2,0,-1)$ and compute the inner product with $\textbf{v}=(2,-1,3)$.
+		\begin{enumerate}
+			\item[(a)]{$\dfdx=0$, $\dfdy=2yz$, and $\dfdz=y^2$. Thus, $\dfdx(\textbf{p})=0$, $\dfdy(\textbf{p})=0$, and $\dfdz(\textbf{p})=0$. We confirm that $2 \cdot 0 + (-1) \cdot 0 + 3 \cdot 0 = 0$.}
+			\item[(b)]{$\dfdx=7x^6$, $\dfdy=0$, and $\dfdz=0$. Thus, $\dfdx(\textbf{p})=448$, $\dfdy(\textbf{p})=0$, and $\dfdz(\textbf{p})=0$. We confirm that $2 \cdot 448 + (-1) \cdot 0 + 3 \cdot 0 = 896$.}
+			\item[(c)]{$\dfdx=e^x\cos(y)$, $\dfdy=-e^x\sin(y)$, and $\dfdz=0$. Thus, $\dfdx(\textbf{p})=e^2$, $\dfdy(\textbf{p})=0$, and $\dfdz(\textbf{p})=0$. We confirm that $2 \cdot e^2 + (-1) \cdot 0 + 3 \cdot 0 = 2e^2$.}
+		\end{enumerate}
+	}
+	\item{For reference, $V=y^2U_1-xU_3$, $f=xy$, and $g=z^3$.
+		\begin{enumerate}
+			\item[(a)]{$V[f]=y^2\cdot y - x\cdot 0=y^3$}
+			\item[(b)]{$V[g]=y^2\cdot0-x\cdot(3z^2)=-3xz^2$}
+			\item[(c)]{$V[fg]=V[f]\cdot g + f\cdot V[g]=y^3\cdot z^3+xy\cdot(-3xz^2)=y^3z^3-3x^2yz^2$}
+			\item[(d)]{$fV[g]-gV[f]=V[fg]-2gV[f]=y^3z^3-3x^2yz^2-2\cdot z^3\cdot y^3 = -3x^2yz^2 - z^3\cdot y^3$}
+			\item[(e)]{First, $f^2=x^2y^2$ and $g^2=z^6$ so that $f^2+g^2=x^2y^2+z^6$. It follows that $V[f^2+g^2]=y^2\cdot(2xy^2)-x\cdot(6z^5)=2xy^4-6xz^5.$}
+			\item[(f)]{$V[V[f]]=y^2\cdot0-x\cdot0=0$}
+		\end{enumerate}
+	}
+	\item{Per the hint, we act $V=\sum v_i U_i$ on $x_j$:
+		\begin{align*}
+		V[x_j] = \left(\sum v_i U_i\right)[x_j] = \sum v_i U_i[x_j].
+		\end{align*}
+		This is by part (3) of Corollary 3.4. The remarks at the top of page 14 tell us that $U_i[f]=\frac{\partial f}{\partial x_i}$ so that $U_i[x_j]=\frac{\partial x_j}{\partial x_i}$. This is 0 unless $i=j$, in which case it is 1. We conclude $V[x_j] = v_j$. This means that $V=\sum v_i U_i=\sum V[x_j] U_i,$ as desired.
+	}
+	\item{Let $Z:=V-W$, then using part (3) of Corollary 3.4 in reverse, we conclude for all $f$, that $Z[f]=(V-W)[f]=0$. Note that this means the vector field $Z$ acting on $f$ yields the zero \emph{function}. If we let $f=x_j$, we have $Z[x_j]=0$. Thus, for every \textbf{p}, we have $Z(\textbf{p})[x_j]=0$. Denote the $i$th component of $Z(\textbf{p})$ by $z_i$, then we have $0=Z(\textbf{p})[x_j]=\sum z_i \frac{\partial x_j}{\partial x_i} = z_j$. Thus, $z_j=0$ for all $j$ so that $Z(\textbf{p})=0$ for all \textbf{p}. That is, $Z=0$ which implies $V-W=0$ or $V=W$.}
 \end{enumerate}
 
 
